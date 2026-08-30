@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BouncyNZ SMP | Minecraft Server</title>
+    <title>CrispySprings SMP | Minecraft Server</title>
     <style>
         :root {
             --primary: #3b82f6;
@@ -71,6 +71,37 @@
         .ip-box:hover {
             background: var(--primary);
             box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+        }
+
+        /* Server Stats Section */
+        .server-stats {
+            margin-top: 25px;
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: rgba(30, 41, 59, 0.6);
+            padding: 10px 20px;
+            border-radius: 30px;
+            display: inline-flex;
+        }
+
+        .status-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .status-dot.online { background-color: var(--accent); box-shadow: 0 0 10px var(--accent); }
+        .status-dot.offline { background-color: #ef4444; box-shadow: 0 0 10px #ef4444; }
+        .status-dot.loading { background-color: #eab308; animation: pulse 1s infinite alternate; }
+
+        @keyframes pulse { 
+            from { opacity: 0.4; } 
+            to { opacity: 1; } 
         }
 
         /* Navigation Links */
@@ -156,12 +187,18 @@
 <body>
 
     <header>
-        <h1>BouncyNZ SMP</h1>
+        <h1>CrispySprings SMP</h1>
         <p>A feature-rich Community SMP with a player-driven economy, custom quests, and endless exploration.</p>
         
         <div class="ip-box" onclick="copyIP()" id="ipBtn">
-            <span>🎮 play.bouncynz.com</span>
+            <span>🎮 147.135.6.160:25899</span>
             <span style="font-size: 0.9rem; color: #93c5fd;">(Click to Copy)</span>
+        </div>
+
+        <br>
+
+        <div class="server-stats" id="serverStats">
+            <span class="status-dot loading"></span> Fetching server status...
         </div>
 
         <div class="nav-links">
@@ -214,13 +251,13 @@
     </div>
 
     <footer>
-        <p>&copy; 2026 BouncyNZ Server. Not affiliated with Mojang AB.</p>
+        <p>&copy; 2026 CrispySprings SMP. Not affiliated with Mojang AB.</p>
     </footer>
 
     <script>
+        // Copy IP Script
         function copyIP() {
-            // Change 'play.bouncynz.com' to your actual server IP
-            const ip = "play.bouncynz.com";
+            const ip = "147.135.6.160:25899";
             navigator.clipboard.writeText(ip);
             
             const btn = document.getElementById('ipBtn');
@@ -236,6 +273,41 @@
                 btn.style.borderColor = "var(--primary)";
             }, 2000);
         }
+
+        // Fetch Server Stats Script
+        async function fetchServerStats() {
+            const ip = "147.135.6.160:25899"; 
+            const statsDiv = document.getElementById('serverStats');
+            
+            try {
+                // We use the mcsrvstat.us API to get the server data
+                const response = await fetch(`https://api.mcsrvstat.us/3/${ip}`);
+                const data = await response.json();
+
+                if (data.online) {
+                    statsDiv.innerHTML = `
+                        <span class="status-dot online"></span>
+                        <span style="color: #f8fafc; font-weight: bold;">${data.players.online} / ${data.players.max}</span> 
+                        &nbsp;Players Online 
+                        <span style="font-size: 0.9em; margin-left: 5px; opacity: 0.7;">(${data.version})</span>
+                    `;
+                } else {
+                    statsDiv.innerHTML = `
+                        <span class="status-dot offline"></span>
+                        Server is currently offline.
+                    `;
+                }
+            } catch (error) {
+                statsDiv.innerHTML = `
+                    <span class="status-dot offline"></span>
+                    Unable to fetch server status.
+                `;
+                console.error("Error fetching stats:", error);
+            }
+        }
+
+        // Run the stats fetcher as soon as the page loads
+        document.addEventListener("DOMContentLoaded", fetchServerStats);
     </script>
 </body>
 </html>
