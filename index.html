@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CrispySprings SMP | Minecraft Server</title>
     
+    <!-- Tab Icon (Favicon) -->
     <link rel="icon" type="image/png" href="https://mc-heads.net/avatar/Steve/64">
 
     <style>
@@ -30,7 +31,7 @@
         }
 
         body {
-            /* Applied your custom background image here, with a dark gradient overlay for text readability */
+            /* Background image with a dark gradient overlay */
             background: linear-gradient(rgba(10, 15, 30, 0.7), rgba(10, 15, 30, 0.85)), 
                         url('dOk3erq3R4FLcv01RbGT9ED2-MVTfRAALUAZUO0WE95SwjrVXV1-OsDEqVJeDvKFqN5e6eNK5th2U4P36Q4kNdOv7oxB-OgVUVliPf4xei6qPq3izRfKbn_BkpghzHH3F9zsr_RETIrdF8yKX2EAWyuv0Jd2CHIf0q7l_unareglG9rzp45j2z5CNyMySWBb.jpeg');
             background-size: cover;
@@ -52,7 +53,7 @@
         /* Hero Section */
         header {
             text-align: center;
-            padding: 120px 20px;
+            padding: 100px 20px 60px;
             border-bottom: 1px solid var(--glass-border);
         }
 
@@ -136,7 +137,7 @@
             max-width: 700px;
             margin-left: auto;
             margin-right: auto;
-            display: none; /* Hidden until data loads */
+            display: none;
         }
 
         .player-list-title {
@@ -175,6 +176,27 @@
             width: 24px;
             height: 24px;
             border-radius: 4px;
+        }
+
+        /* Live Chat Section */
+        .chat-section {
+            margin-top: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .chat-title {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .chat-container {
+            height: 450px;
+            border-radius: 16px;
+            overflow: hidden;
         }
 
         /* Navigation Links */
@@ -279,15 +301,31 @@
             <span class="status-dot loading"></span> Fetching server status...
         </div>
 
+        <!-- Player List Container -->
         <div class="player-list-container" id="playerListContainer">
             <div class="player-list-title">Players Currently Online</div>
             <div class="player-list" id="playerList">
-                </div>
+                <!-- Player badges injected via JS -->
+            </div>
+        </div>
+
+        <!-- Live In-Game Chat Box -->
+        <div class="chat-section">
+            <div class="chat-title">💬 Live Server Chat</div>
+            <div class="chat-container glass">
+                <!-- REPLACE YOUR_DISCORD_SERVER_ID WITH YOUR ACTUAL DISCORD GUILD ID -->
+                <widgetbot
+                    server="YOUR_DISCORD_SERVER_ID" 
+                    channel="1541009617142808596"
+                    width="100%"
+                    height="100%"
+                ></widgetbot>
+            </div>
         </div>
 
         <div class="nav-links">
-            <a href="#store" class="glass">🛍️ Store</a>
-            <a href="#discord" class="glass">💬 Discord</a>
+            <a href="https://store.crispysprings.com" class="glass">🛍️ Store</a>
+            <a href="https://discord.gg/9K9r9kjSR4" class="glass">💬 Discord</a>
         </div>
     </header>
 
@@ -331,6 +369,9 @@
         <p>&copy; 2026 CrispySprings SMP. Not affiliated with Mojang AB.</p>
     </footer>
 
+    <!-- WidgetBot Script -->
+    <script src="https://cdn.jsdelivr.net/npm/@widgetbot/html-embed"></script>
+
     <script>
         // Copy IP Script
         function copyIP() {
@@ -353,7 +394,7 @@
             }, 2000);
         }
 
-        // Fetch Server Stats Script
+        // Fetch Server Stats & Players Script
         async function fetchServerStats() {
             const ip = "147.135.6.160:25899"; 
             const statsDiv = document.getElementById('serverStats');
@@ -372,7 +413,7 @@
                         <span style="font-size: 0.9em; margin-left: 5px; opacity: 0.7;">(${data.version})</span>
                     `;
 
-                    // Handle Player List
+                    // Populate player list if available
                     if (data.players.list && data.players.list.length > 0) {
                         playerListContainer.style.display = "block";
                         playerList.innerHTML = data.players.list.map(player => `
@@ -382,9 +423,8 @@
                             </div>
                         `).join('');
                     } else if (data.players.online > 0) {
-                        // Fallback if players are online but the server hides the actual list of names
                         playerListContainer.style.display = "block";
-                        playerList.innerHTML = '<div style="color: var(--text-muted); font-size: 0.9rem;">Player names are hidden by the server.</div>';
+                        playerList.innerHTML = '<div style="color: var(--text-muted); font-size: 0.9rem;">Player names are hidden by server settings.</div>';
                     }
 
                 } else {
@@ -402,7 +442,6 @@
             }
         }
 
-        // Run the stats fetcher as soon as the page loads
         document.addEventListener("DOMContentLoaded", fetchServerStats);
     </script>
 </body>
