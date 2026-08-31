@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CrispySprings SMP | Minecraft Server</title>
     <style>
-        /* Import a premium-looking gaming font */
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
 
         :root {
@@ -14,7 +13,6 @@
             --text-light: #f8fafc;
             --text-muted: #cbd5e1;
             --accent: #10b981;
-            /* Glass effect colors */
             --glass-bg: rgba(15, 23, 42, 0.65);
             --glass-border: rgba(255, 255, 255, 0.1);
         }
@@ -37,7 +35,6 @@
             scroll-behavior: smooth;
         }
 
-        /* Glassmorphism Utility Class */
         .glass {
             background: var(--glass-bg);
             backdrop-filter: blur(12px);
@@ -47,206 +44,73 @@
         }
 
         /* Hero Section */
-        header {
-            text-align: center;
-            padding: 120px 20px;
-            border-bottom: 1px solid var(--glass-border);
-        }
-
-        header h1 {
-            font-size: 4rem;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            font-weight: 800;
-            text-shadow: 0 4px 15px rgba(0,0,0,0.8);
-            background: linear-gradient(135deg, #ea580c, #fbbf24);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        header p {
-            font-size: 1.2rem;
-            color: var(--text-muted);
-            margin-bottom: 40px;
-            max-width: 650px;
-            margin-left: auto;
-            margin-right: auto;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-        }
-
-        .ip-box {
-            background: rgba(59, 130, 246, 0.2);
-            border: 2px solid var(--primary);
-            padding: 15px 35px;
-            border-radius: 50px;
-            display: inline-flex;
-            align-items: center;
-            gap: 15px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-size: 1.3rem;
-            font-weight: 600;
-            backdrop-filter: blur(5px);
-        }
-
-        .ip-box:hover {
-            background: var(--primary);
-            transform: scale(1.05);
-            box-shadow: 0 0 25px rgba(59, 130, 246, 0.6);
-        }
+        header { text-align: center; padding: 120px 20px; border-bottom: 1px solid var(--glass-border); }
+        header h1 { font-size: 4rem; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 3px; font-weight: 800; text-shadow: 0 4px 15px rgba(0,0,0,0.8); background: linear-gradient(135deg, #ea580c, #fbbf24); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        header p { font-size: 1.2rem; color: var(--text-muted); margin-bottom: 40px; max-width: 650px; margin-left: auto; margin-right: auto; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
+        
+        .ip-box { background: rgba(59, 130, 246, 0.2); border: 2px solid var(--primary); padding: 15px 35px; border-radius: 50px; display: inline-flex; align-items: center; gap: 15px; cursor: pointer; transition: all 0.3s ease; font-size: 1.3rem; font-weight: 600; backdrop-filter: blur(5px); }
+        .ip-box:hover { background: var(--primary); transform: scale(1.05); box-shadow: 0 0 25px rgba(59, 130, 246, 0.6); }
 
         /* Server Stats Section */
-        .server-stats {
-            margin-top: 30px;
-            font-size: 1.1rem;
-            color: var(--text-light);
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            padding: 12px 25px;
-            border-radius: 30px;
-        }
-
-        .status-dot {
-            width: 14px;
-            height: 14px;
-            border-radius: 50%;
-            display: inline-block;
-        }
-
+        .server-stats { margin-top: 30px; font-size: 1.1rem; color: var(--text-light); display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 12px 25px; border-radius: 30px; }
+        .status-dot { width: 14px; height: 14px; border-radius: 50%; display: inline-block; }
         .status-dot.online { background-color: var(--accent); box-shadow: 0 0 12px var(--accent); }
         .status-dot.offline { background-color: #ef4444; box-shadow: 0 0 12px #ef4444; }
         .status-dot.loading { background-color: #eab308; animation: pulse 1s infinite alternate; }
-
-        @keyframes pulse { 
-            from { opacity: 0.4; } 
-            to { opacity: 1; } 
-        }
+        @keyframes pulse { from { opacity: 0.4; } to { opacity: 1; } }
 
         /* Navigation Links */
-        .nav-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 40px;
+        .nav-links { display: flex; justify-content: center; gap: 20px; margin-top: 40px; }
+        .nav-links a { text-decoration: none; color: var(--text-light); padding: 12px 25px; border-radius: 8px; font-weight: 600; transition: all 0.2s ease; border: 1px solid transparent; }
+        .nav-links a:hover { background: rgba(255, 255, 255, 0.1); border-color: var(--glass-border); transform: translateY(-2px); }
+
+        /* Layout */
+        .content-container { max-width: 1200px; margin: 80px auto; padding: 0 20px; }
+        .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 50px; font-weight: 800; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
+
+        /* Interactive Wiki Layout */
+        .wiki-box { padding: 40px; border-radius: 16px; margin-top: 80px; }
+        .wiki-layout { display: flex; gap: 30px; margin-top: 30px; align-items: flex-start; }
+        
+        .wiki-sidebar { flex: 0 0 280px; display: flex; flex-direction: column; gap: 8px; position: sticky; top: 20px; max-height: 80vh; overflow-y: auto; padding-right: 10px; }
+        
+        /* Custom scrollbar for sidebar */
+        .wiki-sidebar::-webkit-scrollbar { width: 6px; }
+        .wiki-sidebar::-webkit-scrollbar-track { background: rgba(0,0,0,0.1); border-radius: 10px; }
+        .wiki-sidebar::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 10px; }
+        
+        .wiki-tab { background: rgba(255, 255, 255, 0.03); border: 1px solid var(--glass-border); color: var(--text-muted); padding: 12px 20px; border-radius: 8px; text-align: left; font-size: 1rem; font-weight: 600; cursor: pointer; transition: all 0.2s ease; display: flex; gap: 10px; }
+        .wiki-tab span { color: #fdba74; width: 25px; }
+        .wiki-tab:hover { background: rgba(255, 255, 255, 0.1); border-color: #fbbf24; color: var(--text-light); }
+        .wiki-tab.active { background: rgba(234, 88, 12, 0.2); border-color: #ea580c; color: #fff; transform: translateX(5px); }
+
+        .wiki-content { flex: 1; background: rgba(0, 0, 0, 0.2); border-radius: 12px; padding: 30px; border: 1px solid var(--glass-border); min-height: 500px; }
+        
+        .wiki-pane { display: none; animation: fadeIn 0.3s ease; }
+        .wiki-pane.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* Wiki Typography & Elements */
+        .wiki-pane h2 { color: #fbbf24; font-size: 2rem; margin-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px; }
+        .wiki-pane h3 { color: #fdba74; font-size: 1.4rem; margin: 25px 0 15px 0; }
+        .wiki-pane p { margin-bottom: 15px; color: var(--text-light); }
+        .wiki-pane ul { margin-left: 25px; margin-bottom: 15px; }
+        .wiki-pane li { margin-bottom: 8px; color: var(--text-muted); }
+        .wiki-pane strong { color: #fff; }
+        .wiki-pane code { background: rgba(0,0,0,0.4); padding: 3px 6px; border-radius: 4px; color: #93c5fd; font-family: monospace; font-size: 0.95em; }
+        .wiki-pane table { width: 100%; border-collapse: collapse; margin: 20px 0; background: rgba(0,0,0,0.2); border-radius: 8px; overflow: hidden; }
+        .wiki-pane th, .wiki-pane td { padding: 12px 15px; text-align: left; border-bottom: 1px solid var(--glass-border); }
+        .wiki-pane th { background: rgba(255,255,255,0.05); color: #fbbf24; font-weight: 600; }
+        .wiki-pane a { color: #93c5fd; text-decoration: none; }
+        .wiki-pane a:hover { text-decoration: underline; }
+
+        /* Responsive Wiki */
+        @media (max-width: 900px) {
+            .wiki-layout { flex-direction: column; }
+            .wiki-sidebar { flex: none; width: 100%; max-height: 250px; }
         }
 
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-light);
-            padding: 12px 25px;
-            border-radius: 8px;
-            font-weight: 600;
-            transition: all 0.2s ease;
-            border: 1px solid transparent;
-        }
-
-        .nav-links a:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: var(--glass-border);
-            transform: translateY(-2px);
-        }
-
-        /* Container & Titles */
-        .content-container {
-            max-width: 1200px;
-            margin: 80px auto;
-            padding: 0 20px;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 50px;
-            font-weight: 800;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
-        }
-
-        /* Features Grid */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-        }
-
-        .card {
-            padding: 40px 30px;
-            border-radius: 16px;
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-            border-color: rgba(234, 88, 12, 0.4); 
-        }
-
-        .card-icon {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            display: inline-block;
-            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
-        }
-
-        .card h3 {
-            margin-bottom: 15px;
-            color: #fdba74; 
-            font-size: 1.4rem;
-        }
-
-        .card p {
-            color: var(--text-muted);
-            font-size: 1rem;
-        }
-
-        /* Wiki Section */
-        .wiki-box {
-            padding: 40px;
-            border-radius: 16px;
-            margin-top: 80px;
-        }
-
-        .wiki-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
-            margin-top: 30px;
-        }
-
-        .wiki-link {
-            padding: 15px 20px;
-            border-radius: 12px;
-            color: var(--text-light);
-            text-decoration: none;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            transition: all 0.2s ease;
-            border: 1px solid var(--glass-border);
-            background: rgba(255, 255, 255, 0.03);
-        }
-
-        .wiki-link:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: #fbbf24;
-            transform: translateX(5px);
-        }
-
-        .wiki-link span {
-            color: #fdba74;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 40px 20px;
-            margin-top: 80px;
-            border-top: 1px solid var(--glass-border);
-        }
+        footer { text-align: center; padding: 40px 20px; margin-top: 80px; border-top: 1px solid var(--glass-border); }
     </style>
 </head>
 <body>
@@ -259,80 +123,388 @@
             <span>🎮 147.135.6.160:25899</span>
             <span style="font-size: 0.9rem; color: #93c5fd; margin-left: 10px;">(Click to Copy)</span>
         </div>
-
         <br>
-
-        <!-- Dynamic Server Stats -->
         <div class="server-stats glass" id="serverStats">
             <span class="status-dot loading"></span> Fetching server status...
         </div>
 
         <div class="nav-links">
             <a href="#wiki" class="glass">📖 Wiki</a>
-            <a href="#store" class="glass">🛍️ Store</a>
-            <a href="https://discord.gg/jqXPUQQwMG" class="glass" target="_blank" rel="noopener noreferrer">💬 Discord</a>
+            <a href="https://store.crispysprings.com" class="glass" target="_blank">🛍️ Store</a>
+            <a href="https://discord.gg/9K9r9kjSR4" class="glass" target="_blank">💬 Discord</a>
         </div>
     </header>
 
     <div class="content-container">
-        <h2 class="section-title">What Makes Us Special</h2>
-        
-        <div class="grid">
-            <div class="card glass">
-                <div class="card-icon">🌍</div>
-                <h3>Java & Bedrock Crossplay</h3>
-                <p>Play with your friends no matter what device they are on. We fully support Bedrock and Java edition players simultaneously.</p>
-            </div>
-            
-            <div class="card glass">
-                <div class="card-icon">💰</div>
-                <h3>Player-Driven Economy</h3>
-                <p>Make a living through the Jobs system, create QuickShops, trade on the global Auction House, and watch the dynamic market rotate!</p>
-            </div>
-
-            <div class="card glass">
-                <div class="card-icon">🎙️</div>
-                <h3>Proximity Voice Chat</h3>
-                <p>Install the SimpleVoiceChat mod to talk to players in-game based on distance. Perfect for trading, exploring, or just hanging out.</p>
-            </div>
-
-            <div class="card glass">
-                <div class="card-icon">📜</div>
-                <h3>Quests & Better Fishing</h3>
-                <p>Never get bored! Complete daily quests for rewards, compete on leaderboards, and experience a fully overhauled fishing system.</p>
-            </div>
-
-            <div class="card glass">
-                <div class="card-icon">🪦</div>
-                <h3>Quality of Life</h3>
-                <p>Die safely with AxGraves to protect your loot, teleport to player towns via PlayerWarps, gather safely in the Resource World, and even sit or crawl anywhere.</p>
-            </div>
-        </div>
-
-        <!-- NEW WIKI SECTION -->
+        <!-- INTERACTIVE WIKI SECTION -->
         <div id="wiki" class="wiki-box glass">
             <h2 class="section-title" style="margin-bottom: 10px;">Server Wiki</h2>
-            <p style="text-align: center; color: var(--text-muted);">Everything you need to know to survive and thrive on CrispySprings.</p>
+            <p style="text-align: center; color: var(--text-muted); margin-bottom: 30px;">The official Crispy Springs Community Guide.[cite: 3]</p>
             
-            <div class="wiki-grid">
-                <!-- Links automatically map to the file names provided in the ZIP structure -->
-                <a href="#" class="wiki-link"><span>02</span> Getting Started</a>
-                <a href="#" class="wiki-link"><span>03</span> Commands</a>
-                <a href="#" class="wiki-link"><span>04</span> Progression</a>
-                <a href="#" class="wiki-link"><span>05</span> Worlds & Travel</a>
-                <a href="#" class="wiki-link"><span>06</span> Economy</a>
-                <a href="#" class="wiki-link"><span>07</span> Jobs</a>
-                <a href="#" class="wiki-link"><span>08</span> mcMMO</a>
-                <a href="#" class="wiki-link"><span>09</span> Claims</a>
-                <a href="#" class="wiki-link"><span>10</span> Storage</a>
-                <a href="#" class="wiki-link"><span>11</span> Player Warps</a>
-                <a href="#" class="wiki-link"><span>12</span> Quests & Achievements</a>
-                <a href="#" class="wiki-link"><span>13</span> Treasures</a>
-                <a href="#" class="wiki-link"><span>14</span> Forge</a>
-                <a href="#" class="wiki-link"><span>15</span> Equipment & Gems</a>
-                <a href="#" class="wiki-link"><span>16</span> Graves</a>
-                <a href="#" class="wiki-link"><span>17</span> Supporter Benefits</a>
-                <a href="#" class="wiki-link"><span>18</span> Rules & Help</a>
+            <div class="wiki-layout">
+                <!-- Sidebar Navigation -->
+                <aside class="wiki-sidebar">
+                    <button class="wiki-tab active" onclick="openWiki('home', this)"><span>01</span> Home</button>
+                    <button class="wiki-tab" onclick="openWiki('getting-started', this)"><span>02</span> Getting Started</button>
+                    <button class="wiki-tab" onclick="openWiki('commands', this)"><span>03</span> Commands</button>
+                    <button class="wiki-tab" onclick="openWiki('progression', this)"><span>04</span> Progression & Ranks</button>
+                    <button class="wiki-tab" onclick="openWiki('worlds', this)"><span>05</span> Worlds & Travel</button>
+                    <button class="wiki-tab" onclick="openWiki('economy', this)"><span>06</span> Economy & Trading</button>
+                    <button class="wiki-tab" onclick="openWiki('jobs', this)"><span>07</span> Jobs</button>
+                    <button class="wiki-tab" onclick="openWiki('mcmmo', this)"><span>08</span> mcMMO Skills</button>
+                    <button class="wiki-tab" onclick="openWiki('claims', this)"><span>09</span> Claims</button>
+                    <button class="wiki-tab" onclick="openWiki('storage', this)"><span>10</span> Homes & Storage</button>
+                    <button class="wiki-tab" onclick="openWiki('warps', this)"><span>11</span> PlayerWarps</button>
+                    <button class="wiki-tab" onclick="openWiki('quests', this)"><span>12</span> Quests & Achievements</button>
+                    <button class="wiki-tab" onclick="openWiki('treasures', this)"><span>13</span> Community Treasures</button>
+                    <button class="wiki-tab" onclick="openWiki('forge', this)"><span>14</span> Community Forge</button>
+                    <button class="wiki-tab" onclick="openWiki('gems', this)"><span>15</span> Equipment Gems</button>
+                    <button class="wiki-tab" onclick="openWiki('graves', this)"><span>16</span> Graves & Recovery</button>
+                    <button class="wiki-tab" onclick="openWiki('supporters', this)"><span>17</span> Supporter Benefits</button>
+                    <button class="wiki-tab" onclick="openWiki('rules', this)"><span>18</span> Rules & Help</button>
+                </aside>
+
+                <!-- Main Content Area -->
+                <main class="wiki-content">
+                    
+                    <!-- 01 HOME -->
+                    <div id="home" class="wiki-pane active">
+                        <h2>Crispy Springs Community Guide</h2>
+                        <p>Welcome to <strong>Crispy Springs</strong>, a feature-rich community survival server built around exploration, cooperation, meaningful progression and a player-driven economy.[cite: 3]</p>
+                        <p>Crispy Springs supports both <strong>Java Edition and Bedrock Edition</strong> players.[cite: 3] You can progress through 550 levels, choose Jobs, build and protect a home, trade with other players, discover hidden treasures, complete achievements and create permanent Masterwork equipment through the Community Forge.[cite: 3]</p>
+                        
+                        <h3>Start here</h3>
+                        <ul>
+                            <li>Complete the first-join Pathfinder journey.[cite: 3]</li>
+                            <li>Read and accept the server rules.[cite: 3]</li>
+                            <li>Collect your starter equipment.[cite: 3]</li>
+                            <li>Enter Survival and use <code>/rtp</code> to begin exploring.[cite: 3]</li>
+                            <li>Choose your Jobs and complete daily quests.[cite: 3]</li>
+                            <li>Protect your first home with a claim.[cite: 3]</li>
+                            <li>Use <code>/menu</code> whenever you are unsure what to do next.[cite: 3]</li>
+                        </ul>
+                    </div>
+
+                    <!-- 02 GETTING STARTED -->
+                    <div id="getting-started" class="wiki-pane">
+                        <h2>Getting Started</h2>
+                        <h3>Joining the server</h3>
+                        <p>Crispy Springs supports Java and Bedrock cross-play through Geyser and Floodgate.[cite: 3]</p>
+                        <ul>
+                            <li><strong>Server address:</strong> <code>147.135.6.160</code>[cite: 3]</li>
+                            <li><strong>Port:</strong> <code>25899</code>[cite: 3]</li>
+                        </ul>
+                        <p>Bedrock usernames may display with a leading <code>.</code> in some server systems.[cite: 3] This is normal and keeps Java and Bedrock accounts separate.[cite: 3]</p>
+
+                        <h3>Your first join</h3>
+                        <p>New players follow the Pathfinder onboarding journey around Spawn.[cite: 3] The journey introduces the server in this order:[cite: 3]</p>
+                        <ol style="margin-left: 25px; color: var(--text-muted);">
+                            <li>Pathfinder[cite: 3]</li>
+                            <li>Archivist[cite: 3]</li>
+                            <li>Forgekeeper[cite: 3]</li>
+                            <li>Pathfinder[cite: 3]</li>
+                            <li>Guild Master[cite: 3]</li>
+                            <li>Claim Keeper[cite: 3]</li>
+                            <li>Pathfinder[cite: 3]</li>
+                        </ol>
+                        <p>The journey introduces the guide, starter equipment, Forge, Jobs, claims and Survival travel.[cite: 3] Complete each step before moving to the next one.[cite: 3]</p>
+
+                        <h3>Starter equipment</h3>
+                        <p>The starter set includes an iron pickaxe, shovel and sword with improved starter enchantments.[cite: 3] These tools are unbreakable and bound to their owner.[cite: 3] The starter golden shovel is used for creating land claims.[cite: 3]</p>
+                        <p>Starter items may be stored in personal storage, including Ender Chests, personal vaults and shulker boxes.[cite: 3] Another player cannot use your bound equipment.[cite: 3] If your starter equipment is missing after completing onboarding, contact staff rather than repeatedly claiming replacements.[cite: 3]</p>
+                    </div>
+
+                    <!-- 03 COMMANDS -->
+                    <div id="commands" class="wiki-pane">
+                        <h2>Player Commands</h2>
+                        
+                        <h3>Main navigation</h3>
+                        <table>
+                            <tr><th>Command</th><th>Purpose</th></tr>
+                            <tr><td><code>/menu</code></td><td>Open the main server menu.[cite: 3]</td></tr>
+                            <tr><td><code>/guide</code></td><td>Open the Crispy Springs Community Guide.[cite: 3]</td></tr>
+                            <tr><td><code>/progress</code></td><td>View progression and claim completed levels.[cite: 3]</td></tr>
+                            <tr><td><code>/achievements</code></td><td>Open achievement categories and rewards.[cite: 3]</td></tr>
+                            <tr><td><code>/forge</code></td><td>Open the player Forge as a backup to the physical Forge Station.[cite: 3]</td></tr>
+                        </table>
+
+                        <h3>Economy and trading</h3>
+                        <table>
+                            <tr><th>Command</th><th>Purpose</th></tr>
+                            <tr><td><code>/balance</code> or <code>/bal</code></td><td>View your current money balance.[cite: 3]</td></tr>
+                            <tr><td><code>/pay &lt;player&gt; &lt;amount&gt;</code></td><td>Pay another player.[cite: 3]</td></tr>
+                            <tr><td><code>/balancetop</code> or <code>/baltop</code></td><td>View the wealth leaderboard.[cite: 3]</td></tr>
+                            <tr><td><code>/ah</code></td><td>Open the global Auction House.[cite: 3]</td></tr>
+                            <tr><td><code>/store</code></td><td>Open the server buy store.[cite: 3]</td></tr>
+                            <tr><td><code>/sell</code></td><td>Open the low-value server buyback shop.[cite: 3]</td></tr>
+                        </table>
+
+                        <h3>Travel and homes</h3>
+                        <table>
+                            <tr><th>Command</th><th>Purpose</th></tr>
+                            <tr><td><code>/spawn</code></td><td>Return to Spawn.[cite: 3]</td></tr>
+                            <tr><td><code>/rtp</code></td><td>Randomly teleport within Survival.[cite: 3]</td></tr>
+                            <tr><td><code>/rw tp</code></td><td>Randomly teleport into the Resource World.[cite: 3]</td></tr>
+                            <tr><td><code>/sethome &lt;name&gt;</code></td><td>Save a home location.[cite: 3]</td></tr>
+                            <tr><td><code>/home &lt;name&gt;</code></td><td>Teleport to a saved home.[cite: 3]</td></tr>
+                            <tr><td><code>/delhome &lt;name&gt;</code></td><td>Delete a saved home.[cite: 3]</td></tr>
+                            <tr><td><code>/back</code></td><td>Return to your previous permitted location.[cite: 3]</td></tr>
+                        </table>
+                    </div>
+
+                    <!-- 04 PROGRESSION -->
+                    <div id="progression" class="wiki-pane">
+                        <h2>Progression and Ranks</h2>
+                        <p>Crispy Springs uses a 550-level progression system.[cite: 3] Progression gives every player long-term goals while keeping staff and supporter status separate from gameplay rank.[cite: 3]</p>
+                        
+                        <table>
+                            <tr><th>Rank</th><th>Levels</th></tr>
+                            <tr><td>Settler</td><td>1–50[cite: 3]</td></tr>
+                            <tr><td>Resident</td><td>51–100[cite: 3]</td></tr>
+                            <tr><td>Explorer</td><td>101–175[cite: 3]</td></tr>
+                            <tr><td>Adventurer</td><td>176–275[cite: 3]</td></tr>
+                            <tr><td>Veteran</td><td>276–400[cite: 3]</td></tr>
+                            <tr><td>Legend</td><td>401–550[cite: 3]</td></tr>
+                        </table>
+
+                        <p>Use <code>/progress</code> to view your current task.[cite: 3] Once a task is complete, return to the menu to claim the level and reward.[cite: 3] The sidebar may display <strong>Ready! Use /progress to level up</strong> when your objective is complete.[cite: 3]</p>
+                        <p>Progression objectives include activities such as playtime, blocks broken, blocks placed, mobs killed, fishing, mcMMO power, Job levels, quests and other server features.[cite: 3]</p>
+
+                        <h3>Important notes</h3>
+                        <ul>
+                            <li>Gameplay rank comes from progression, not from staff or supporter status.[cite: 3]</li>
+                            <li>Subscriber benefits add to or multiply selected rank benefits but do not replace the progression rank.[cite: 3]</li>
+                            <li>Some Forge recipes and equipment tiers require a specific progression level.[cite: 3]</li>
+                            <li>Rewards must be clicked and claimed after completing their requirement.[cite: 3]</li>
+                        </ul>
+                    </div>
+
+                    <!-- 05 WORLDS -->
+                    <div id="worlds" class="wiki-pane">
+                        <h2>Worlds and Travel</h2>
+                        <h3>Spawn</h3>
+                        <p>Spawn is the protected community hub.[cite: 3] It contains onboarding NPCs, the Community Forge, server information and links to major systems.[cite: 3]</p>
+                        
+                        <h3>Survival</h3>
+                        <p>Survival is the permanent building world.[cite: 3] Use <code>/rtp</code> to find an undeveloped location, then create a claim before building permanently.[cite: 3]</p>
+                        <p>The Survival border is designed as a <strong>1,000,000 × 1,000,000 block</strong> playable area, extending 500,000 blocks from the centre in each direction.[cite: 3]</p>
+
+                        <h3>Survival Nether</h3>
+                        <p>The Nether unlocks at <strong>progression level 15</strong>.[cite: 3] Players below the required level receive a locked-access message rather than being transported through the portal.[cite: 3]</p>
+
+                        <h3>The End</h3>
+                        <p>The permanent Survival End is currently closed.[cite: 3] Players should receive a message explaining that the End will open at a future date.[cite: 3] A renewable End resource experience is planned so future players can fight the dragon and obtain End resources and Elytras without permanently exhausting the main End.[cite: 3]</p>
+
+                        <h3>Resource World</h3>
+                        <p>Use <code>/rw tp</code> to travel randomly into the Resource World.[cite: 3] This world is intended for gathering and may be regenerated.[cite: 3] Do not place permanent homes, towns or valuable builds there.[cite: 3]</p>
+                    </div>
+
+                    <!-- 06 ECONOMY -->
+                    <div id="economy" class="wiki-pane">
+                        <h2>Economy and Player Trading</h2>
+                        <p>Crispy Springs uses a player-driven economy.[cite: 3] The server provides ways to earn and spend money, but direct player trade, QuickShops and the Auction House are intended to remain important.[cite: 3]</p>
+                        
+                        <h3>Earning money</h3>
+                        <p>Players can earn money through:[cite: 3]</p>
+                        <ul>
+                            <li>Jobs[cite: 3]</li>
+                            <li>Daily quests[cite: 3]</li>
+                            <li>Achievements and progression[cite: 3]</li>
+                            <li>Treasure discoveries[cite: 3]</li>
+                            <li>Events and playtime rewards[cite: 3]</li>
+                            <li>Selling to other players[cite: 3]</li>
+                            <li>QuickShops and the Auction House[cite: 3]</li>
+                            <li>Limited server buyback through <code>/sell</code>[cite: 3]</li>
+                        </ul>
+                        <p>Rare materials are intentionally focused on the player market rather than unlimited server selling.[cite: 3] Diamonds, emeralds and ancient debris are examples of materials protected from easy unlimited server sell loops.[cite: 3]</p>
+                    </div>
+
+                    <!-- 07 JOBS -->
+                    <div id="jobs" class="wiki-pane">
+                        <h2>Jobs</h2>
+                        <p>Jobs provide money and experience for normal gameplay activities.[cite: 3] Browse the available choices and select Jobs that match the way you enjoy playing.[cite: 3]</p>
+                        
+                        <h3>Commands</h3>
+                        <table>
+                            <tr><th>Command</th><th>Purpose</th></tr>
+                            <tr><td><code>/jobs browse</code></td><td>Browse available Jobs.[cite: 3]</td></tr>
+                            <tr><td><code>/jobs join &lt;job&gt;</code></td><td>Join a Job.[cite: 3]</td></tr>
+                            <tr><td><code>/jobs leave &lt;job&gt;</code></td><td>Leave a Job.[cite: 3]</td></tr>
+                            <tr><td><code>/jobs stats</code></td><td>View your Job levels and progress.[cite: 3]</td></tr>
+                        </table>
+
+                        <h3>Job limits</h3>
+                        <p>Your maximum number of active Jobs and maximum Job level can be affected by progression and supporter benefits.[cite: 3]</p>
+                        <p>Jobs are designed as one of the main sources of income.[cite: 3] Automated or exploitative activity is not permitted.[cite: 3]</p>
+                    </div>
+
+                    <!-- 08 MCMMO -->
+                    <div id="mcmmo" class="wiki-pane">
+                        <h2>mcMMO Skills and Abilities</h2>
+                        <p>mcMMO adds long-term skill progression to familiar Minecraft activities.[cite: 3] As skills increase, passive bonuses and active abilities become stronger or last longer.[cite: 3]</p>
+                        <p>Use <code>/mcstats</code> to view your levels and <code>/mcmmo</code> for general help.[cite: 3]</p>
+
+                        <h3>Boosters</h3>
+                        <p>Global mcMMO boosters may be activated through store packages or rewards.[cite: 3] The current global booster provides <strong>1.5× mcMMO XP</strong> alongside <strong>1.5× Jobs XP</strong> for three hours.[cite: 3] Global multiplier stacking is capped at 1.5×.[cite: 3]</p>
+                    </div>
+
+                    <!-- 09 CLAIMS -->
+                    <div id="claims" class="wiki-pane">
+                        <h2>Claims and Build Protection</h2>
+                        <p>GriefPrevention claims protect homes, storage and builds from unwanted changes.[cite: 3] Create a claim before leaving valuable items in Survival.[cite: 3]</p>
+                        
+                        <h3>Creating a claim</h3>
+                        <ol style="margin-left: 25px; color: var(--text-muted);">
+                            <li>Hold the golden shovel supplied during onboarding.[cite: 3]</li>
+                            <li>Select one corner of the area you want to protect.[cite: 3]</li>
+                            <li>Select the opposite corner.[cite: 3]</li>
+                            <li>Check that the claim outline covers the complete build.[cite: 3]</li>
+                        </ol>
+                        <p>You earn claim blocks through play and selected rewards.[cite: 3] Only trust players you know.[cite: 3] Different trust levels may permit entry, container use or building.[cite: 3]</p>
+                    </div>
+
+                    <!-- 10 STORAGE -->
+                    <div id="storage" class="wiki-pane">
+                        <h2>Homes and Personal Storage</h2>
+                        
+                        <h3>Ender Chest</h3>
+                        <p>Your Ender Chest is private and follows you between supported worlds.[cite: 3] Use a physical Ender Chest or <code>/enderchest</code> when your rank or permissions allow remote access.[cite: 3]</p>
+
+                        <h3>Personal vaults</h3>
+                        <p>Use <code>/pv</code> to open your personal vault menu.[cite: 3] Vaults are private player storage.[cite: 3] Base vault access grows with progression:[cite: 3]</p>
+                        <table>
+                            <tr><th>Rank</th><th>Base personal vaults</th></tr>
+                            <tr><td>Settler</td><td>1[cite: 3]</td></tr>
+                            <tr><td>Resident</td><td>2[cite: 3]</td></tr>
+                            <tr><td>Explorer</td><td>3[cite: 3]</td></tr>
+                            <tr><td>Adventurer</td><td>4[cite: 3]</td></tr>
+                            <tr><td>Veteran</td><td>5[cite: 3]</td></tr>
+                            <tr><td>Legend</td><td>6[cite: 3]</td></tr>
+                        </table>
+
+                        <h3>Homes</h3>
+                        <p>Use <code>/sethome &lt;name&gt;</code>, <code>/home &lt;name&gt;</code> and <code>/delhome &lt;name&gt;</code> to manage home locations.[cite: 3]</p>
+                    </div>
+
+                    <!-- 11 WARPS -->
+                    <div id="warps" class="wiki-pane">
+                        <h2>PlayerWarps</h2>
+                        <p>PlayerWarps allow players to publish useful destinations such as towns, public farms, attractions and shops.[cite: 3]</p>
+                        <p>Normal warp limits come from progression.[cite: 3] Warp owners are responsible for keeping public destinations safe, accessible and accurately described.[cite: 3] Traps or misleading commercial warps are not permitted.[cite: 3]</p>
+                    </div>
+
+                    <!-- 12 QUESTS -->
+                    <div id="quests" class="wiki-pane">
+                        <h2>Daily Quests and Achievements</h2>
+                        <h3>Daily quests</h3>
+                        <p>Players receive a mixture of Easy, Medium and Hard daily objectives.[cite: 3] Quests are selected per player and provide rewards for participating in different server activities.[cite: 3]</p>
+                        <p>Daily quests reset at <strong>4:00 AM Pacific/Auckland time</strong>.[cite: 3]</p>
+
+                        <h3>Achievements</h3>
+                        <p>Use <code>/achievements</code> to browse achievement categories, requirements and rewards.[cite: 3] When a tooltip displays <strong>OBJECTIVE COMPLETE — CLICK TO CLAIM</strong>, click the achievement to receive the reward and record it as claimed.[cite: 3]</p>
+                    </div>
+
+                    <!-- 13 TREASURES -->
+                    <div id="treasures" class="wiki-pane">
+                        <h2>Community Treasures</h2>
+                        <p>Hidden treasures are placed around Spawn for players to discover while exploring.[cite: 3] Treasures use custom decorative heads rather than ordinary loot chests.[cite: 3]</p>
+                        <p>There are approximately 100 discoveries across Common, Uncommon, Rare and Legendary treasure designs.[cite: 3] Each discovery contributes to the 24-stage Treasure Achievement track.[cite: 3]</p>
+                        
+                        <h3>How treasures work</h3>
+                        <ol style="margin-left: 25px; color: var(--text-muted);">
+                            <li>Explore Spawn carefully.[cite: 3]</li>
+                            <li>Interact with a treasure you have not previously discovered.[cite: 3]</li>
+                            <li>Check the Treasure Achievements menu.[cite: 3]</li>
+                            <li>Claim any newly completed stage.[cite: 3]</li>
+                        </ol>
+                    </div>
+
+                    <!-- 14 FORGE -->
+                    <div id="forge" class="wiki-pane">
+                        <h2>Community Forge</h2>
+                        <p>The Community Forge is Crispy Springs’ permanent equipment progression system.[cite: 3] It allows players to craft, upgrade, socket, extract and repair owned Masterwork tools, weapons and armour.[cite: 3]</p>
+                        
+                        <h3>Equipment ownership</h3>
+                        <p>Masterwork equipment is bound to the player who owns it:[cite: 3]</p>
+                        <ul>
+                            <li>Other players cannot use or collect it as their own.[cite: 3]</li>
+                            <li>It may be stored in personal vaults, Ender Chests, shulker boxes and other permitted private storage.[cite: 3]</li>
+                            <li>Lost eligible equipment can be recovered through the Forge return system.[cite: 3]</li>
+                        </ul>
+
+                        <h3>Upgrading equipment</h3>
+                        <p>A Masterwork upgrade requires the existing owned item in the designated equipment slot.[cite: 3] This prevents crafting a new item from accidentally replacing a higher-tier item.[cite: 3]</p>
+                    </div>
+
+                    <!-- 15 GEMS -->
+                    <div id="gems" class="wiki-pane">
+                        <h2>Equipment Gems, Fragments and Cores</h2>
+                        <p>Equipment Gems add specialised bonuses to Masterwork tools, weapons and armour.[cite: 3] Available sockets depend on the item and equipment tier.[cite: 3]</p>
+                        
+                        <h3>Gem progression</h3>
+                        <ul>
+                            <li>Fragments are used to craft Tier I gems.[cite: 3]</li>
+                            <li>Compatible Tier I gems can be combined into Tier II.[cite: 3]</li>
+                            <li>Tier II combined with Tier I creates Tier III where the recipe permits it.[cite: 3]</li>
+                            <li>Socket tooltips show how many compatible sockets remain.[cite: 3]</li>
+                            <li>Gems may be extracted and reused when the extraction requirements are met.[cite: 3]</li>
+                        </ul>
+                        <p>Equipment Gem Fragments do <strong>not</strong> drop from mob kills.[cite: 3]</p>
+                        <p>A complete Tier II armour set grants an additional <strong>5% gem-stat set bonus</strong>.[cite: 3]</p>
+                    </div>
+
+                    <!-- 16 GRAVES -->
+                    <div id="graves" class="wiki-pane">
+                        <h2>Graves and Death Recovery</h2>
+                        <p>AxGraves protects dropped inventory after death by creating a temporary grave.[cite: 3] Return to the grave and interact with it to recover your items.[cite: 3]</p>
+                        
+                        <h3>Important advice</h3>
+                        <ul>
+                            <li>Read the grave location and expiry information immediately.[cite: 3]</li>
+                            <li>Do not delay recovery unnecessarily.[cite: 3]</li>
+                            <li>Bring appropriate equipment when returning to a dangerous area.[cite: 3]</li>
+                            <li>Make sure your inventory has room if the grave cannot restore everything automatically.[cite: 3]</li>
+                            <li>Forge ownership protections still apply to bound equipment.[cite: 3]</li>
+                        </ul>
+                    </div>
+
+                    <!-- 17 SUPPORTERS -->
+                    <div id="supporters" class="wiki-pane">
+                        <h2>Supporter Subscriptions</h2>
+                        <p>Supporter subscriptions help fund Crispy Springs while providing convenience, cosmetics and monthly rewards.[cite: 3] Benefits remain active only while subscribed and do not replace gameplay progression.[cite: 3]</p>
+                        
+                        <h3>Limits and progression</h3>
+                        <table>
+                            <tr><th>Benefit</th><th>Supporter</th><th>Supporter+</th><th>Champion</th></tr>
+                            <tr><td>Additional homes</td><td>+2[cite: 3]</td><td>+4[cite: 3]</td><td>+6[cite: 3]</td></tr>
+                            <tr><td>Personal vault multiplier</td><td>×2[cite: 3]</td><td>×4[cite: 3]</td><td>×6[cite: 3]</td></tr>
+                            <tr><td>Additional PlayerWarps</td><td>+2[cite: 3]</td><td>+4[cite: 3]</td><td>+6[cite: 3]</td></tr>
+                            <tr><td>Additional Jobs</td><td>+2[cite: 3]</td><td>+3[cite: 3]</td><td>+4[cite: 3]</td></tr>
+                        </table>
+                    </div>
+
+                    <!-- 18 RULES -->
+                    <div id="rules" class="wiki-pane">
+                        <h2>Rules and Getting Help</h2>
+                        <p>Crispy Springs is built around community, creativity, fairness, exploration and meaningful progression.[cite: 3]</p>
+                        
+                        <h3>Core expectations</h3>
+                        <ul>
+                            <li>Treat other players and staff respectfully.[cite: 3]</li>
+                            <li>Do not grief, steal or bypass land protection.[cite: 3]</li>
+                            <li>Do not use cheats, hacked clients, exploits, macros or unattended automation.[cite: 3]</li>
+                            <li>Do not scam players or deliberately misrepresent trades.[cite: 3]</li>
+                            <li>Keep public builds, shops and PlayerWarps safe and appropriately named.[cite: 3]</li>
+                            <li>Do not build permanent projects in renewable resource worlds.[cite: 3]</li>
+                            <li>Report exploits privately rather than demonstrating them publicly.[cite: 3]</li>
+                            <li>Follow staff directions and the complete rules accepted during onboarding.[cite: 3]</li>
+                        </ul>
+
+                        <h3>Getting help</h3>
+                        <p>Discord: <a href="https://discord.gg/9K9r9kjSR4" target="_blank">https://discord.gg/9K9r9kjSR4</a>[cite: 2, 3]</p>
+                    </div>
+
+                </main>
             </div>
         </div>
     </div>
@@ -342,6 +514,21 @@
     </footer>
 
     <script>
+        // Wiki Tab Navigation Script
+        function openWiki(tabId, btnElement) {
+            // Hide all panes
+            const panes = document.querySelectorAll('.wiki-pane');
+            panes.forEach(pane => pane.classList.remove('active'));
+            
+            // Remove active class from all buttons
+            const buttons = document.querySelectorAll('.wiki-tab');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            
+            // Show targeted pane and set button active
+            document.getElementById(tabId).classList.add('active');
+            btnElement.classList.add('active');
+        }
+
         // Copy IP Script
         function copyIP() {
             const ip = "147.135.6.160:25899";
@@ -390,11 +577,9 @@
                     <span class="status-dot offline"></span>
                     Unable to fetch server status.
                 `;
-                console.error("Error fetching stats:", error);
             }
         }
 
-        // Run the stats fetcher as soon as the page loads
         document.addEventListener("DOMContentLoaded", fetchServerStats);
     </script>
 </body>
