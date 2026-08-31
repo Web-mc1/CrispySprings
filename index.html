@@ -5,11 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CrispySprings SMP | Minecraft Server</title>
     
-    <!-- Tab Icon (Favicon) -->
     <link rel="icon" type="image/png" href="https://mc-heads.net/avatar/Steve/64">
 
     <style>
-        /* Import a premium-looking gaming font */
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
 
         :root {
@@ -18,7 +16,6 @@
             --text-light: #f8fafc;
             --text-muted: #cbd5e1;
             --accent: #10b981;
-            /* Glass effect colors */
             --glass-bg: rgba(15, 23, 42, 0.65);
             --glass-border: rgba(255, 255, 255, 0.1);
         }
@@ -31,7 +28,6 @@
         }
 
         body {
-            /* Background image with a dark gradient overlay */
             background: linear-gradient(rgba(10, 15, 30, 0.7), rgba(10, 15, 30, 0.85)), 
                         url('dOk3erq3R4FLcv01RbGT9ED2-MVTfRAALUAZUO0WE95SwjrVXV1-OsDEqVJeDvKFqN5e6eNK5th2U4P36Q4kNdOv7oxB-OgVUVliPf4xei6qPq3izRfKbn_BkpghzHH3F9zsr_RETIrdF8yKX2EAWyuv0Jd2CHIf0q7l_unareglG9rzp45j2z5CNyMySWBb.jpeg');
             background-size: cover;
@@ -41,7 +37,6 @@
             line-height: 1.6;
         }
 
-        /* Glassmorphism Utility Class */
         .glass {
             background: var(--glass-bg);
             backdrop-filter: blur(12px);
@@ -50,7 +45,6 @@
             box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
         }
 
-        /* Hero Section */
         header {
             text-align: center;
             padding: 100px 20px 60px;
@@ -64,8 +58,6 @@
             letter-spacing: 3px;
             font-weight: 800;
             text-shadow: 0 4px 15px rgba(0,0,0,0.8);
-            
-            /* Orange Gradient */
             background: linear-gradient(135deg, #ea580c, #fbbf24);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -102,7 +94,6 @@
             box-shadow: 0 0 25px rgba(59, 130, 246, 0.6);
         }
 
-        /* Server Stats Section */
         .server-stats {
             margin-top: 30px;
             font-size: 1.1rem;
@@ -131,7 +122,6 @@
             to { opacity: 1; } 
         }
 
-        /* Player List Styles */
         .player-list-container {
             margin-top: 25px;
             max-width: 700px;
@@ -178,7 +168,7 @@
             border-radius: 4px;
         }
 
-        /* Live Chat Section */
+        /* Live Chat Box Styling */
         .chat-section {
             margin-top: 40px;
             max-width: 800px;
@@ -199,7 +189,6 @@
             overflow: hidden;
         }
 
-        /* Navigation Links */
         .nav-links {
             display: flex;
             justify-content: center;
@@ -223,7 +212,6 @@
             transform: translateY(-2px);
         }
 
-        /* Features Section */
         .features-container {
             max-width: 1200px;
             margin: 80px auto;
@@ -275,7 +263,6 @@
             font-size: 1rem;
         }
 
-        /* Footer */
         footer {
             text-align: center;
             padding: 40px 20px;
@@ -301,21 +288,16 @@
             <span class="status-dot loading"></span> Fetching server status...
         </div>
 
-        <!-- Player List Container -->
         <div class="player-list-container" id="playerListContainer">
             <div class="player-list-title">Players Currently Online</div>
-            <div class="player-list" id="playerList">
-                <!-- Player badges injected via JS -->
-            </div>
+            <div class="player-list" id="playerList"></div>
         </div>
 
-        <!-- Live In-Game Chat Box -->
         <div class="chat-section">
             <div class="chat-title">💬 Live Server Chat</div>
             <div class="chat-container glass">
-                <!-- REPLACE YOUR_DISCORD_SERVER_ID WITH YOUR ACTUAL DISCORD GUILD ID -->
                 <widgetbot
-                    server="YOUR_DISCORD_SERVER_ID" 
+                    server="1541009617142808596" 
                     channel="1541009617142808596"
                     width="100%"
                     height="100%"
@@ -369,11 +351,9 @@
         <p>&copy; 2026 CrispySprings SMP. Not affiliated with Mojang AB.</p>
     </footer>
 
-    <!-- WidgetBot Script -->
     <script src="https://cdn.jsdelivr.net/npm/@widgetbot/html-embed"></script>
 
     <script>
-        // Copy IP Script
         function copyIP() {
             const ip = "147.135.6.160:25899";
             navigator.clipboard.writeText(ip);
@@ -394,7 +374,6 @@
             }, 2000);
         }
 
-        // Fetch Server Stats & Players Script
         async function fetchServerStats() {
             const ip = "147.135.6.160:25899"; 
             const statsDiv = document.getElementById('serverStats');
@@ -413,7 +392,6 @@
                         <span style="font-size: 0.9em; margin-left: 5px; opacity: 0.7;">(${data.version})</span>
                     `;
 
-                    // Populate player list if available
                     if (data.players.list && data.players.list.length > 0) {
                         playerListContainer.style.display = "block";
                         playerList.innerHTML = data.players.list.map(player => `
