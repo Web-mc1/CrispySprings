@@ -84,7 +84,7 @@
         .wiki-tab:hover { background: rgba(255, 255, 255, 0.1); border-color: #fbbf24; color: var(--text-light); }
         .wiki-tab.active { background: rgba(234, 88, 12, 0.2); border-color: #ea580c; color: #fff; transform: translateX(5px); }
 
-        .wiki-content { flex: 1; background: rgba(0, 0, 0, 0.2); border-radius: 12px; padding: 30px; border: 1px solid var(--glass-border); min-height: 500px; }
+        .wiki-content { flex: 1; background: rgba(0, 0, 0, 0.2); border-radius: 12px; padding: 30px; border: 1px solid var(--glass-border); min-height: 500px; overflow-x: auto; }
         
         .wiki-pane { display: none; animation: fadeIn 0.3s ease; }
         .wiki-pane.active { display: block; }
@@ -94,7 +94,7 @@
         .wiki-pane h2 { color: #fbbf24; font-size: 2rem; margin-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px; }
         .wiki-pane h3 { color: #fdba74; font-size: 1.4rem; margin: 25px 0 15px 0; }
         .wiki-pane p { margin-bottom: 15px; color: var(--text-light); }
-        .wiki-pane ul { margin-left: 25px; margin-bottom: 15px; }
+        .wiki-pane ul, .wiki-pane ol { margin-left: 25px; margin-bottom: 15px; }
         .wiki-pane li { margin-bottom: 8px; color: var(--text-muted); }
         .wiki-pane strong { color: #fff; }
         .wiki-pane code { background: rgba(0,0,0,0.4); padding: 3px 6px; border-radius: 4px; color: #93c5fd; font-family: monospace; font-size: 0.95em; }
@@ -103,6 +103,7 @@
         .wiki-pane th { background: rgba(255,255,255,0.05); color: #fbbf24; font-weight: 600; }
         .wiki-pane a { color: #93c5fd; text-decoration: none; }
         .wiki-pane a:hover { text-decoration: underline; }
+        .wiki-pane .admin-note { color: #f87171; font-weight: 600; background: rgba(239, 68, 68, 0.1); padding: 10px; border-radius: 8px; border-left: 4px solid #ef4444; margin: 15px 0; display: block; }
 
         /* Responsive Wiki */
         @media (max-width: 900px) {
@@ -183,6 +184,13 @@
                             <li>Protect your first home with a claim.[cite: 3]</li>
                             <li>Use <code>/menu</code> whenever you are unsure what to do next.[cite: 3]</li>
                         </ul>
+
+                        <h3>Important links</h3>
+                        <ul>
+                            <li><strong>Store:</strong> <a href="https://store.crispysprings.com" target="_blank">https://store.crispysprings.com</a>[cite: 3]</li>
+                            <li><strong>Discord:</strong> <a href="https://discord.gg/9K9r9kjSR4" target="_blank">https://discord.gg/9K9r9kjSR4</a>[cite: 3]</li>
+                        </ul>
+                        <p>Need help? Ask a staff member or open the community Discord.[cite: 3]</p>
                     </div>
 
                     <!-- 02 GETTING STARTED -->
@@ -198,7 +206,7 @@
 
                         <h3>Your first join</h3>
                         <p>New players follow the Pathfinder onboarding journey around Spawn.[cite: 3] The journey introduces the server in this order:[cite: 3]</p>
-                        <ol style="margin-left: 25px; color: var(--text-muted);">
+                        <ol>
                             <li>Pathfinder[cite: 3]</li>
                             <li>Archivist[cite: 3]</li>
                             <li>Forgekeeper[cite: 3]</li>
@@ -211,7 +219,18 @@
 
                         <h3>Starter equipment</h3>
                         <p>The starter set includes an iron pickaxe, shovel and sword with improved starter enchantments.[cite: 3] These tools are unbreakable and bound to their owner.[cite: 3] The starter golden shovel is used for creating land claims.[cite: 3]</p>
-                        <p>Starter items may be stored in personal storage, including Ender Chests, personal vaults and shulker boxes.[cite: 3] Another player cannot use your bound equipment.[cite: 3] If your starter equipment is missing after completing onboarding, contact staff rather than repeatedly claiming replacements.[cite: 3]</p>
+                        <p>Starter items may be stored in personal storage, including Ender Chests, personal vaults and shulker boxes.[cite: 3] Another player cannot use your bound equipment.[cite: 3]</p>
+                        <p>If your starter equipment is missing after completing onboarding, contact staff rather than repeatedly claiming replacements.[cite: 3]</p>
+
+                        <h3>First things to do</h3>
+                        <ol>
+                            <li>Open <code>/menu</code>.[cite: 3]</li>
+                            <li>Check <code>/progress</code> for your current progression task.[cite: 3]</li>
+                            <li>Travel to Survival and use <code>/rtp</code>.[cite: 3]</li>
+                            <li>Choose Jobs.[cite: 3]</li>
+                            <li>Create a claim before building permanently.[cite: 3]</li>
+                            <li>Set a home once you find a suitable location.[cite: 3]</li>
+                        </ol>
                     </div>
 
                     <!-- 03 COMMANDS -->
@@ -250,6 +269,28 @@
                             <tr><td><code>/delhome &lt;name&gt;</code></td><td>Delete a saved home.[cite: 3]</td></tr>
                             <tr><td><code>/back</code></td><td>Return to your previous permitted location.[cite: 3]</td></tr>
                         </table>
+
+                        <h3>Storage</h3>
+                        <table>
+                            <tr><th>Command</th><th>Purpose</th></tr>
+                            <tr><td><code>/enderchest</code></td><td>Open your private Ender Chest remotely when permitted.[cite: 3]</td></tr>
+                            <tr><td><code>/pv</code></td><td>Open the personal vault menu.[cite: 3]</td></tr>
+                        </table>
+
+                        <h3>Jobs and skills</h3>
+                        <table>
+                            <tr><th>Command</th><th>Purpose</th></tr>
+                            <tr><td><code>/jobs browse</code></td><td>Browse available Jobs.[cite: 3]</td></tr>
+                            <tr><td><code>/jobs join &lt;job&gt;</code></td><td>Join a Job.[cite: 3]</td></tr>
+                            <tr><td><code>/jobs leave &lt;job&gt;</code></td><td>Leave a Job.[cite: 3]</td></tr>
+                            <tr><td><code>/jobs stats</code></td><td>View your Job progress.[cite: 3]</td></tr>
+                            <tr><td><code>/mcmmo</code></td><td>View mcMMO help and skills.[cite: 3]</td></tr>
+                            <tr><td><code>/mcstats</code></td><td>View your mcMMO skill levels.[cite: 3]</td></tr>
+                        </table>
+
+                        <h3>PlayerWarps and claims</h3>
+                        <p>The exact public PlayerWarps and GriefPrevention command aliases should be copied from the live help output before publishing this subsection.[cite: 3]</p>
+                        <span class="admin-note"><strong>Admin verification required:</strong> confirm whether Crispy Springs publishes <code>/pwarp</code>, <code>/pw</code>, <code>/claimslist</code>, <code>/trust</code>, <code>/containertrust</code>, <code>/accesstrust</code> and <code>/untrust</code> or uses menu-only access for any of them.[cite: 3]</span>
                     </div>
 
                     <!-- 04 PROGRESSION -->
@@ -291,12 +332,21 @@
 
                         <h3>Survival Nether</h3>
                         <p>The Nether unlocks at <strong>progression level 15</strong>.[cite: 3] Players below the required level receive a locked-access message rather than being transported through the portal.[cite: 3]</p>
+                        <p>The Nether border is scaled to match the Overworld’s 8:1 coordinate relationship.[cite: 3]</p>
 
                         <h3>The End</h3>
-                        <p>The permanent Survival End is currently closed.[cite: 3] Players should receive a message explaining that the End will open at a future date.[cite: 3] A renewable End resource experience is planned so future players can fight the dragon and obtain End resources and Elytras without permanently exhausting the main End.[cite: 3]</p>
+                        <p>The permanent Survival End is currently closed.[cite: 3] Players should receive a message explaining that the End will open at a future date.[cite: 3]</p>
+                        <p>A renewable End resource experience is planned so future players can fight the dragon and obtain End resources and Elytras without permanently exhausting the main End.[cite: 3]</p>
 
                         <h3>Resource World</h3>
                         <p>Use <code>/rw tp</code> to travel randomly into the Resource World.[cite: 3] This world is intended for gathering and may be regenerated.[cite: 3] Do not place permanent homes, towns or valuable builds there.[cite: 3]</p>
+
+                        <h3>Random teleport</h3>
+                        <ul>
+                            <li>Survival: <code>/rtp</code>[cite: 3]</li>
+                            <li>Resource World: <code>/rw tp</code>[cite: 3]</li>
+                        </ul>
+                        <p>Random teleport includes a short safety delay.[cite: 3] Avoid moving while a teleport is being prepared.[cite: 3]</p>
                     </div>
 
                     <!-- 06 ECONOMY -->
@@ -316,7 +366,21 @@
                             <li>QuickShops and the Auction House[cite: 3]</li>
                             <li>Limited server buyback through <code>/sell</code>[cite: 3]</li>
                         </ul>
+
+                        <h3>Useful commands</h3>
+                        <table>
+                            <tr><th>Command</th><th>Purpose</th></tr>
+                            <tr><td><code>/balance</code> or <code>/bal</code></td><td>Check your balance.[cite: 3]</td></tr>
+                            <tr><td><code>/pay &lt;player&gt; &lt;amount&gt;</code></td><td>Pay a nearby or remote player for a trade.[cite: 3]</td></tr>
+                            <tr><td><code>/balancetop</code> or <code>/baltop</code></td><td>View the wealth leaderboard.[cite: 3]</td></tr>
+                            <tr><td><code>/ah</code></td><td>Open the global Auction House.[cite: 3]</td></tr>
+                            <tr><td><code>/store</code></td><td>Open the server buy store.[cite: 3]</td></tr>
+                            <tr><td><code>/sell</code></td><td>Sell approved items to the server at low buyback values.[cite: 3]</td></tr>
+                        </table>
+
+                        <p>Always check the player name and payment amount before confirming a trade.[cite: 3] Staff will not normally reverse payments voluntarily sent to the wrong player.[cite: 3]</p>
                         <p>Rare materials are intentionally focused on the player market rather than unlimited server selling.[cite: 3] Diamonds, emeralds and ancient debris are examples of materials protected from easy unlimited server sell loops.[cite: 3]</p>
+                        <span class="admin-note"><strong>Admin verification required:</strong> confirm whether the public starting balance is still <code>$250</code> before publishing a starting-money value.[cite: 3]</span>
                     </div>
 
                     <!-- 07 JOBS -->
@@ -335,7 +399,16 @@
 
                         <h3>Job limits</h3>
                         <p>Your maximum number of active Jobs and maximum Job level can be affected by progression and supporter benefits.[cite: 3]</p>
+                        <p>Subscriber additions are:[cite: 3]</p>
+                        <table>
+                            <tr><th>Subscription</th><th>Additional Jobs</th><th>Maximum Job level</th></tr>
+                            <tr><td>Supporter</td><td>+2[cite: 3]</td><td>130[cite: 3]</td></tr>
+                            <tr><td>Supporter+</td><td>+3[cite: 3]</td><td>160[cite: 3]</td></tr>
+                            <tr><td>Champion</td><td>+4[cite: 3]</td><td>200[cite: 3]</td></tr>
+                        </table>
+                        <p>These are subscription benefits and remain available only while the subscription is active.[cite: 3]</p>
                         <p>Jobs are designed as one of the main sources of income.[cite: 3] Automated or exploitative activity is not permitted.[cite: 3]</p>
+                        <span class="admin-note"><strong>Admin verification required:</strong> add the final list and description of all eight live Jobs from <code>/jobs browse</code> before publication.[cite: 3]</span>
                     </div>
 
                     <!-- 08 MCMMO -->
@@ -343,6 +416,15 @@
                         <h2>mcMMO Skills and Abilities</h2>
                         <p>mcMMO adds long-term skill progression to familiar Minecraft activities.[cite: 3] As skills increase, passive bonuses and active abilities become stronger or last longer.[cite: 3]</p>
                         <p>Use <code>/mcstats</code> to view your levels and <code>/mcmmo</code> for general help.[cite: 3]</p>
+
+                        <h3>Active abilities</h3>
+                        <p>Many mcMMO abilities are activated by preparing the matching tool and then using it.[cite: 3] Ability duration normally grows with the related skill.[cite: 3] Supporter subscriptions add additional time:[cite: 3]</p>
+                        <table>
+                            <tr><th>Subscription</th><th>Additional ability time</th></tr>
+                            <tr><td>Supporter</td><td>+4 seconds[cite: 3]</td></tr>
+                            <tr><td>Supporter+</td><td>+8 seconds[cite: 3]</td></tr>
+                            <tr><td>Champion</td><td>+12 seconds[cite: 3]</td></tr>
+                        </table>
 
                         <h3>Boosters</h3>
                         <p>Global mcMMO boosters may be activated through store packages or rewards.[cite: 3] The current global booster provides <strong>1.5× mcMMO XP</strong> alongside <strong>1.5× Jobs XP</strong> for three hours.[cite: 3] Global multiplier stacking is capped at 1.5×.[cite: 3]</p>
@@ -354,13 +436,21 @@
                         <p>GriefPrevention claims protect homes, storage and builds from unwanted changes.[cite: 3] Create a claim before leaving valuable items in Survival.[cite: 3]</p>
                         
                         <h3>Creating a claim</h3>
-                        <ol style="margin-left: 25px; color: var(--text-muted);">
+                        <ol>
                             <li>Hold the golden shovel supplied during onboarding.[cite: 3]</li>
                             <li>Select one corner of the area you want to protect.[cite: 3]</li>
                             <li>Select the opposite corner.[cite: 3]</li>
                             <li>Check that the claim outline covers the complete build.[cite: 3]</li>
                         </ol>
-                        <p>You earn claim blocks through play and selected rewards.[cite: 3] Only trust players you know.[cite: 3] Different trust levels may permit entry, container use or building.[cite: 3]</p>
+                        <p>You earn claim blocks through play and selected rewards.[cite: 3] Subscriber monthly rewards include:[cite: 3]</p>
+                        <table>
+                            <tr><th>Subscription</th><th>Monthly claim blocks</th></tr>
+                            <tr><td>Supporter</td><td>2,500[cite: 3]</td></tr>
+                            <tr><td>Supporter+</td><td>5,000[cite: 3]</td></tr>
+                            <tr><td>Champion</td><td>10,000[cite: 3]</td></tr>
+                        </table>
+                        <p>Only trust players you know.[cite: 3] Different trust levels may permit entry, container use or building.[cite: 3]</p>
+                        <span class="admin-note"><strong>Admin verification required:</strong> add the exact live claim-management command aliases after confirming them in-game.[cite: 3]</span>
                     </div>
 
                     <!-- 10 STORAGE -->
@@ -381,16 +471,38 @@
                             <tr><td>Veteran</td><td>5[cite: 3]</td></tr>
                             <tr><td>Legend</td><td>6[cite: 3]</td></tr>
                         </table>
+                        
+                        <p>Subscriber vault benefits are true multipliers applied to the rank amount:[cite: 3]</p>
+                        <ul>
+                            <li>Supporter: ×2[cite: 3]</li>
+                            <li>Supporter+: ×4[cite: 3]</li>
+                            <li>Champion: ×6[cite: 3]</li>
+                        </ul>
+                        <p>Example: an Explorer normally has 3 vaults.[cite: 3] An Explorer with Champion receives <code>3 × 6 = 18</code> vaults.[cite: 3]</p>
 
                         <h3>Homes</h3>
-                        <p>Use <code>/sethome &lt;name&gt;</code>, <code>/home &lt;name&gt;</code> and <code>/delhome &lt;name&gt;</code> to manage home locations.[cite: 3]</p>
+                        <p>Use <code>/sethome &lt;name&gt;</code>, <code>/home &lt;name&gt;</code> and <code>/delhome &lt;name&gt;</code> to manage home locations.[cite: 3] Subscriber packages add +2, +4 or +6 homes to the player’s normal progression allowance.[cite: 3]</p>
+
+                        <h3>Bound Forge equipment</h3>
+                        <p>Owned Forge tools, weapons and armour can be safely stored in Ender Chests, personal vaults and shulker boxes.[cite: 3] Soulbinding prevents another player from using the equipment; it does not prevent normal personal storage.[cite: 3]</p>
                     </div>
 
                     <!-- 11 WARPS -->
                     <div id="warps" class="wiki-pane">
                         <h2>PlayerWarps</h2>
                         <p>PlayerWarps allow players to publish useful destinations such as towns, public farms, attractions and shops.[cite: 3]</p>
-                        <p>Normal warp limits come from progression.[cite: 3] Warp owners are responsible for keeping public destinations safe, accessible and accurately described.[cite: 3] Traps or misleading commercial warps are not permitted.[cite: 3]</p>
+                        <p>Normal warp limits come from progression.[cite: 3] Supporter subscriptions add:[cite: 3]</p>
+                        
+                        <table>
+                            <tr><th>Subscription</th><th>Additional PlayerWarps</th></tr>
+                            <tr><td>Supporter</td><td>+2[cite: 3]</td></tr>
+                            <tr><td>Supporter+</td><td>+4[cite: 3]</td></tr>
+                            <tr><td>Champion</td><td>+6[cite: 3]</td></tr>
+                        </table>
+
+                        <p>Additional warp allowances stack with the player’s normal rank allowance.[cite: 3]</p>
+                        <p>Warp owners are responsible for keeping public destinations safe, accessible and accurately described.[cite: 3] Traps or misleading commercial warps are not permitted.[cite: 3]</p>
+                        <span class="admin-note"><strong>Admin verification required:</strong> add the exact create, delete, list, amount and teleport commands shown by the live PlayerWarps help menu.[cite: 3]</span>
                     </div>
 
                     <!-- 12 QUESTS -->
@@ -401,7 +513,21 @@
                         <p>Daily quests reset at <strong>4:00 AM Pacific/Auckland time</strong>.[cite: 3]</p>
 
                         <h3>Achievements</h3>
-                        <p>Use <code>/achievements</code> to browse achievement categories, requirements and rewards.[cite: 3] When a tooltip displays <strong>OBJECTIVE COMPLETE — CLICK TO CLAIM</strong>, click the achievement to receive the reward and record it as claimed.[cite: 3]</p>
+                        <p>Use <code>/achievements</code> to browse achievement categories, requirements and rewards.[cite: 3] Categories include activities such as:[cite: 3]</p>
+                        <ul>
+                            <li>Playtime[cite: 3]</li>
+                            <li>Blocks broken[cite: 3]</li>
+                            <li>Blocks placed[cite: 3]</li>
+                            <li>Mobs killed[cite: 3]</li>
+                            <li>mcMMO power level[cite: 3]</li>
+                            <li>Job levels[cite: 3]</li>
+                            <li>Daily quests[cite: 3]</li>
+                            <li>Treasure discoveries[cite: 3]</li>
+                        </ul>
+
+                        <p>When a tooltip displays <strong>OBJECTIVE COMPLETE — CLICK TO CLAIM</strong>, click the achievement to receive the reward and record it as claimed.[cite: 3]</p>
+                        <p>Some achievement rewards include money, Community Coins and Jobs or mcMMO XP boosters.[cite: 3]</p>
+                        <p>If a completed achievement does not claim, take a screenshot of the tooltip and report the exact category and stage to staff.[cite: 3]</p>
                     </div>
 
                     <!-- 13 TREASURES -->
@@ -409,21 +535,24 @@
                         <h2>Community Treasures</h2>
                         <p>Hidden treasures are placed around Spawn for players to discover while exploring.[cite: 3] Treasures use custom decorative heads rather than ordinary loot chests.[cite: 3]</p>
                         <p>There are approximately 100 discoveries across Common, Uncommon, Rare and Legendary treasure designs.[cite: 3] Each discovery contributes to the 24-stage Treasure Achievement track.[cite: 3]</p>
-                        
+                        <p>Rewards can include money, Community Coins and occasional special rewards.[cite: 3] Completing the final stage unlocks the <strong>Seeker</strong> recognition.[cite: 3]</p>
+
                         <h3>How treasures work</h3>
-                        <ol style="margin-left: 25px; color: var(--text-muted);">
+                        <ol>
                             <li>Explore Spawn carefully.[cite: 3]</li>
                             <li>Interact with a treasure you have not previously discovered.[cite: 3]</li>
                             <li>Check the Treasure Achievements menu.[cite: 3]</li>
                             <li>Claim any newly completed stage.[cite: 3]</li>
                         </ol>
+                        <p>Each account can receive credit for an individual treasure only once.[cite: 3] Do not break decorative treasure heads.[cite: 3]</p>
                     </div>
 
                     <!-- 14 FORGE -->
                     <div id="forge" class="wiki-pane">
                         <h2>Community Forge</h2>
                         <p>The Community Forge is Crispy Springs’ permanent equipment progression system.[cite: 3] It allows players to craft, upgrade, socket, extract and repair owned Masterwork tools, weapons and armour.[cite: 3]</p>
-                        
+                        <p>Use the physical Forge Station at Spawn whenever possible.[cite: 3] <code>/forge</code> remains available as the player-facing backup menu.[cite: 3]</p>
+
                         <h3>Equipment ownership</h3>
                         <p>Masterwork equipment is bound to the player who owns it:[cite: 3]</p>
                         <ul>
@@ -432,8 +561,27 @@
                             <li>Lost eligible equipment can be recovered through the Forge return system.[cite: 3]</li>
                         </ul>
 
+                        <h3>Starter and specialised equipment</h3>
+                        <p>The system begins with starter equipment and develops into Masterwork equipment.[cite: 3] Tool specialisations include Fortune-focused and Silk Touch/Prospector paths.[cite: 3] Some recipes and equipment become visible only after reaching their required progression level.[cite: 3]</p>
+
                         <h3>Upgrading equipment</h3>
                         <p>A Masterwork upgrade requires the existing owned item in the designated equipment slot.[cite: 3] This prevents crafting a new item from accidentally replacing a higher-tier item.[cite: 3]</p>
+                        <p>Valid upgrades preserve:[cite: 3]</p>
+                        <ul>
+                            <li>Installed Equipment Gems[cite: 3]</li>
+                            <li>Socket identities[cite: 3]</li>
+                            <li>Mending and permitted enchantments[cite: 3]</li>
+                            <li>Ownership[cite: 3]</li>
+                            <li>Remaining durability[cite: 3]</li>
+                        </ul>
+                        <p>Failed upgrades must not consume or duplicate installed gems.[cite: 3]</p>
+                        <p>Ordinary Protection is capped at <strong>Protection IV</strong>; Protection V is retired.[cite: 3]</p>
+
+                        <h3>Replacement and recovery</h3>
+                        <p>Use <code>/forgereturn</code> or <code>/forgereturnitem</code> where available to recover or replace eligible Forge equipment.[cite: 3] Replacements may cost money or Community Coins.[cite: 3] A returned basic copy may need to be repurchased or upgraded before it matches the previously owned tier.[cite: 3]</p>
+
+                        <h3>Forge Station relocation</h3>
+                        <p>Forge Station binding and relocation commands are staff-only.[cite: 3] Players should contact staff if a public station is missing or not responding.[cite: 3]</p>
                     </div>
 
                     <!-- 15 GEMS -->
@@ -450,7 +598,38 @@
                             <li>Gems may be extracted and reused when the extraction requirements are met.[cite: 3]</li>
                         </ul>
                         <p>Equipment Gem Fragments do <strong>not</strong> drop from mob kills.[cite: 3]</p>
+                        
+                        <h3>Topaz</h3>
+                        <p>Topaz changes effect based on the item:[cite: 3]</p>
+                        <table>
+                            <tr><th>Gem tier</th><th>Tools</th><th>Swords</th></tr>
+                            <tr><td>Tier I</td><td>Haste I and about +5% mining XP[cite: 3]</td><td>Luck I and Looting II[cite: 3]</td></tr>
+                            <tr><td>Tier II</td><td>Haste II and about +10% mining XP[cite: 3]</td><td>Luck II and Looting III[cite: 3]</td></tr>
+                            <tr><td>Tier III</td><td>Haste III and about +15% mining XP[cite: 3]</td><td>Luck III and Looting IV[cite: 3]</td></tr>
+                        </table>
+                        <p>Duplicate Topaz uses diminishing returns: the first contributes 100%, the second 50% and the third 25%.[cite: 3]</p>
+
+                        <h3>Armour gem effects</h3>
+                        <p>The armour gem families include:[cite: 3]</p>
+                        <ul>
+                            <li>Ruby — Strength[cite: 3]</li>
+                            <li>Sapphire — Resistance[cite: 3]</li>
+                            <li>Emerald — Speed[cite: 3]</li>
+                            <li>Topaz — Haste[cite: 3]</li>
+                            <li>Amethyst — Jump Boost[cite: 3]</li>
+                            <li>Obsidian — Fire Resistance[cite: 3]</li>
+                            <li>Aquamarine — Water Breathing[cite: 3]</li>
+                            <li>Onyx — Night Vision[cite: 3]</li>
+                            <li>Garnet — Regeneration[cite: 3]</li>
+                            <li>Diamond — Absorption[cite: 3]</li>
+                            <li>Quartz — Luck[cite: 3]</li>
+                            <li>Jade — Saturation[cite: 3]</li>
+                            <li>Citrine — Health Boost[cite: 3]</li>
+                            <li>Moonstone — Slow Falling[cite: 3]</li>
+                            <li>Sunstone — Glowing[cite: 3]</li>
+                        </ul>
                         <p>A complete Tier II armour set grants an additional <strong>5% gem-stat set bonus</strong>.[cite: 3]</p>
+                        <p>Keep inventory space available when extracting a gem.[cite: 3] If extraction cannot safely return the item, stop and clear space before trying again.[cite: 3]</p>
                     </div>
 
                     <!-- 16 GRAVES -->
@@ -458,6 +637,9 @@
                         <h2>Graves and Death Recovery</h2>
                         <p>AxGraves protects dropped inventory after death by creating a temporary grave.[cite: 3] Return to the grave and interact with it to recover your items.[cite: 3]</p>
                         
+                        <h3>Respawning</h3>
+                        <p>If you have a valid bed or respawn anchor, Minecraft should return you there after death.[cite: 3] If it is missing, obstructed or invalid, you may return to the appropriate world spawn.[cite: 3]</p>
+
                         <h3>Important advice</h3>
                         <ul>
                             <li>Read the grave location and expiry information immediately.[cite: 3]</li>
@@ -466,6 +648,7 @@
                             <li>Make sure your inventory has room if the grave cannot restore everything automatically.[cite: 3]</li>
                             <li>Forge ownership protections still apply to bound equipment.[cite: 3]</li>
                         </ul>
+                        <span class="admin-note"><strong>Admin verification required:</strong> add the exact live grave lifetime, teleport command and recovery rules from the AxGraves configuration.[cite: 3]</span>
                     </div>
 
                     <!-- 17 SUPPORTERS -->
@@ -480,7 +663,45 @@
                             <tr><td>Personal vault multiplier</td><td>×2[cite: 3]</td><td>×4[cite: 3]</td><td>×6[cite: 3]</td></tr>
                             <tr><td>Additional PlayerWarps</td><td>+2[cite: 3]</td><td>+4[cite: 3]</td><td>+6[cite: 3]</td></tr>
                             <tr><td>Additional Jobs</td><td>+2[cite: 3]</td><td>+3[cite: 3]</td><td>+4[cite: 3]</td></tr>
+                            <tr><td>Maximum Job level</td><td>130[cite: 3]</td><td>160[cite: 3]</td><td>200[cite: 3]</td></tr>
+                            <tr><td>Additional mcMMO ability time</td><td>+4 sec[cite: 3]</td><td>+8 sec[cite: 3]</td><td>+12 sec[cite: 3]</td></tr>
                         </table>
+                        <p>Personal vaults are multiplied from the player’s progression rank.[cite: 3] For example, an Explorer with 3 base vaults and Champion receives 18 vaults.[cite: 3]</p>
+
+                        <h3>Convenience and cosmetics</h3>
+                        <table>
+                            <tr><th>Supporter</th><th>Supporter+ adds</th><th>Champion adds</th></tr>
+                            <tr><td><code>/craft</code>, <code>/hat</code>[cite: 3]</td><td><code>/trash</code>, <code>/condense</code>, coloured <code>/nick</code>[cite: 3]</td><td>Protected <code>/renameitem</code>[cite: 3]</td></tr>
+                            <tr><td>Subscriber chat and TAB marker[cite: 3]</td><td>Expanded cosmetics and QuickShop benefits[cite: 3]</td><td>Complete cosmetics and QuickShop benefits[cite: 3]</td></tr>
+                        </table>
+                        <p>Benefits are cumulative unless the store description explicitly states otherwise.[cite: 3]</p>
+
+                        <h3>Monthly rewards</h3>
+                        <table>
+                            <tr><th>Reward</th><th>Supporter</th><th>Supporter+</th><th>Champion</th></tr>
+                            <tr><td>Money</td><td>$5,000[cite: 3]</td><td>$10,000[cite: 3]</td><td>$20,000[cite: 3]</td></tr>
+                            <tr><td>Community Coins</td><td>250[cite: 3]</td><td>500[cite: 3]</td><td>1,000[cite: 3]</td></tr>
+                            <tr><td>Treasure Crate Keys</td><td>1[cite: 3]</td><td>2[cite: 3]</td><td>3[cite: 3]</td></tr>
+                            <tr><td>Equipment Gem Fragments</td><td>3[cite: 3]</td><td>6[cite: 3]</td><td>9[cite: 3]</td></tr>
+                            <tr><td>Core Fragments</td><td>6[cite: 3]</td><td>12[cite: 3]</td><td>18[cite: 3]</td></tr>
+                            <tr><td>Universal Cores</td><td>0[cite: 3]</td><td>1[cite: 3]</td><td>2[cite: 3]</td></tr>
+                            <tr><td>Claim blocks</td><td>2,500[cite: 3]</td><td>5,000[cite: 3]</td><td>10,000[cite: 3]</td></tr>
+                            <tr><td>Jobs XP boosters</td><td>1[cite: 3]</td><td>2[cite: 3]</td><td>3[cite: 3]</td></tr>
+                            <tr><td>mcMMO XP boosters</td><td>1[cite: 3]</td><td>2[cite: 3]</td><td>3[cite: 3]</td></tr>
+                            <tr><td>Total personal boosters</td><td>2[cite: 3]</td><td>4[cite: 3]</td><td>6[cite: 3]</td></tr>
+                        </table>
+                        <p>Monthly packages must be claimed or delivered using the current store process.[cite: 3] A subscription tier receives its own tier’s package rather than the lower Supporter package.[cite: 3]</p>
+
+                        <h3>Global booster</h3>
+                        <p>The store’s global booster runs for <strong>three hours</strong> and provides:[cite: 3]</p>
+                        <ul>
+                            <li>1.5× Jobs XP[cite: 3]</li>
+                            <li>1.5× mcMMO XP[cite: 3]</li>
+                            <li>Server-wide benefit[cite: 3]</li>
+                            <li>Restart-safe remaining time[cite: 3]</li>
+                            <li>Maximum effective global multiplier capped at 1.5×[cite: 3]</li>
+                        </ul>
+                        <p>View current packages at <a href="https://store.crispysprings.com" target="_blank">https://store.crispysprings.com</a>.[cite: 3]</p>
                     </div>
 
                     <!-- 18 RULES -->
@@ -501,7 +722,19 @@
                         </ul>
 
                         <h3>Getting help</h3>
-                        <p>Discord: <a href="https://discord.gg/9K9r9kjSR4" target="_blank">https://discord.gg/9K9r9kjSR4</a>[cite: 2, 3]</p>
+                        <p>When reporting an issue, include:[cite: 3]</p>
+                        <ul>
+                            <li>Your exact Java or Bedrock username[cite: 3]</li>
+                            <li>The command or menu used[cite: 3]</li>
+                            <li>The world and approximate location[cite: 3]</li>
+                            <li>What you expected to happen[cite: 3]</li>
+                            <li>What actually happened[cite: 3]</li>
+                            <li>A screenshot of any message or tooltip[cite: 3]</li>
+                            <li>The approximate time of the problem[cite: 3]</li>
+                        </ul>
+                        <p>Discord: <a href="https://discord.gg/9K9r9kjSR4" target="_blank">https://discord.gg/9K9r9kjSR4</a>[cite: 3]</p>
+
+                        <span class="admin-note"><strong>Admin verification required:</strong> replace the summary above with or link it to the final authoritative rules page before publication.[cite: 3]</span>
                     </div>
 
                 </main>
