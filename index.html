@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CrispySprings SMP | Minecraft Server</title>
+    <title>CrispySprings SMP | Official Server Store & Wiki</title>
+
+    <!-- Tebex Official Embed Overlay Script -->
+    <script src="https://js.tebex.io/v1/embed.js"></script>
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
 
@@ -13,8 +17,8 @@
             --text-light: #f8fafc;
             --text-muted: #cbd5e1;
             --accent: #10b981;
-            --glass-bg: rgba(15, 23, 42, 0.65);
-            --glass-border: rgba(255, 255, 255, 0.1);
+            --glass-bg: rgba(15, 23, 42, 0.75);
+            --glass-border: rgba(255, 255, 255, 0.12);
         }
 
         * {
@@ -25,7 +29,7 @@
         }
 
         body {
-            background: linear-gradient(rgba(10, 15, 30, 0.7), rgba(10, 15, 30, 0.85)), 
+            background: linear-gradient(rgba(10, 15, 30, 0.75), rgba(10, 15, 30, 0.88)), 
                         url('dOk3erq3R4FLcv01RbGT9ED2-MVTfRAALUAZUO0WE95SwjrVXV1-OsDEqVJeDvKFqN5e6eNK5th2U4P36Q4kNdOv7oxB-OgVUVliPf4xei6qPq3izRfKbn_BkpghzHH3F9zsr_RETIrdF8yKX2EAWyuv0Jd2CHIf0q7l_unareglG9rzp45j2z5CNyMySWBb.jpeg');
             background-size: cover;
             background-position: center;
@@ -43,78 +47,77 @@
             box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
         }
 
-        /* Hero Section */
-        header { text-align: center; padding: 120px 20px; border-bottom: 1px solid var(--glass-border); }
-        header h1 { font-size: 4rem; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 3px; font-weight: 800; text-shadow: 0 4px 15px rgba(0,0,0,0.8); background: linear-gradient(135deg, #ea580c, #fbbf24); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        header p { font-size: 1.2rem; color: var(--text-muted); margin-bottom: 40px; max-width: 650px; margin-left: auto; margin-right: auto; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
+        /* Header / Hero */
+        header { text-align: center; padding: 100px 20px 80px; border-bottom: 1px solid var(--glass-border); }
+        header h1 { font-size: 3.8rem; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 3px; font-weight: 800; background: linear-gradient(135deg, #ea580c, #fbbf24); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        header p { font-size: 1.15rem; color: var(--text-muted); margin-bottom: 30px; max-width: 700px; margin-left: auto; margin-right: auto; }
         
-        .ip-box { background: rgba(59, 130, 246, 0.2); border: 2px solid var(--primary); padding: 15px 35px; border-radius: 50px; display: inline-flex; align-items: center; gap: 15px; cursor: pointer; transition: all 0.3s ease; font-size: 1.3rem; font-weight: 600; backdrop-filter: blur(5px); }
-        .ip-box:hover { background: var(--primary); transform: scale(1.05); box-shadow: 0 0 25px rgba(59, 130, 246, 0.6); }
+        .ip-box { background: rgba(59, 130, 246, 0.2); border: 2px solid var(--primary); padding: 14px 30px; border-radius: 50px; display: inline-flex; align-items: center; gap: 12px; cursor: pointer; transition: all 0.3s ease; font-size: 1.2rem; font-weight: 600; }
+        .ip-box:hover { background: var(--primary); transform: scale(1.04); box-shadow: 0 0 25px rgba(59, 130, 246, 0.6); }
 
-        /* Server Stats Section */
-        .server-stats { margin-top: 30px; font-size: 1.1rem; color: var(--text-light); display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 12px 25px; border-radius: 30px; }
-        .status-dot { width: 14px; height: 14px; border-radius: 50%; display: inline-block; }
-        .status-dot.online { background-color: var(--accent); box-shadow: 0 0 12px var(--accent); }
-        .status-dot.offline { background-color: #ef4444; box-shadow: 0 0 12px #ef4444; }
+        .server-stats { margin-top: 25px; font-size: 1rem; color: var(--text-light); display: inline-flex; align-items: center; gap: 10px; padding: 10px 20px; border-radius: 30px; }
+        .status-dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
+        .status-dot.online { background-color: var(--accent); box-shadow: 0 0 10px var(--accent); }
+        .status-dot.offline { background-color: #ef4444; box-shadow: 0 0 10px #ef4444; }
         .status-dot.loading { background-color: #eab308; animation: pulse 1s infinite alternate; }
         @keyframes pulse { from { opacity: 0.4; } to { opacity: 1; } }
 
-        /* Navigation Links */
-        .nav-links { display: flex; justify-content: center; gap: 20px; margin-top: 40px; }
-        .nav-links a, .nav-links button { text-decoration: none; color: var(--text-light); padding: 12px 25px; border-radius: 8px; font-weight: 600; transition: all 0.2s ease; border: 1px solid transparent; background: transparent; cursor: pointer; }
-        .nav-links a:hover, .nav-links button:hover { background: rgba(255, 255, 255, 0.1); border-color: var(--glass-border); transform: translateY(-2px); }
+        .nav-links { display: flex; justify-content: center; gap: 15px; margin-top: 35px; flex-wrap: wrap; }
+        .nav-links a { text-decoration: none; color: var(--text-light); padding: 10px 22px; border-radius: 8px; font-weight: 600; transition: all 0.2s ease; border: 1px solid var(--glass-border); }
+        .nav-links a:hover { background: rgba(255, 255, 255, 0.15); transform: translateY(-2px); }
 
-        /* Layout */
-        .content-container { max-width: 1200px; margin: 80px auto; padding: 0 20px; }
-        .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 20px; font-weight: 800; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
-        .category-title { color: #fbbf24; font-size: 1.8rem; margin: 40px 0 20px 0; border-bottom: 1px solid var(--glass-border); padding-bottom: 10px; }
+        /* Container Layout */
+        .content-container { max-width: 1300px; margin: 60px auto; padding: 0 20px; }
+        .section-title { text-align: center; font-size: 2.3rem; margin-bottom: 10px; font-weight: 800; }
+        .category-title { color: #fbbf24; font-size: 1.6rem; margin: 35px 0 15px 0; border-bottom: 1px solid var(--glass-border); padding-bottom: 8px; }
 
-        /* Store Grid */
-        .store-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        /* Tebex Store Grid */
+        .store-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
         .store-card { padding: 25px; border-radius: 12px; text-align: center; display: flex; flex-direction: column; justify-content: space-between; gap: 15px; }
-        .store-card h3 { color: #fdba74; font-size: 1.3rem; }
-        .buy-btn { background: var(--primary); color: #fff; border: none; padding: 12px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; transition: background 0.2s; }
+        .store-card h3 { color: #fdba74; font-size: 1.25rem; font-weight: 600; }
+        .buy-btn { background: var(--primary); color: #fff; border: none; padding: 12px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; transition: background 0.2s; text-decoration: none; display: inline-block; }
         .buy-btn:hover { background: var(--primary-hover); }
 
         /* Interactive Wiki Layout */
-        .wiki-box { padding: 40px; border-radius: 16px; margin-top: 80px; }
-        .wiki-layout { display: flex; gap: 30px; margin-top: 30px; align-items: flex-start; }
+        .wiki-box { padding: 35px; border-radius: 16px; margin-top: 60px; }
+        .wiki-layout { display: flex; gap: 30px; margin-top: 25px; align-items: flex-start; }
         
-        .wiki-sidebar { flex: 0 0 280px; display: flex; flex-direction: column; gap: 8px; position: sticky; top: 20px; max-height: 80vh; overflow-y: auto; padding-right: 10px; }
-        .wiki-sidebar::-webkit-scrollbar { width: 6px; }
-        .wiki-sidebar::-webkit-scrollbar-track { background: rgba(0,0,0,0.1); border-radius: 10px; }
+        .wiki-sidebar { flex: 0 0 300px; display: flex; flex-direction: column; gap: 6px; position: sticky; top: 20px; max-height: 80vh; overflow-y: auto; padding-right: 8px; }
+        .wiki-sidebar::-webkit-scrollbar { width: 5px; }
         .wiki-sidebar::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 10px; }
         
-        .wiki-tab { background: rgba(255, 255, 255, 0.03); border: 1px solid var(--glass-border); color: var(--text-muted); padding: 12px 20px; border-radius: 8px; text-align: left; font-size: 1rem; font-weight: 600; cursor: pointer; transition: all 0.2s ease; display: flex; gap: 10px; }
-        .wiki-tab span { color: #fdba74; width: 25px; }
+        .wiki-tab { background: rgba(255, 255, 255, 0.03); border: 1px solid var(--glass-border); color: var(--text-muted); padding: 10px 15px; border-radius: 8px; text-align: left; font-size: 0.92rem; font-weight: 600; cursor: pointer; transition: all 0.2s ease; display: flex; align-items: center; gap: 10px; }
+        .wiki-tab span.num { color: #fdba74; font-size: 0.85rem; width: 22px; flex-shrink: 0; }
         .wiki-tab:hover { background: rgba(255, 255, 255, 0.1); border-color: #fbbf24; color: var(--text-light); }
-        .wiki-tab.active { background: rgba(234, 88, 12, 0.2); border-color: #ea580c; color: #fff; transform: translateX(5px); }
+        .wiki-tab.active { background: rgba(234, 88, 12, 0.25); border-color: #ea580c; color: #fff; transform: translateX(4px); }
 
-        .wiki-content { flex: 1; background: rgba(0, 0, 0, 0.2); border-radius: 12px; padding: 30px; border: 1px solid var(--glass-border); min-height: 500px; overflow-x: auto; }
+        .wiki-content { flex: 1; background: rgba(0, 0, 0, 0.25); border-radius: 12px; padding: 30px; border: 1px solid var(--glass-border); min-height: 600px; overflow-x: auto; }
         
-        .wiki-pane { display: none; animation: fadeIn 0.3s ease; }
+        .wiki-pane { display: none; animation: fadeIn 0.25s ease; }
         .wiki-pane.active { display: block; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
 
-        .wiki-pane h2 { color: #fbbf24; font-size: 2rem; margin-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px; }
-        .wiki-pane h3 { color: #fdba74; font-size: 1.4rem; margin: 25px 0 15px 0; }
-        .wiki-pane p { margin-bottom: 15px; color: var(--text-light); }
-        .wiki-pane ul, .wiki-pane ol { margin-left: 25px; margin-bottom: 15px; }
-        .wiki-pane li { margin-bottom: 8px; color: var(--text-muted); }
+        /* Article Typography & Elements */
+        .wiki-pane h2 { color: #fbbf24; font-size: 1.8rem; margin-bottom: 15px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 8px; }
+        .wiki-pane h3 { color: #fdba74; font-size: 1.3rem; margin: 22px 0 12px 0; }
+        .wiki-pane p { margin-bottom: 14px; color: var(--text-light); font-size: 0.98rem; }
+        .wiki-pane ul, .wiki-pane ol { margin-left: 22px; margin-bottom: 15px; }
+        .wiki-pane li { margin-bottom: 6px; color: var(--text-muted); }
         .wiki-pane strong { color: #fff; }
-        .wiki-pane code { background: rgba(0,0,0,0.4); padding: 3px 6px; border-radius: 4px; color: #93c5fd; font-family: monospace; font-size: 0.95em; }
-        .wiki-pane table { width: 100%; border-collapse: collapse; margin: 20px 0; background: rgba(0,0,0,0.2); border-radius: 8px; overflow: hidden; }
-        .wiki-pane th, .wiki-pane td { padding: 12px 15px; text-align: left; border-bottom: 1px solid var(--glass-border); }
-        .wiki-pane th { background: rgba(255,255,255,0.05); color: #fbbf24; font-weight: 600; }
+        .wiki-pane code { background: rgba(0,0,0,0.45); padding: 2px 6px; border-radius: 4px; color: #93c5fd; font-family: monospace; font-size: 0.9em; }
+        .wiki-pane table { width: 100%; border-collapse: collapse; margin: 18px 0; background: rgba(0,0,0,0.25); border-radius: 8px; overflow: hidden; font-size: 0.92rem; }
+        .wiki-pane th, .wiki-pane td { padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--glass-border); }
+        .wiki-pane th { background: rgba(255,255,255,0.06); color: #fbbf24; font-weight: 600; }
+        .wiki-pane blockquote { background: rgba(234, 88, 12, 0.15); border-left: 4px solid #ea580c; padding: 12px 18px; border-radius: 0 8px 8px 0; margin-bottom: 18px; font-style: italic; }
         .wiki-pane a { color: #93c5fd; text-decoration: none; }
         .wiki-pane a:hover { text-decoration: underline; }
 
-        @media (max-width: 900px) {
+        @media (max-width: 960px) {
             .wiki-layout { flex-direction: column; }
-            .wiki-sidebar { flex: none; width: 100%; max-height: 250px; }
+            .wiki-sidebar { flex: none; width: 100%; max-height: 280px; position: static; }
         }
 
-        footer { text-align: center; padding: 40px 20px; margin-top: 80px; border-top: 1px solid var(--glass-border); }
+        footer { text-align: center; padding: 40px 20px; margin-top: 60px; border-top: 1px solid var(--glass-border); color: var(--text-muted); font-size: 0.9rem; }
     </style>
 </head>
 <body>
@@ -125,7 +128,7 @@
         
         <div class="ip-box" onclick="copyIP()" id="ipBtn">
             <span>🎮 147.135.6.160:25899</span>
-            <span style="font-size: 0.9rem; color: #93c5fd; margin-left: 10px;">(Click to Copy)</span>
+            <span style="font-size: 0.85rem; color: #93c5fd; margin-left: 8px;">(Click to Copy)</span>
         </div>
         <br>
         <div class="server-stats glass" id="serverStats">
@@ -134,86 +137,225 @@
 
         <div class="nav-links">
             <a href="#store" class="glass">🛍️ Store</a>
-            <a href="#wiki" class="glass">📖 Wiki</a>
+            <a href="#wiki" class="glass">📖 Wiki Guide</a>
             <a href="https://discord.gg/9K9r9kjSR4" class="glass" target="_blank">💬 Discord</a>
         </div>
     </header>
 
     <div class="content-container">
 
-        <div id="store" class="glass" style="padding: 40px; border-radius: 16px;">
+        <!-- TEBEX STORE SECTION -->
+        <div id="store" class="glass" style="padding: 35px; border-radius: 16px;">
             <h2 class="section-title">Server Store</h2>
-            <p style="text-align: center; color: var(--text-muted); margin-bottom: 30px;">Support the server and unlock exclusive perks and items in-game.</p>
+            <p style="text-align: center; color: var(--text-muted); margin-bottom: 25px;">Support the server and unlock exclusive perks and items in-game.</p>
             
-            <h3 class="category-title">👑 Ranks</h3>
+            <!-- Category: Ranks -->
+            <h3 class="category-title">👑 Subscriptions & Ranks</h3>
             <div class="store-grid">
                 <div class="store-card glass">
                     <h3>SUPPORTER</h3>
-                    <button class="buy-btn" onclick="buyPackage(7646970)">Purchase</button>
+                    <a href="https://store.crispysprings.com/package/7646970" data-tebex-control="checkout" class="buy-btn">Purchase</a>
                 </div>
 
                 <div class="store-card glass">
                     <h3>SUPPORTER PLUS</h3>
-                    <button class="buy-btn" onclick="buyPackage(7646975)">Purchase</button>
+                    <a href="https://store.crispysprings.com/package/7646975" data-tebex-control="checkout" class="buy-btn">Purchase</a>
                 </div>
 
                 <div class="store-card glass">
                     <h3>CHAMPION</h3>
-                    <button class="buy-btn" onclick="buyPackage(7646982)">Purchase</button>
+                    <a href="https://store.crispysprings.com/package/7646982" data-tebex-control="checkout" class="buy-btn">Purchase</a>
                 </div>
             </div>
 
+            <!-- Category: Boosters & Keys -->
             <h3 class="category-title">⚡ Boosters & Keys</h3>
             <div class="store-grid">
                 <div class="store-card glass">
                     <h3>1H GLOBAL XP BOOSTER</h3>
-                    <button class="buy-btn" onclick="buyPackage(7647008)">Purchase</button>
+                    <a href="https://store.crispysprings.com/package/7647008" data-tebex-control="checkout" class="buy-btn">Purchase</a>
                 </div>
 
                 <div class="store-card glass">
                     <h3>3H GLOBAL XP BOOSTER</h3>
-                    <button class="buy-btn" onclick="buyPackage(7646994)">Purchase</button>
+                    <a href="https://store.crispysprings.com/package/7646994" data-tebex-control="checkout" class="buy-btn">Purchase</a>
                 </div>
 
                 <div class="store-card glass">
                     <h3>1x TREASURE CRATE KEYS</h3>
-                    <button class="buy-btn" onclick="buyPackage(7647016)">Purchase</button>
+                    <a href="https://store.crispysprings.com/package/7647016" data-tebex-control="checkout" class="buy-btn">Purchase</a>
                 </div>
             </div>
         </div>
 
+        <!-- WIKI SECTION -->
         <div id="wiki" class="wiki-box glass">
-            <h2 class="section-title" style="margin-bottom: 10px;">Server Wiki</h2>
-            <p style="text-align: center; color: var(--text-muted); margin-bottom: 30px;">The official Crispy Springs Community Guide.</p>
+            <h2 class="section-title">Server Wiki</h2>
+            <p style="text-align: center; color: var(--text-muted); margin-bottom: 25px;">The official Crispy Springs Community Guide.</p>
             
             <div class="wiki-layout">
                 <aside class="wiki-sidebar">
-                    <button class="wiki-tab active" onclick="openWiki('home', this)"><span>01</span> Home</button>
-                    <button class="wiki-tab" onclick="openWiki('getting-started', this)"><span>02</span> Getting Started</button>
-                    <button class="wiki-tab" onclick="openWiki('commands', this)"><span>03</span> Commands</button>
-                    <button class="wiki-tab" onclick="openWiki('rules', this)"><span>04</span> Rules</button>
+                    <button class="wiki-tab active" onclick="openWiki('home', this)"><span class="num">01</span> Home</button>
+                    <button class="wiki-tab" onclick="openWiki('getting-started', this)"><span class="num">02</span> Getting Started</button>
+                    <button class="wiki-tab" onclick="openWiki('commands', this)"><span class="num">03</span> Commands</button>
+                    <button class="wiki-tab" onclick="openWiki('progression', this)"><span class="num">04</span> Progression & Ranks</button>
+                    <button class="wiki-tab" onclick="openWiki('worlds', this)"><span class="num">05</span> Worlds & Travel</button>
+                    <button class="wiki-tab" onclick="openWiki('economy', this)"><span class="num">06</span> Economy & Trading</button>
+                    <button class="wiki-tab" onclick="openWiki('jobs', this)"><span class="num">07</span> Jobs</button>
+                    <button class="wiki-tab" onclick="openWiki('mcmmo', this)"><span class="num">08</span> mcMMO Skills</button>
+                    <button class="wiki-tab" onclick="openWiki('claims', this)"><span class="num">09</span> Claims & Protection</button>
+                    <button class="wiki-tab" onclick="openWiki('homes-storage', this)"><span class="num">10</span> Homes & Storage</button>
                 </aside>
 
                 <main class="wiki-content">
+                    
+                    <!-- 01. HOME -->
                     <div id="home" class="wiki-pane active">
                         <h2>Crispy Springs Community Guide</h2>
-                        <p>Welcome to <strong>Crispy Springs</strong>, a feature-rich community survival server built around exploration, cooperation, and meaningful progression.</p>
+                        <p>Welcome to <strong>Crispy Springs</strong>, a feature-rich community survival server built around exploration, cooperation, meaningful progression and a player-driven economy[cite: 11].</p>
+                        <p>Crispy Springs supports both <strong>Java Edition and Bedrock Edition</strong> players[cite: 11]. You can progress through 550 levels, choose Jobs, build and protect a home, trade with other players, discover hidden treasures, complete achievements, choose whether to participate in optional PvP and create permanent Masterwork equipment through the Community Forge[cite: 11].</p>
+                        <h3>Start here</h3>
+                        <ul>
+                            <li>Complete the first-join Pathfinder journey[cite: 11].</li>
+                            <li>Read and accept the server rules[cite: 11].</li>
+                            <li>Collect your starter equipment[cite: 11].</li>
+                            <li>Enter Survival and use <code>/rtp</code> to begin exploring[cite: 11].</li>
+                            <li>Choose your Jobs and complete daily quests[cite: 11].</li>
+                            <li>Protect your first home with a claim[cite: 11].</li>
+                            <li>Browse player buy requests with <code>/orders</code>[cite: 11].</li>
+                            <li>Apply for the Creator Programme if you make livestreams or gaming content[cite: 11].</li>
+                            <li>Use <code>/menu</code> whenever you are unsure what to do next[cite: 11].</li>
+                        </ul>
+                        <h3>Important links</h3>
+                        <ul>
+                            <li><strong>Store:</strong> <a href="https://store.crispysprings.com" target="_blank">store.crispysprings.com</a>[cite: 11]</li>
+                            <li><strong>Discord:</strong> <a href="https://discord.gg/9K9r9kjSR4" target="_blank">discord.gg/9K9r9kjSR4</a>[cite: 11]</li>
+                        </ul>
                     </div>
 
+                    <!-- 02. GETTING STARTED -->
                     <div id="getting-started" class="wiki-pane">
                         <h2>Getting Started</h2>
-                        <p>Server address: <code>147.135.6.160</code> | Port: <code>25899</code></p>
+                        <h3>Joining the server</h3>
+                        <p>Crispy Springs supports Java and Bedrock cross-play through Geyser and Floodgate[cite: 12].</p>
+                        <ul>
+                            <li><strong>Server address:</strong> <code>147.135.6.160</code>[cite: 12]</li>
+                            <li><strong>Port:</strong> <code>25899</code>[cite: 12]</li>
+                        </ul>
+                        <p>Bedrock usernames may display with a leading <code>.</code> in some server systems[cite: 12]. This is normal and keeps Java and Bedrock accounts separate[cite: 12].</p>
+                        <h3>Your first join</h3>
+                        <p>New players follow the Pathfinder onboarding journey around Spawn[cite: 12]. The journey introduces the server in this order[cite: 12]:</p>
+                        <ol>
+                            <li>Pathfinder[cite: 12]</li>
+                            <li>Archivist[cite: 12]</li>
+                            <li>Forgekeeper[cite: 12]</li>
+                            <li>Pathfinder[cite: 12]</li>
+                            <li>Guild Master[cite: 12]</li>
+                            <li>Claim Keeper[cite: 12]</li>
+                            <li>Pathfinder[cite: 12]</li>
+                        </ol>
+                        <h3>Starter equipment</h3>
+                        <p>The starter set includes an iron pickaxe, shovel and sword with improved starter enchantments[cite: 12]. These tools are unbreakable and bound to their owner[cite: 12]. The starter golden shovel is used for creating land claims[cite: 12].</p>
+                        <p>The protected Forge starter set is issued through <code>/forgestarter</code>[cite: 12]. This is intended for onboarding or staff-directed recovery and will not create duplicate owned equipment[cite: 12].</p>
                     </div>
 
+                    <!-- 03. COMMANDS -->
                     <div id="commands" class="wiki-pane">
-                        <h2>Commands</h2>
-                        <p>Use <code>/menu</code> in-game to access the central server dashboard.</p>
+                        <h2>Player Commands by Rank</h2>
+                        <p>Ranks inherit commands from lower ranks[cite: 13]. Available from Settler means the command remains available to Resident, Explorer, Adventurer, Veteran, and Legend players[cite: 13].</p>
+                        
+                        <h3>Main Navigation</h3>
+                        <table>
+                            <tr><th>Command</th><th>Purpose</th><th>Available from</th></tr>
+                            <tr><td><code>/menu</code></td><td>Open the main server menu[cite: 13].</td><td>Settler[cite: 13]</td></tr>
+                            <tr><td><code>/guide</code></td><td>Open the Crispy Springs Community Guide[cite: 13].</td><td>Settler[cite: 13]</td></tr>
+                            <tr><td><code>/progress</code></td><td>View progression and claim completed levels[cite: 13].</td><td>Settler[cite: 13]</td></tr>
+                            <tr><td><code>/achievements</code></td><td>Open achievement categories and rewards[cite: 13].</td><td>Settler[cite: 13]</td></tr>
+                            <tr><td><code>/orders</code></td><td>Open the player buy-order marketplace[cite: 13].</td><td>Settler[cite: 13]</td></tr>
+                            <tr><td><code>/sb</code></td><td>Toggle the progression scoreboard[cite: 13].</td><td>Settler[cite: 13]</td></tr>
+                        </table>
+
+                        <h3>Travel & Storage</h3>
+                        <table>
+                            <tr><th>Command</th><th>Purpose</th><th>Available from</th></tr>
+                            <tr><td><code>/rtp</code></td><td>Randomly teleport within Survival[cite: 13].</td><td>Settler[cite: 13]</td></tr>
+                            <tr><td><code>/rw tp</code></td><td>Randomly teleport into renewable Resource World[cite: 13].</td><td>Settler[cite: 13]</td></tr>
+                            <tr><td><code>/sethome &lt;name&gt;</code></td><td>Save a home location[cite: 13].</td><td>Settler[cite: 13]</td></tr>
+                            <tr><td><code>/home &lt;name&gt;</code></td><td>Teleport to a saved home[cite: 13].</td><td>Settler[cite: 13]</td></tr>
+                            <tr><td><code>/tpa &lt;player&gt;</code></td><td>Request to teleport to another player[cite: 13].</td><td>Settler[cite: 13]</td></tr>
+                            <tr><td><code>/pv</code></td><td>Open personal vault menu[cite: 13].</td><td>Settler[cite: 13]</td></tr>
+                            <tr><td><code>/back</code></td><td>Return to previous permitted location[cite: 13].</td><td>Explorer[cite: 13]</td></tr>
+                        </table>
                     </div>
 
-                    <div id="rules" class="wiki-pane">
-                        <h2>Rules</h2>
-                        <p>Be respectful, play fair, and do not use unapproved client modifications.</p>
+                    <!-- 04. PROGRESSION -->
+                    <div id="progression" class="wiki-pane">
+                        <h2>Progression and Ranks</h2>
+                        <p>Crispy Springs uses a 550-level progression system[cite: 14]. Progression gives every player long-term goals while keeping staff and supporter status separate from gameplay rank[cite: 14].</p>
+                        <table>
+                            <tr><th>Rank</th><th>Levels</th></tr>
+                            <tr><td>Settler</td><td>1–50[cite: 14]</td></tr>
+                            <tr><td>Resident</td><td>51–100[cite: 14]</td></tr>
+                            <tr><td>Explorer</td><td>101–175[cite: 14]</td></tr>
+                            <tr><td>Adventurer</td><td>176–275[cite: 14]</td></tr>
+                            <tr><td>Veteran</td><td>276–400[cite: 14]</td></tr>
+                            <tr><td>Legend</td><td>401–550[cite: 14]</td></tr>
+                        </table>
+                        <p>Use <code>/progress</code> to view your current task[cite: 14]. Nether access is granted automatically as the player reaches Overall Level 15 by completing Level 14[cite: 14].</p>
                     </div>
+
+                    <!-- 05. WORLDS -->
+                    <div id="worlds" class="wiki-pane">
+                        <h2>Worlds and Travel</h2>
+                        <p><strong>Spawn:</strong> Protected community hub with onboarding NPCs, Community Forge, and server links[cite: 15].</p>
+                        <p><strong>Survival:</strong> Permanent build world with a 1,000,000 × 1,000,000 block playable area[cite: 15].</p>
+                        <p><strong>Resource World:</strong> Accessible via <code>/rw tp</code> for gathering materials[cite: 15]. Do not build permanent bases here as it regenerates[cite: 15].</p>
+                        <p><strong>Nether:</strong> Unlocks upon reaching Overall Level 15[cite: 15].</p>
+                    </div>
+
+                    <!-- 06. ECONOMY -->
+                    <div id="economy" class="wiki-pane">
+                        <h2>Economy and Player Trading</h2>
+                        <p>Crispy Springs uses a player-driven economy[cite: 16]. Players earn money through Jobs, daily quests, achievements, trading, QuickShops, Auction House (<code>/ah</code>), and buy orders (<code>/orders</code>)[cite: 16].</p>
+                        <p>Diamonds, emeralds, and ancient debris are protected from easy server sell loops to maintain market integrity[cite: 16].</p>
+                    </div>
+
+                    <!-- 07. JOBS -->
+                    <div id="jobs" class="wiki-pane">
+                        <h2>Jobs</h2>
+                        <p>Jobs provide money and experience for normal gameplay activities[cite: 17]. Open the Jobs browser using <code>/jobs browse</code>[cite: 17].</p>
+                        <p>Upcoming supporter subscriptions will increase active Job allowances and maximum Job levels (Supporter: +2/lvl 130, Supporter+: +3/lvl 160, Champion: +4/lvl 200)[cite: 17].</p>
+                    </div>
+
+                    <!-- 08. MCMMO -->
+                    <div id="mcmmo" class="wiki-pane">
+                        <h2>mcMMO Skills and Abilities</h2>
+                        <p>mcMMO adds RPG-style skill progression to Minecraft actions[cite: 18]. Use <code>/mcstats</code> to view your skill levels[cite: 18].</p>
+                        <p>Store Global Boosters are planned to provide <strong>1.5× mcMMO XP</strong> and <strong>1.5× Jobs XP</strong> for three hours[cite: 18].</p>
+                    </div>
+
+                    <!-- 09. CLAIMS -->
+                    <div id="claims" class="wiki-pane">
+                        <h2>Claims and Build Protection</h2>
+                        <p>GriefPrevention claims protect homes, storage, and builds[cite: 19]. Use the golden shovel supplied during onboarding to claim territory[cite: 19].</p>
+                        <p>Claims automatically extend downwards as you mine deeper[cite: 19]. PvP is strictly disabled inside all claims regardless of personal settings[cite: 19].</p>
+                    </div>
+
+                    <!-- 10. STORAGE -->
+                    <div id="homes-storage" class="wiki-pane">
+                        <h2>Homes and Personal Storage</h2>
+                        <p>Access private vaults via <code>/pv</code>[cite: 20]. Base vault limits increase as you rank up[cite: 20]:</p>
+                        <table>
+                            <tr><th>Rank</th><th>Base Personal Vaults</th></tr>
+                            <tr><td>Settler</td><td>5[cite: 20]</td></tr>
+                            <tr><td>Resident</td><td>6[cite: 20]</td></tr>
+                            <tr><td>Explorer</td><td>7[cite: 20]</td></tr>
+                            <tr><td>Adventurer</td><td>8[cite: 20]</td></tr>
+                            <tr><td>Veteran</td><td>9[cite: 20]</td></tr>
+                            <tr><td>Legend</td><td>10[cite: 20]</td></tr>
+                        </table>
+                    </div>
+
                 </main>
             </div>
         </div>
@@ -223,17 +365,8 @@
         <p>&copy; 2026 CrispySprings SMP. All rights reserved. Not affiliated with Mojang Studios or Microsoft.</p>
     </footer>
 
-    <script src="https://js.tebex.io/v1/tebex.js"></script>
+    <!-- Script Section -->
     <script>
-        // Initialized with your Public Token
-        const tebex = new Tebex("14fuz-c2bf349083c6d0f0e3a596418197f7331dd71600");
-
-        function buyPackage(packageId) {
-            tebex.checkout.initiate({
-                packageId: packageId
-            });
-        }
-
         // Tab Switching Functionality
         function openWiki(paneId, btnElement) {
             const panes = document.querySelectorAll('.wiki-pane');
@@ -242,8 +375,13 @@
             panes.forEach(pane => pane.classList.remove('active'));
             tabs.forEach(tab => tab.classList.remove('active'));
 
-            document.getElementById(paneId).classList.add('active');
-            btnElement.classList.add('active');
+            const targetPane = document.getElementById(paneId);
+            if (targetPane) {
+                targetPane.classList.add('active');
+            }
+            if (btnElement) {
+                btnElement.classList.add('active');
+            }
         }
 
         // Copy IP Address
