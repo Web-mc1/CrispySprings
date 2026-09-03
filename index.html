@@ -82,7 +82,7 @@
         .wiki-box { padding: 35px; border-radius: 16px; margin-top: 60px; }
         .wiki-layout { display: flex; gap: 30px; margin-top: 25px; align-items: flex-start; }
         
-        .wiki-sidebar { flex: 0 0 300px; display: flex; flex-direction: column; gap: 6px; position: sticky; top: 20px; max-height: 80vh; overflow-y: auto; padding-right: 8px; }
+        .wiki-sidebar { flex: 0 0 320px; display: flex; flex-direction: column; gap: 6px; position: sticky; top: 20px; max-height: 80vh; overflow-y: auto; padding-right: 8px; }
         .wiki-sidebar::-webkit-scrollbar { width: 5px; }
         .wiki-sidebar::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 10px; }
         
@@ -109,6 +109,7 @@
         .wiki-pane th, .wiki-pane td { padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--glass-border); }
         .wiki-pane th { background: rgba(255,255,255,0.06); color: #fbbf24; font-weight: 600; }
         .wiki-pane blockquote { background: rgba(234, 88, 12, 0.15); border-left: 4px solid #ea580c; padding: 12px 18px; border-radius: 0 8px 8px 0; margin-bottom: 18px; font-style: italic; }
+        .wiki-pane pre { background: rgba(0,0,0,0.5); padding: 12px 16px; border-radius: 8px; font-family: monospace; font-size: 0.9rem; color: #93c5fd; margin-bottom: 15px; overflow-x: auto; border: 1px solid var(--glass-border); }
         .wiki-pane a { color: #93c5fd; text-decoration: none; }
         .wiki-pane a:hover { text-decoration: underline; }
 
@@ -205,6 +206,17 @@
                     <button class="wiki-tab" onclick="openWiki('mcmmo', this)"><span class="num">08</span> mcMMO Skills</button>
                     <button class="wiki-tab" onclick="openWiki('claims', this)"><span class="num">09</span> Claims & Protection</button>
                     <button class="wiki-tab" onclick="openWiki('homes-storage', this)"><span class="num">10</span> Homes & Storage</button>
+                    <button class="wiki-tab" onclick="openWiki('playerwarps', this)"><span class="num">11</span> PlayerWarps</button>
+                    <button class="wiki-tab" onclick="openWiki('quests-achievements', this)"><span class="num">12</span> Daily Quests & Achievements</button>
+                    <button class="wiki-tab" onclick="openWiki('treasures', this)"><span class="num">13</span> Community Treasures</button>
+                    <button class="wiki-tab" onclick="openWiki('forge', this)"><span class="num">14</span> Community Forge</button>
+                    <button class="wiki-tab" onclick="openWiki('equipment-gems', this)"><span class="num">15</span> Equipment Gems</button>
+                    <button class="wiki-tab" onclick="openWiki('graves', this)"><span class="num">16</span> Graves & Death</button>
+                    <button class="wiki-tab" onclick="openWiki('supporter-benefits', this)"><span class="num">17</span> Supporter Store Perks</button>
+                    <button class="wiki-tab" onclick="openWiki('rules-help', this)"><span class="num">18</span> Rules & Support</button>
+                    <button class="wiki-tab" onclick="openWiki('marketplace-orders', this)"><span class="num">19</span> Marketplace Buy Orders</button>
+                    <button class="wiki-tab" onclick="openWiki('pvp', this)"><span class="num">20</span> Player vs Player</button>
+                    <button class="wiki-tab" onclick="openWiki('creator-programme', this)"><span class="num">21</span> Creator Programme</button>
                 </aside>
 
                 <main class="wiki-content">
@@ -223,7 +235,7 @@
                             <li>Choose your Jobs and complete daily quests[cite: 11].</li>
                             <li>Protect your first home with a claim[cite: 11].</li>
                             <li>Browse player buy requests with <code>/orders</code>[cite: 11].</li>
-                            <li>Apply for the Creator Programme if you make livestreams or gaming content[cite: 11].</li>
+                            <li>Apply for the Creator Programme if you make livestreams or gaming content[cite: 11, 31].</li>
                             <li>Use <code>/menu</code> whenever you are unsure what to do next[cite: 11].</li>
                         </ul>
                         <h3>Important links</h3>
@@ -354,6 +366,147 @@
                             <tr><td>Veteran</td><td>9[cite: 20]</td></tr>
                             <tr><td>Legend</td><td>10[cite: 20]</td></tr>
                         </table>
+                    </div>
+
+                    <!-- 11. PLAYERWARPS -->
+                    <div id="playerwarps" class="wiki-pane">
+                        <h2>PlayerWarps</h2>
+                        <p>PlayerWarps allow players to publish useful destinations such as towns, public farms, attractions and shops[cite: 21].</p>
+                        <p>Normal warp limits come from progression[cite: 21]. Coming-soon Supporter subscriptions add additional warps (+2 for Supporter, +4 for Supporter+, +6 for Champion)[cite: 21]. Approved Creators receive one additional PlayerWarp[cite: 21].</p>
+                        <p>Warp owners are responsible for keeping public destinations safe, accessible, and accurately described[cite: 21]. Traps or misleading commercial warps are not permitted[cite: 21].</p>
+                    </div>
+
+                    <!-- 12. QUESTS & ACHIEVEMENTS -->
+                    <div id="quests-achievements" class="wiki-pane">
+                        <h2>Daily Quests and Achievements</h2>
+                        <h3>Daily Quests</h3>
+                        <p>Players receive Easy, Medium, and Hard daily objectives that reset at <strong>4:00 AM Pacific/Auckland time</strong>[cite: 22].</p>
+                        <p>Selected Forge contracts award Equipment Gem Fragments[cite: 22]:</p>
+                        <ul>
+                            <li>Easy Forge contract: 1 fragment[cite: 22]</li>
+                            <li>Medium Forge contract: 2 fragments[cite: 22]</li>
+                            <li>Hard Forge contract: 3 fragments[cite: 22]</li>
+                        </ul>
+                        <h3>Achievements</h3>
+                        <p>Use <code>/achievements</code> to browse achievement categories[cite: 22]. When a tooltip displays <strong>OBJECTIVE COMPLETE — CLICK TO CLAIM</strong>, click it to receive rewards like money, Community Coins, or XP boosters[cite: 22].</p>
+                    </div>
+
+                    <!-- 13. TREASURES -->
+                    <div id="treasures" class="wiki-pane">
+                        <h2>Community Treasures</h2>
+                        <p>Hidden treasures are placed around Spawn for players to discover[cite: 23]. Treasures use custom decorative heads rather than ordinary chests[cite: 23].</p>
+                        <p>There are approximately 100 discoveries across Common, Uncommon, Rare, and Legendary designs contributing to a 24-stage Treasure Achievement track[cite: 23]. Completing the final stage unlocks the <strong>Seeker</strong> recognition[cite: 23].</p>
+                        <blockquote>Each account can receive credit for an individual treasure only once. Do not break decorative treasure heads[cite: 23].</blockquote>
+                    </div>
+
+                    <!-- 14. FORGE -->
+                    <div id="forge" class="wiki-pane">
+                        <h2>Community Forge</h2>
+                        <p>The Community Forge allows players to craft, upgrade, socket, extract, and repair owned Masterwork tools, weapons, and armour[cite: 24]. Use a physical Community Forge Station or <code>/forge</code> as a menu backup[cite: 24].</p>
+                        <h3>Crafting Recipe</h3>
+                        <table>
+                            <tr><td>Iron Ingot</td><td>Anvil</td><td>Iron Ingot</td></tr>
+                            <tr><td>Crafting Table</td><td>Smithing Table</td><td>Grindstone</td></tr>
+                            <tr><td>Iron Ingot</td><td>Diamond</td><td>Iron Ingot</td></tr>
+                        </table>
+                        <p>Masterwork equipment is strictly bound to its owner[cite: 24]. Lost eligible items can be recovered through <code>/forgereturn</code> or <code>/forgereturnitem</code>[cite: 24].</p>
+                    </div>
+
+                    <!-- 15. EQUIPMENT GEMS -->
+                    <div id="equipment-gems" class="wiki-pane">
+                        <h2>Equipment Gems, Fragments and Cores</h2>
+                        <p>Equipment Gems add contextual bonuses to Masterwork equipment[cite: 25]. 9 genuine Equipment Gem Fragments craft one selected Gem I[cite: 25]. Equipment Gem Fragments do <strong>not</strong> drop from mob kills; obtain them through ores, Forge contracts, or treasure milestones[cite: 25].</p>
+                        <h3>Gem Stacking</h3>
+                        <p>Matching Gems stack with controlled diminishing returns[cite: 25]:</p>
+                        <ul>
+                            <li>Strongest copy: 100% contribution[cite: 25]</li>
+                            <li>Second copy: 50% contribution[cite: 25]</li>
+                            <li>Third copy: 25% contribution[cite: 25]</li>
+                            <li>Fourth+ copy: No additional effect[cite: 25]</li>
+                        </ul>
+                        <p>Use <code>/armourgems inspect</code> to view active gem totals and diminishing returns[cite: 13, 25].</p>
+                    </div>
+
+                    <!-- 16. GRAVES -->
+                    <div id="graves" class="wiki-pane">
+                        <h2>Graves and Death Recovery</h2>
+                        <p>AxGraves protects dropped inventory after death by creating a temporary grave[cite: 26]. Return to the grave location and interact with it to recover your items[cite: 26].</p>
+                        <ul>
+                            <li>Read grave location and expiry details in chat immediately upon dying[cite: 26].</li>
+                            <li>Ensure inventory space is available when retrieving items[cite: 26].</li>
+                            <li>Forge ownership protections still apply to bound equipment[cite: 26].</li>
+                        </ul>
+                    </div>
+
+                    <!-- 17. SUPPORTER BENEFITS -->
+                    <div id="supporter-benefits" class="wiki-pane">
+                        <h2>Supporter Store Benefits (Coming Soon)</h2>
+                        <p>Supporter subscriptions fund the server while offering convenience and cosmetics without replacing gameplay progression[cite: 27].</p>
+                        <table>
+                            <tr><th>Benefit</th><th>Supporter</th><th>Supporter+</th><th>Champion</th></tr>
+                            <tr><td>Additional Homes</td><td>+2[cite: 27]</td><td>+4[cite: 27]</td><td>+6[cite: 27]</td></tr>
+                            <tr><td>Personal Vault Multiplier</td><td>×2[cite: 27]</td><td>×4[cite: 27]</td><td>×6[cite: 27]</td></tr>
+                            <tr><td>Additional Jobs</td><td>+2[cite: 27]</td><td>+3[cite: 27]</td><td>+4[cite: 27]</td></tr>
+                            <tr><td>Monthly Claim Blocks</td><td>2,500[cite: 27]</td><td>5,000[cite: 27]</td><td>10,000[cite: 27]</td></tr>
+                        </table>
+                    </div>
+
+                    <!-- 18. RULES & HELP -->
+                    <div id="rules-help" class="wiki-pane">
+                        <h2>Rules and Getting Help</h2>
+                        <h3>Core Expectations</h3>
+                        <ul>
+                            <li>Treat other players and staff respectfully[cite: 28].</li>
+                            <li>Do not grief, steal, or bypass land protection[cite: 28].</li>
+                            <li>Do not use cheats, hacked clients, exploits, macros, or unattended automation[cite: 28].</li>
+                            <li>Do not scam players or misrepresent trades[cite: 28].</li>
+                        </ul>
+                        <p>If you need assistance, report issues on our <a href="https://discord.gg/9K9r9kjSR4" target="_blank">Discord Support Channel</a>[cite: 28].</p>
+                    </div>
+
+                    <!-- 19. MARKETPLACE ORDERS -->
+                    <div id="marketplace-orders" class="wiki-pane">
+                        <h2>Marketplace Buy Orders</h2>
+                        <p>DonutOrders lets players advertise what they want to buy instead of waiting for item listings[cite: 29]. Use <code>/orders</code> to open the marketplace interface[cite: 29].</p>
+                        <p>The system supports <strong>1,425 normal survival materials</strong>[cite: 29]. Spawn eggs, admin items, technical blocks, and <code>PLAYER_HEAD</code> are excluded[cite: 29].</p>
+                    </div>
+
+                    <!-- 20. PVP -->
+                    <div id="pvp" class="wiki-pane">
+                        <h2>Player versus Player (PvP)</h2>
+                        <p>Crispy Springs uses optional PvP[cite: 30]. Use <code>/pvptoggle</code> to toggle your personal combat setting[cite: 30].</p>
+                        <p>PvP is strictly disabled inside player claims and protected regions like Spawn, overriding individual player settings[cite: 30]. Never use PvP to harass or repeatedly target players[cite: 30].</p>
+                    </div>
+
+                    <!-- 21. CREATOR PROGRAMME -->
+                    <div id="creator-programme" class="wiki-pane">
+                        <h2>Crispy Springs Creator Programme</h2>
+                        <p>The Creator Programme recognises livestreamers and video creators who share Crispy Springs with their communities[cite: 31]. Creator is a secondary status: members continue progressing normally from Settler through Legend[cite: 31].</p>
+
+                        <h3>Creator Identity</h3>
+                        <p>Approved members display a Creator badge beside their normal player identity[cite: 31]:</p>
+                        <pre>[Explorer] PlayerName [✦ Creator]</pre>
+                        <p>While streaming, the badge changes automatically after the creator activates their verified stream link[cite: 31]:</p>
+                        <pre>[Explorer] PlayerName [● LIVE ✦ Creator]</pre>
+
+                        <h3>Included Benefits</h3>
+                        <ul>
+                            <li>Creator and LIVE identification[cite: 31]</li>
+                            <li>Controlled server-wide stream promotion[cite: 31]</li>
+                            <li>Creator profile and approved platform links in the website directory[cite: 31]</li>
+                            <li>Creator role and collaboration areas in Discord[cite: 31]</li>
+                            <li>Opportunities to propose or host community events with staff support[cite: 31]</li>
+                            <li>Early previews of selected upcoming server features[cite: 31]</li>
+                            <li>One additional home (stacks with progression and subscriptions)[cite: 31]</li>
+                            <li>One additional PlayerWarp (stacks with progression and subscriptions)[cite: 31]</li>
+                            <li>Portable crafting with <code>/craft</code>[cite: 31]</li>
+                        </ul>
+
+                        <h3>Going LIVE</h3>
+                        <p>After staff verify and approve the creator's HTTPS Twitch, YouTube, or TikTok channel link, the creator can use <code>/creatorlive on</code>[cite: 31]. Activations grant a LIVE badge for up to six hours and send a server-wide announcement (subject to a 6-hour announcement cooldown)[cite: 31]. Use <code>/creatorlive status</code> to check remaining time and <code>/creatorlive off</code> when ending a stream[cite: 31].</p>
+
+                        <h3>Applying</h3>
+                        <p>Contact the Crispy Springs team through Discord and provide your Minecraft name, platform, channel link, usual content, and approximate streaming schedule[cite: 31].</p>
                     </div>
 
                 </main>
