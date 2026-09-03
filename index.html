@@ -5,19 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CrispySprings SMP | Official Server Store & Wiki</title>
 
-    <!-- Fallback Favicon Tag -->
-    <link rel="shortcut icon" id="favicon" type="image/png" href="./minecraft-png-icon-16689.png?v=2">
-
-    <!-- Script to Force Tab Icon Load & Bypass Browser Cache -->
-    <script>
-        (function() {
-            var link = document.createElement('link');
-            link.type = 'image/png';
-            link.rel = 'icon';
-            link.href = './minecraft-png-icon-16689.png?v=' + new Date().getTime();
-            document.getElementsByTagName('head')[0].appendChild(link);
-        })();
-    </script>
+    <!-- Base64 Embedded Favicon (Guaranteed Instant Tab Icon) -->
+    <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAALUlEQVRYR2NkYGA4D8R3oXgUjIJRMApGwSgYBSB1A/1BfB6I70DxKBiM4A4DAAEuKBAv2mOIAAAAAElFTkSuQmCC">
 
     <!-- Tebex Official Embed Overlay Script -->
     <script src="https://js.tebex.io/v1/embed.js"></script>
@@ -164,38 +153,32 @@
             <h2 class="section-title">Server Store</h2>
             <p style="text-align: center; color: var(--text-muted); margin-bottom: 25px;">Support the server and unlock exclusive perks and items in-game.</p>
             
-            <!-- Category: Ranks -->
             <h3 class="category-title">👑 Subscriptions & Ranks</h3>
             <div class="store-grid">
                 <div class="store-card glass">
                     <h3>SUPPORTER</h3>
                     <a href="https://crispy-springs.tebex.store/package/7646970" data-tebex-control="checkout" class="buy-btn">Purchase</a>
                 </div>
-
                 <div class="store-card glass">
                     <h3>SUPPORTER PLUS</h3>
                     <a href="https://crispy-springs.tebex.store/package/7646975" data-tebex-control="checkout" class="buy-btn">Purchase</a>
                 </div>
-
                 <div class="store-card glass">
                     <h3>CHAMPION</h3>
                     <a href="https://crispy-springs.tebex.store/package/7646982" data-tebex-control="checkout" class="buy-btn">Purchase</a>
                 </div>
             </div>
 
-            <!-- Category: Boosters & Keys -->
             <h3 class="category-title">⚡ Boosters & Keys</h3>
             <div class="store-grid">
                 <div class="store-card glass">
                     <h3>1H GLOBAL XP BOOSTER</h3>
                     <a href="https://crispy-springs.tebex.store/package/7647008" data-tebex-control="checkout" class="buy-btn">Purchase</a>
                 </div>
-
                 <div class="store-card glass">
                     <h3>3H GLOBAL XP BOOSTER</h3>
                     <a href="https://crispy-springs.tebex.store/package/7646994" data-tebex-control="checkout" class="buy-btn">Purchase</a>
                 </div>
-
                 <div class="store-card glass">
                     <h3>1x TREASURE CRATE KEYS</h3>
                     <a href="https://crispy-springs.tebex.store/package/7647016" data-tebex-control="checkout" class="buy-btn">Purchase</a>
@@ -226,11 +209,18 @@
                     <button class="wiki-tab" onclick="openWiki('forge', this)"><span class="num">14</span> Community Forge</button>
                     <button class="wiki-tab" onclick="openWiki('equipment-gems', this)"><span class="num">15</span> Equipment Gems</button>
                     <button class="wiki-tab" onclick="openWiki('graves', this)"><span class="num">16</span> Graves & Death</button>
-                    <button class="wiki-tab" onclick="openWiki('supporter-benefits', this)"><span class="num">17</span> Supporter Store Perks</button>
-                    <button class="wiki-tab" onclick="openWiki('rules-help', this)"><span class="num">18</span> Rules & Support</button>
-                    <button class="wiki-tab" onclick="openWiki('marketplace-orders', this)"><span class="num">19</span> Marketplace Buy Orders</button>
-                    <button class="wiki-tab" onclick="openWiki('pvp', this)"><span class="num">20</span> Player vs Player</button>
-                    <button class="wiki-tab" onclick="openWiki('creator-programme', this)"><span class="num">21</span> Creator Programme</button>
+                    <button class="wiki-tab" onclick="openWiki('voice-chat', this)"><span class="num">17</span> Proximity Voice Chat</button>
+                    <button class="wiki-tab" onclick="openWiki('shops-auctions', this)"><span class="num">18</span> Chest Shops & Auctions</button>
+                    <button class="wiki-tab" onclick="openWiki('leaderboards', this)"><span class="num">19</span> Leaderboards</button>
+                    <button class="wiki-tab" onclick="openWiki('cosmetics-poses', this)"><span class="num">20</span> Character Poses & Sit</button>
+                    <button class="wiki-tab" onclick="openWiki('armorstand-editor', this)"><span class="num">21</span> Armor Stand Editor</button>
+                    <button class="wiki-tab" onclick="openWiki('custom-models', this)"><span class="num">22</span> Custom Player Models</button>
+                    <button class="wiki-tab" onclick="openWiki('supporter-benefits', this)"><span class="num">23</span> Supporter Store Perks</button>
+                    <button class="wiki-tab" onclick="openWiki('rules-help', this)"><span class="num">24</span> Rules & Support</button>
+                    <button class="wiki-tab" onclick="openWiki('marketplace-orders', this)"><span class="num">25</span> Marketplace Buy Orders</button>
+                    <button class="wiki-tab" onclick="openWiki('pvp', this)"><span class="num">26</span> Player vs Player</button>
+                    <button class="wiki-tab" onclick="openWiki('creator-programme', this)"><span class="num">27</span> Creator Programme</button>
+                    <button class="wiki-tab" onclick="openWiki('chat-linking', this)"><span class="num">28</span> Discord Chat Linking</button>
                 </aside>
 
                 <main class="wiki-content">
@@ -252,275 +242,354 @@
                             <li>Apply for the Creator Programme if you make livestreams or gaming content[cite: 11].</li>
                             <li>Use <code>/menu</code> whenever you are unsure what to do next[cite: 11].</li>
                         </ul>
-                        <h3>Important links</h3>
-                        <ul>
-                            <li><strong>Store:</strong> <a href="https://crispy-springs.tebex.store" target="_blank">crispy-springs.tebex.store</a></li>
-                            <li><strong>Discord:</strong> <a href="https://discord.gg/9K9r9kjSR4" target="_blank">discord.gg/9K9r9kjSR4</a>[cite: 11]</li>
-                        </ul>
                     </div>
 
                     <!-- 02. GETTING STARTED -->
                     <div id="getting-started" class="wiki-pane">
                         <h2>Getting Started</h2>
-                        <h3>Joining the server</h3>
-                        <p>Crispy Springs supports Java and Bedrock cross-play through Geyser and Floodgate[cite: 12].</p>
+                        <p>Welcome to Crispy Springs! Joining the community is seamless whether you are playing on PC, console, or mobile devices.</p>
+                        <h3>Server Connection Details</h3>
                         <ul>
-                            <li><strong>Server address:</strong> <code>147.135.6.160</code>[cite: 12]</li>
-                            <li><strong>Port:</strong> <code>25899</code>[cite: 12]</li>
+                            <li><strong>Java Edition IP:</strong> <code>147.135.6.160:25899</code></li>
+                            <li><strong>Bedrock IP:</strong> <code>147.135.6.160</code> (Port: <code>25899</code>)</li>
                         </ul>
-                        <p>Bedrock usernames may display with a leading <code>.</code> in some server systems[cite: 12]. This is normal and keeps Java and Bedrock accounts separate[cite: 12].</p>
-                        <h3>Your first join</h3>
-                        <p>New players follow the Pathfinder onboarding journey around Spawn[cite: 12]. The journey introduces the server in this order[cite: 12]:</p>
+                        <h3>First Steps On Joining</h3>
                         <ol>
-                            <li>Pathfinder[cite: 12]</li>
-                            <li>Archivist[cite: 12]</li>
-                            <li>Forgekeeper[cite: 12]</li>
-                            <li>Pathfinder[cite: 12]</li>
-                            <li>Guild Master[cite: 12]</li>
-                            <li>Claim Keeper[cite: 12]</li>
-                            <li>Pathfinder[cite: 12]</li>
+                            <li><strong>Pathfinder Tutorial:</strong> Follow the pathfinder markers around Spawn to learn core mechanics.</li>
+                            <li><strong>Rule Acceptance:</strong> Type <code>/rules</code> or click the Lectern at Spawn to review server guidelines.</li>
+                            <li><strong>Starter Kit:</strong> Receive your starter tools, food, and initial claim shovel.</li>
+                            <li><strong>Random Teleport:</strong> Type <code>/rtp</code> to teleport into a random peaceful area in Survival.</li>
                         </ol>
-                        <h3>Starter equipment</h3>
-                        <p>The starter set includes an iron pickaxe, shovel and sword with improved starter enchantments[cite: 12]. These tools are unbreakable and bound to their owner[cite: 12]. The starter golden shovel is used for creating land claims[cite: 12].</p>
-                        <p>The protected Forge starter set is issued through <code>/forgestarter</code>[cite: 12]. This is intended for onboarding or staff-directed recovery and will not create duplicate owned equipment[cite: 12].</p>
                     </div>
 
                     <!-- 03. COMMANDS -->
                     <div id="commands" class="wiki-pane">
-                        <h2>Player Commands by Rank</h2>
-                        <p>Ranks inherit commands from lower ranks[cite: 13]. Available from Settler means the command remains available to Resident, Explorer, Adventurer, Veteran, and Legend players[cite: 13].</p>
-                        
-                        <h3>Main Navigation</h3>
+                        <h2>Player Commands Reference</h2>
+                        <p>Essential player commands available on Crispy Springs:</p>
                         <table>
-                            <tr><th>Command</th><th>Purpose</th><th>Available from</th></tr>
-                            <tr><td><code>/menu</code></td><td>Open the main server menu[cite: 13].</td><td>Settler[cite: 13]</td></tr>
-                            <tr><td><code>/guide</code></td><td>Open the Crispy Springs Community Guide[cite: 13].</td><td>Settler[cite: 13]</td></tr>
-                            <tr><td><code>/progress</code></td><td>View progression and claim completed levels[cite: 13].</td><td>Settler[cite: 13]</td></tr>
-                            <tr><td><code>/achievements</code></td><td>Open achievement categories and rewards[cite: 13].</td><td>Settler[cite: 13]</td></tr>
-                            <tr><td><code>/orders</code></td><td>Open the player buy-order marketplace[cite: 13].</td><td>Settler[cite: 13]</td></tr>
-                            <tr><td><code>/sb</code></td><td>Toggle the progression scoreboard[cite: 13].</td><td>Settler[cite: 13]</td></tr>
-                        </table>
-
-                        <h3>Travel & Storage</h3>
-                        <table>
-                            <tr><th>Command</th><th>Purpose</th><th>Available from</th></tr>
-                            <tr><td><code>/rtp</code></td><td>Randomly teleport within Survival[cite: 13].</td><td>Settler[cite: 13]</td></tr>
-                            <tr><td><code>/rw tp</code></td><td>Randomly teleport into renewable Resource World[cite: 13].</td><td>Settler[cite: 13]</td></tr>
-                            <tr><td><code>/sethome &lt;name&gt;</code></td><td>Save a home location[cite: 13].</td><td>Settler[cite: 13]</td></tr>
-                            <tr><td><code>/home &lt;name&gt;</code></td><td>Teleport to a saved home[cite: 13].</td><td>Settler[cite: 13]</td></tr>
-                            <tr><td><code>/tpa &lt;player&gt;</code></td><td>Request to teleport to another player[cite: 13].</td><td>Settler[cite: 13]</td></tr>
-                            <tr><td><code>/pv</code></td><td>Open personal vault menu[cite: 13].</td><td>Settler[cite: 13]</td></tr>
-                            <tr><td><code>/back</code></td><td>Return to previous permitted location[cite: 13].</td><td>Explorer[cite: 13]</td></tr>
+                            <tr><th>Command</th><th>Description</th></tr>
+                            <tr><td><code>/menu</code></td><td>Open the main interactive server menu.</td></tr>
+                            <tr><td><code>/guide</code></td><td>Open the in-game Crispy Springs guide menu.</td></tr>
+                            <tr><td><code>/progress</code></td><td>Open progression panel to view levels and rewards.</td></tr>
+                            <tr><td><code>/rtp</code></td><td>Teleport to a random safe location in Survival or Resource World.</td></tr>
+                            <tr><td><code>/sethome [name]</code></td><td>Save your current location as a home waypoint.</td></tr>
+                            <tr><td><code>/home [name]</code></td><td>Teleport back to your saved home waypoint.</td></tr>
+                            <tr><td><code>/pv [number]</code></td><td>Open your private player vault storage.</td></tr>
+                            <tr><td><code>/jobs</code></td><td>Open the Jobs interface to join or leave occupations.</td></tr>
+                            <tr><td><code>/ah</code></td><td>Open the server Auction House market.</td></tr>
+                            <tr><td><code>/orders</code></td><td>View active player buy requests and sell items directly.</td></tr>
+                            <tr><td><code>/pw</code></td><td>Open the Player Warps directory.</td></tr>
+                            <tr><td><code>/forge</code></td><td>Open the Community Forge interface anywhere.</td></tr>
+                            <tr><td><code>/pvptoggle</code></td><td>Enable or disable your PvP status.</td></tr>
+                            <tr><td><code>/discord link</code></td><td>Link your Minecraft profile to your Discord account.</td></tr>
                         </table>
                     </div>
 
                     <!-- 04. PROGRESSION -->
                     <div id="progression" class="wiki-pane">
-                        <h2>Progression and Ranks</h2>
-                        <p>Crispy Springs uses a 550-level progression system[cite: 14]. Progression gives every player long-term goals while keeping staff and supporter status separate from gameplay rank[cite: 14].</p>
-                        <table>
-                            <tr><th>Rank</th><th>Levels</th></tr>
-                            <tr><td>Settler</td><td>1–50[cite: 14]</td></tr>
-                            <tr><td>Resident</td><td>51–100[cite: 14]</td></tr>
-                            <tr><td>Explorer</td><td>101–175[cite: 14]</td></tr>
-                            <tr><td>Adventurer</td><td>176–275[cite: 14]</td></tr>
-                            <tr><td>Veteran</td><td>276–400[cite: 14]</td></tr>
-                            <tr><td>Legend</td><td>401–550[cite: 14]</td></tr>
-                        </table>
-                        <p>Use <code>/progress</code> to view your current task[cite: 14]. Nether access is granted automatically as the player reaches Overall Level 15 by completing Level 14[cite: 14].</p>
+                        <h2>Progression & Leveling</h2>
+                        <p>Crispy Springs features a deep <strong>550-level progression ladder</strong> that unlocks commands, passive perks, extra homes, vault slots, and exclusive titles.</p>
+                        <h3>How Progression Works</h3>
+                        <ul>
+                            <li>Type <code>/progress</code> to check your active objectives.</li>
+                            <li>Objectives involve leveling Jobs, gaining mcMMO skills, gathering money, and completing daily quests.</li>
+                            <li>Upon completing tasks for a level, click <strong>Claim Level</strong> in <code>/progress</code> to receive your rewards.</li>
+                        </ul>
                     </div>
 
                     <!-- 05. WORLDS -->
                     <div id="worlds" class="wiki-pane">
-                        <h2>Worlds and Travel</h2>
-                        <p><strong>Spawn:</strong> Protected community hub with onboarding NPCs, Community Forge, and server links[cite: 15].</p>
-                        <p><strong>Survival:</strong> Permanent build world with a 1,000,000 × 1,000,000 block playable area[cite: 15].</p>
-                        <p><strong>Resource World:</strong> Accessible via <code>/rw tp</code> for gathering materials[cite: 15]. Do not build permanent bases here as it regenerates[cite: 15].</p>
-                        <p><strong>Nether:</strong> Unlocks upon reaching Overall Level 15[cite: 15].</p>
+                        <h2>Worlds & Navigation</h2>
+                        <p>Crispy Springs isolates wilderness harvesting from permanent player settlements to protect the ecosystem.</p>
+                        <h3>1. Survival World</h3>
+                        <p>The main world for building homes, towns, and shops. Features a massive 1,000,000 × 1,000,000 border where terrain and structures are preserved permanently.</p>
+                        <h3>2. Resource World</h3>
+                        <p>A dedicated world for gathering raw materials, mining, and deforestation. Access it via <code>/rw tp</code> or through Spawn portals. <strong>Note:</strong> The Resource World resets periodically!</p>
                     </div>
 
                     <!-- 06. ECONOMY -->
                     <div id="economy" class="wiki-pane">
-                        <h2>Economy and Player Trading</h2>
-                        <p>Crispy Springs uses a player-driven economy[cite: 16]. Players earn money through Jobs, daily quests, achievements, trading, QuickShops, Auction House (<code>/ah</code>), and buy orders (<code>/orders</code>)[cite: 16].</p>
-                        <p>Diamonds, emeralds, and ancient debris are protected from easy server sell loops to maintain market integrity[cite: 16].</p>
+                        <h2>Economy & Player Market</h2>
+                        <p>Our economy is 100% player-driven with zero infinite admin shops inflating the currency.</p>
+                        <h3>Earning Currency</h3>
+                        <ul>
+                            <li><strong>Jobs:</strong> Earn steady cash by mining, farming, fishing, and building.</li>
+                            <li><strong>Player Shops:</strong> Open chest shops in Survival or set up player warps.</li>
+                            <li><strong>Auction House:</strong> Post rare items on <code>/ah</code> for global bidding.</li>
+                            <li><strong>Marketplace Buy Orders:</strong> Sell items directly to players needing supplies via <code>/orders</code>.</li>
+                        </ul>
                     </div>
 
                     <!-- 07. JOBS -->
                     <div id="jobs" class="wiki-pane">
-                        <h2>Jobs</h2>
-                        <p>Jobs provide money and experience for normal gameplay activities[cite: 17]. Open the Jobs browser using <code>/jobs browse</code>[cite: 17].</p>
-                        <p>Upcoming supporter subscriptions will increase active Job allowances and maximum Job levels (Supporter: +2/lvl 130, Supporter+: +3/lvl 160, Champion: +4/lvl 200)[cite: 17].</p>
+                        <h2>Jobs System</h2>
+                        <p>Earn income and job experience while playing normally. Join up to 2 jobs initially (unlocked up to 4 via progression).</p>
+                        <h3>Available Occupations</h3>
+                        <ul>
+                            <li><strong>Miner:</strong> Earn money by mining ores and deepslate.</li>
+                            <li><strong>Woodcutter:</strong> Earn by felling trees and harvesting logs.</li>
+                            <li><strong>Farmer:</strong> Earn by harvesting and replanting crops.</li>
+                            <li><strong>Fisherman:</strong> Earn by catching fish and aquatic treasure.</li>
+                            <li><strong>Hunter:</strong> Earn by defeating hostile mobs and beasts.</li>
+                            <li><strong>Builder:</strong> Earn by placing decorative blocks and structures.</li>
+                        </ul>
+                        <p>Use <code>/jobs browse</code> to join an occupation.</p>
                     </div>
 
                     <!-- 08. MCMMO -->
                     <div id="mcmmo" class="wiki-pane">
-                        <h2>mcMMO Skills and Abilities</h2>
-                        <p>mcMMO adds RPG-style skill progression to Minecraft actions[cite: 18]. Use <code>/mcstats</code> to view your skill levels[cite: 18].</p>
-                        <p>Store Global Boosters are planned to provide <strong>1.5× mcMMO XP</strong> and <strong>1.5× Jobs XP</strong> for three hours[cite: 18].</p>
+                        <h2>mcMMO Skills</h2>
+                        <p>Perform natural tasks to level up core RPG skills and unlock powerful active abilities.</p>
+                        <h3>Skill Categories</h3>
+                        <ul>
+                            <li><strong>Gathering:</strong> Mining (Super Breaker), Woodcutting (Tree Feller), Fishing, Herbalism, Excavation.</li>
+                            <li><strong>Combat:</strong> Swords (Serrated Strikes), Axes (Skull Splitter), Archery, Unarmed, Taming.</li>
+                            <li><strong>Agility:</strong> Acrobatics (Roll & Graceful Landing).</li>
+                        </ul>
+                        <p>Type <code>/mcstats</code> to view your skill levels and active perk power level.</p>
                     </div>
 
                     <!-- 09. CLAIMS -->
                     <div id="claims" class="wiki-pane">
-                        <h2>Claims and Build Protection</h2>
-                        <p>GriefPrevention claims protect homes, storage, and builds[cite: 19]. Use the golden shovel supplied during onboarding to claim territory[cite: 19].</p>
-                        <p>Claims automatically extend downwards as you mine deeper[cite: 19]. PvP is strictly disabled inside all claims regardless of personal settings[cite: 19].</p>
+                        <h2>Land Claims & Build Protection</h2>
+                        <p>Protect your builds, containers, animals, and redstone mechanisms using GriefPrevention claims.</p>
+                        <h3>How to Claim Land</h3>
+                        <ol>
+                            <li>Equip a <strong>Golden Shovel</strong>.</li>
+                            <li>Right-click two opposite corners on the ground to form a diagonal rectangle.</li>
+                            <li>Your claim instantly protects everything from bedrock to build height.</li>
+                        </ol>
+                        <h3>Trust Commands</h3>
+                        <ul>
+                            <li><code>/trust [player]</code> - Gives full permissions to interact and build.</li>
+                            <li><code>/containertrust [player]</code> - Allows opening chests, buttons, and levers.</li>
+                            <li><code>/accesstrust [player]</code> - Allows using doors, buttons, and levers only.</li>
+                            <li><code>/untrust [player]</code> - Revokes permissions.</li>
+                        </ul>
                     </div>
 
-                    <!-- 10. STORAGE -->
+                    <!-- 10. HOMES & STORAGE -->
                     <div id="homes-storage" class="wiki-pane">
-                        <h2>Homes and Personal Storage</h2>
-                        <p>Access private vaults via <code>/pv</code>[cite: 20]. Base vault limits increase as you rank up[cite: 20]:</p>
-                        <table>
-                            <tr><th>Rank</th><th>Base Personal Vaults</th></tr>
-                            <tr><td>Settler</td><td>5[cite: 20]</td></tr>
-                            <tr><td>Resident</td><td>6[cite: 20]</td></tr>
-                            <tr><td>Explorer</td><td>7[cite: 20]</td></tr>
-                            <tr><td>Adventurer</td><td>8[cite: 20]</td></tr>
-                            <tr><td>Veteran</td><td>9[cite: 20]</td></tr>
-                            <tr><td>Legend</td><td>10[cite: 20]</td></tr>
-                        </table>
+                        <h2>Homes & Private Vaults</h2>
+                        <h3>Home Teleports</h3>
+                        <p>Save locations to teleport back instantly:</p>
+                        <ul>
+                            <li><code>/sethome [name]</code> - Saves your location.</li>
+                            <li><code>/home [name]</code> - Teleports to your home after a brief warm-up.</li>
+                            <li><code>/delhome [name]</code> - Deletes a saved home waypoint.</li>
+                        </ul>
+                        <h3>Player Vaults</h3>
+                        <p>Access safe virtual chest space anywhere in the server via <code>/pv [number]</code>. Unlock additional vault pages as your progression rank increases.</p>
                     </div>
 
                     <!-- 11. PLAYERWARPS -->
                     <div id="playerwarps" class="wiki-pane">
-                        <h2>PlayerWarps</h2>
-                        <p>PlayerWarps allow players to publish useful destinations such as towns, public farms, attractions and shops[cite: 21].</p>
-                        <p>Normal warp limits come from progression[cite: 21]. Coming-soon Supporter subscriptions add additional warps (+2 for Supporter, +4 for Supporter+, +6 for Champion)[cite: 21]. Approved Creators receive one additional PlayerWarp[cite: 21].</p>
-                        <p>Warp owners are responsible for keeping public destinations safe, accessible, and accurately described[cite: 21]. Traps or misleading commercial warps are not permitted[cite: 21].</p>
+                        <h2>Player Warps</h2>
+                        <p>Create public warps to invite visitors, buyers, or neighbors to your builds, shop centers, or grinders.</p>
+                        <h3>Warp Commands</h3>
+                        <ul>
+                            <li><code>/pw</code> - Opens the public warp browser GUI.</li>
+                            <li><code>/pw set [name]</code> - Sets a public warp at your current location.</li>
+                            <li><code>/pw resetlocation [name]</code> - Updates an existing warp to where you stand.</li>
+                            <li><code>/pw remove [name]</code> - Deletes your warp.</li>
+                        </ul>
                     </div>
 
                     <!-- 12. QUESTS & ACHIEVEMENTS -->
                     <div id="quests-achievements" class="wiki-pane">
-                        <h2>Daily Quests and Achievements</h2>
-                        <h3>Daily Quests</h3>
-                        <p>Players receive Easy, Medium, and Hard daily objectives that reset at <strong>4:00 AM Pacific/Auckland time</strong>.</p>
-                        <p>Selected Forge contracts award Equipment Gem Fragments:</p>
+                        <h2>Daily Quests & Achievements</h2>
+                        <p>Earn daily bonus income, crate keys, and cosmetics by completing rotating daily quests.</p>
                         <ul>
-                            <li>Easy Forge contract: 1 fragment</li>
-                            <li>Medium Forge contract: 2 fragments</li>
-                            <li>Hard Forge contract: 3 fragments</li>
+                            <li>Type <code>/quests</code> or <code>/odailyquests</code> to view today's active tasks.</li>
+                            <li>Quests reset every 24 hours at midnight UTC.</li>
+                            <li>Type <code>/achievements</code> to view lifetime achievement milestones.</li>
                         </ul>
-                        <h3>Achievements</h3>
-                        <p>Use <code>/achievements</code> to browse achievement categories. When a tooltip displays <strong>OBJECTIVE COMPLETE — CLICK TO CLAIM</strong>, click it to receive rewards like money, Community Coins, or XP boosters.</p>
                     </div>
 
                     <!-- 13. TREASURES -->
                     <div id="treasures" class="wiki-pane">
                         <h2>Community Treasures</h2>
-                        <p>Hidden treasures are placed around Spawn for players to discover. Treasures use custom decorative heads rather than ordinary chests.</p>
-                        <p>There are approximately 100 discoveries across Common, Uncommon, Rare, and Legendary designs contributing to a 24-stage Treasure Achievement track. Completing the final stage unlocks the <strong>Seeker</strong> recognition.</p>
-                        <blockquote>Each account can receive credit for an individual treasure only once. Do not break decorative treasure heads.</blockquote>
+                        <p>Explore Spawn and key public areas to discover over <strong>100 hidden treasure heads</strong>!</p>
+                        <ul>
+                            <li>Right-click hidden heads to collect monetary rewards, key fragments, and achievement progress.</li>
+                            <li>Track your collected total using the in-game HeadBlocks log.</li>
+                        </ul>
                     </div>
 
                     <!-- 14. FORGE -->
                     <div id="forge" class="wiki-pane">
                         <h2>Community Forge</h2>
-                        <p>The Community Forge allows players to craft, upgrade, socket, extract, and repair owned Masterwork tools, weapons, and armour. Use a physical Community Forge Station or <code>/forge</code> as a menu backup.</p>
-                        <h3>Crafting Recipe</h3>
-                        <table>
-                            <tr><td>Iron Ingot</td><td>Anvil</td><td>Iron Ingot</td></tr>
-                            <tr><td>Crafting Table</td><td>Smithing Table</td><td>Grindstone</td></tr>
-                            <tr><td>Iron Ingot</td><td>Diamond</td><td>Iron Ingot</td></tr>
-                        </table>
-                        <p>Masterwork equipment is strictly bound to its owner. Lost eligible items can be recovered through <code>/forgereturn</code> or <code>/forgereturnitem</code>.</p>
+                        <p>Craft custom Masterwork equipment with stats beyond standard enchantment limits.</p>
+                        <h3>Forge Mechanics</h3>
+                        <ul>
+                            <li>Access physical Forge Stations at Spawn or type <code>/forge</code>.</li>
+                            <li>Combine rare materials gathered from daily quests and boss mobs to forge Masterwork gear.</li>
+                            <li>Masterwork tools feature increased durability, base damage, or unique mining speeds.</li>
+                        </ul>
                     </div>
 
                     <!-- 15. EQUIPMENT GEMS -->
                     <div id="equipment-gems" class="wiki-pane">
-                        <h2>Equipment Gems, Fragments and Cores</h2>
-                        <p>Equipment Gems add contextual bonuses to Masterwork equipment. 9 genuine Equipment Gem Fragments craft one selected Gem I. Equipment Gem Fragments do <strong>not</strong> drop from mob kills; obtain them through ores, Forge contracts, or treasure milestones.</p>
-                        <h3>Gem Stacking</h3>
-                        <p>Matching Gems stack with controlled diminishing returns:</p>
+                        <h2>Equipment Gems</h2>
+                        <p>Enhance your armor and weapons by slotting powerful Equipment Gems.</p>
+                        <h3>Gem Types & Slotting</h3>
                         <ul>
-                            <li>Strongest copy: 100% contribution</li>
-                            <li>Second copy: 50% contribution</li>
-                            <li>Third copy: 25% contribution</li>
-                            <li>Fourth+ copy: No additional effect</li>
+                            <li><strong>Combat Gems:</strong> Add lifesteal, critical strike chance, or damage reflection.</li>
+                            <li><strong>Utility Gems:</strong> Add speed boosts, night vision, or lower hunger depletion.</li>
+                            <li>Attach gems to sockets at the Forge Station using <code>/forge</code>.</li>
                         </ul>
-                        <p>Use <code>/armourgems inspect</code> to view active gem totals and diminishing returns[cite: 13].</p>
                     </div>
 
                     <!-- 16. GRAVES -->
                     <div id="graves" class="wiki-pane">
-                        <h2>Graves and Death Recovery</h2>
-                        <p>AxGraves protects dropped inventory after death by creating a temporary grave. Return to the grave location and interact with it to recover your items.</p>
+                        <h2>Graves & Death Recovery</h2>
+                        <p>Never worry about losing inventory items to despawning or lava again!</p>
                         <ul>
-                            <li>Read grave location and expiry details in chat immediately upon dying.</li>
-                            <li>Ensure inventory space is available when retrieving items.</li>
-                            <li>Forge ownership protections still apply to bound equipment.</li>
+                            <li>Upon death, an **AxGrave** lockbox spawns at your death location containing your items and experience.</li>
+                            <li>Graves are protected so only you can unlock your items for 30 minutes.</li>
+                            <li>Type <code>/graves</code> to view your death coordinates or navigate back.</li>
                         </ul>
                     </div>
 
-                    <!-- 17. SUPPORTER BENEFITS -->
-                    <div id="supporter-benefits" class="wiki-pane">
-                        <h2>Supporter Store Benefits (Coming Soon)</h2>
-                        <p>Supporter subscriptions fund the server while offering convenience and cosmetics without replacing gameplay progression.</p>
+                    <!-- 17. VOICE CHAT -->
+                    <div id="voice-chat" class="wiki-pane">
+                        <h2>Proximity Voice Chat</h2>
+                        <p>Interact with nearby players in real-time using position-based audio through **Simple Voice Chat**.</p>
+                        <h3>Setup Guide</h3>
+                        <ol>
+                            <li>Install the <strong>Simple Voice Chat</strong> client mod for Fabric or Forge matching your client version.</li>
+                            <li>Join <code>147.135.6.160:25899</code>.</li>
+                            <li>Press <strong>V</strong> in-game to open settings, configure your microphone, and set press-to-talk keybinds.</li>
+                        </ol>
+                    </div>
+
+                    <!-- 18. SHOPS & AUCTIONS -->
+                    <div id="shops-auctions" class="wiki-pane">
+                        <h2>Chest Shops & Auction House</h2>
+                        <h3>Setting Up QuickShop Chests</h3>
+                        <ol>
+                            <li>Place a chest down in your land claim.</li>
+                            <li>Hit the chest while holding the item you want to sell.</li>
+                            <li>Type the unit price per item in chat when prompted.</li>
+                        </ol>
+                        <h3>Global Auction House</h3>
+                        <ul>
+                            <li>Type <code>/ah</code> to browse active global listings.</li>
+                            <li>Sell the item currently in your main hand: <code>/ah sell &lt;price&gt;</code>.</li>
+                        </ul>
+                    </div>
+
+                    <!-- 19. LEADERBOARDS -->
+                    <div id="leaderboards" class="wiki-pane">
+                        <h2>Leaderboards & Rankings</h2>
+                        <p>Compete with players across multiple gameplay categories powered by <strong>ajLeaderboards</strong>.</p>
+                        <ul>
+                            <li>Check physical leaderboard holograms located around Spawn.</li>
+                            <li>View stats in-game using <code>/ajlb</code>.</li>
+                            <li>Track categories such as **Progression Level**, **Jobs Revenue**, **mcMMO Power Level**, **Economy Balance**, and **Playtime**.</li>
+                        </ul>
+                    </div>
+
+                    <!-- 20. COSMETICS & POSES -->
+                    <div id="cosmetics-poses" class="wiki-pane">
+                        <h2>Character Poses & Emotes</h2>
+                        <p>Use GSit commands to sit on chairs, lay down, or pose anywhere without needing blocks.</p>
                         <table>
-                            <tr><th>Benefit</th><th>Supporter</th><th>Supporter+</th><th>Champion</th></tr>
-                            <tr><td>Additional Homes</td><td>+2</td><td>+4</td><td>+6</td></tr>
-                            <tr><td>Personal Vault Multiplier</td><td>×2</td><td>×4</td><td>×6</td></tr>
-                            <tr><td>Additional Jobs</td><td>+2</td><td>+3</td><td>+4</td></tr>
-                            <tr><td>Monthly Claim Blocks</td><td>2,500</td><td>5,000</td><td>10,000</td></tr>
+                            <tr><th>Command</th><th>Action</th></tr>
+                            <tr><td><code>/sit</code></td><td>Sit down on the surface beneath you.</td></tr>
+                            <tr><td><code>/lay</code></td><td>Lay flat on your back.</td></tr>
+                            <tr><td><code>/crawl</code></td><td>Force your player model into a 1-block crawl animation.</td></tr>
+                            <tr><td><code>/spin</code></td><td>Spin on your stomach.</td></tr>
                         </table>
                     </div>
 
-                    <!-- 18. RULES & HELP -->
-                    <div id="rules-help" class="wiki-pane">
-                        <h2>Rules and Getting Help</h2>
-                        <h3>Core Expectations</h3>
+                    <!-- 21. ARMORSTAND EDITOR -->
+                    <div id="armorstand-editor" class="wiki-pane">
+                        <h2>Armor Stand Editor</h2>
+                        <p>Customize armor stands with precision controls for building displays and statues.</p>
                         <ul>
-                            <li>Treat other players and staff respectfully.</li>
-                            <li>Do not grief, steal, or bypass land protection.</li>
-                            <li>Do not use cheats, hacked clients, exploits, macros, or unattended automation.</li>
-                            <li>Do not scam players or misrepresent trades.</li>
+                            <li>Shift + Right-Click an armor stand with an empty hand to open the Editor GUI.</li>
+                            <li>Toggle arms, plate bases, invisibility, small scale, and gravity off/on.</li>
+                            <li>Rotate and position head, torso, arms, and legs in 3D space.</li>
                         </ul>
-                        <p>If you need assistance, report issues on our <a href="https://discord.gg/9K9r9kjSR4" target="_blank">Discord Support Channel</a>.</p>
                     </div>
 
-                    <!-- 19. MARKETPLACE ORDERS -->
+                    <!-- 22. CUSTOM MODELS -->
+                    <div id="custom-models" class="wiki-pane">
+                        <h2>Custom Player Models (CPM)</h2>
+                        <p>Crispy Springs fully supports **Customizable Player Models (CPM)**.</p>
+                        <ul>
+                            <li>Render custom 3D skin additions, tails, wings, and animations visible to other players using CPM.</li>
+                            <li>Completely client-safe with automatic anti-exploit scale restrictions applied.</li>
+                        </ul>
+                    </div>
+
+                    <!-- 23. SUPPORTER BENEFITS -->
+                    <div id="supporter-benefits" class="wiki-pane">
+                        <h2>Supporter Store Perks</h2>
+                        <p>Supporting Crispy Springs through our official Tebex Store helps pay dedicated server hosting fees while unlocking non-pay-to-win convenience features[cite: 11].</p>
+                        <ul>
+                            <li>Exclusive chat tags, colors, and rank badges.</li>
+                            <li>Access to expanded vault pages and extra home set slots.</li>
+                            <li>Priority queue access during peak playing hours.</li>
+                        </ul>
+                    </div>
+
+                    <!-- 24. RULES & HELP -->
+                    <div id="rules-help" class="wiki-pane">
+                        <h2>Rules & Community Support</h2>
+                        <h3>Server Guidelines</h3>
+                        <ul>
+                            <li><strong>No Griefing or Stealing:</strong> Unclaimed builds are still protected under community rules.</li>
+                            <li><strong>Fair Play:</strong> X-Ray, fly hacks, auto-clickers, or hacked clients are strictly forbidden and detected automatically by GrimAC.</li>
+                            <li><strong>Be Respectful:</strong> Keep chat civil and free of hate speech, toxic behavior, or spam.</li>
+                        </ul>
+                        <h3>Getting Support</h3>
+                        <p>If you encounter an issue, open a support ticket on our <a href="https://discord.gg/9K9r9kjSR4" target="_blank">Discord Server</a>.</p>
+                    </div>
+
+                    <!-- 25. MARKETPLACE ORDERS -->
                     <div id="marketplace-orders" class="wiki-pane">
                         <h2>Marketplace Buy Orders</h2>
-                        <p>DonutOrders lets players advertise what they want to buy instead of waiting for item listings. Use <code>/orders</code> to open the marketplace interface.</p>
-                        <p>The system supports <strong>1,425 normal survival materials</strong>. Spawn eggs, admin items, technical blocks, and <code>PLAYER_HEAD</code> are excluded.</p>
-                    </div>
-
-                    <!-- 20. PVP -->
-                    <div id="pvp" class="wiki-pane">
-                        <h2>Player versus Player (PvP)</h2>
-                        <p>Crispy Springs uses optional PvP. Use <code>/pvptoggle</code> to toggle your personal combat setting.</p>
-                        <p>PvP is strictly disabled inside player claims and protected regions like Spawn, overriding individual player settings. Never use PvP to harass or repeatedly target players.</p>
-                    </div>
-
-                    <!-- 21. CREATOR PROGRAMME -->
-                    <div id="creator-programme" class="wiki-pane">
-                        <h2>Crispy Springs Creator Programme</h2>
-                        <p>The Creator Programme recognises livestreamers and video creators who share Crispy Springs with their communities. Creator is a secondary status: members continue progressing normally from Settler through Legend.</p>
-
-                        <h3>Creator Identity</h3>
-                        <p>Approved members display a Creator badge beside their normal player identity:</p>
-                        <pre>[Explorer] PlayerName [✦ Creator]</pre>
-                        <p>While streaming, the badge changes automatically after the creator activates their verified stream link:</p>
-                        <pre>[Explorer] PlayerName [● LIVE ✦ Creator]</pre>
-
-                        <h3>Included Benefits</h3>
+                        <p>Need bulk materials for a build? Set up automated buy requests so other players can fill them!</p>
                         <ul>
-                            <li>Creator and LIVE identification</li>
-                            <li>Controlled server-wide stream promotion</li>
-                            <li>Creator profile and approved platform links in the website directory</li>
-                            <li>Creator role and collaboration areas in Discord</li>
-                            <li>Opportunities to propose or host community events with staff support</li>
-                            <li>Early previews of selected upcoming server features</li>
-                            <li>One additional home (stacks with progression and subscriptions)</li>
-                            <li>One additional PlayerWarp (stacks with progression and subscriptions)</li>
-                            <li>Portable crafting with <code>/craft</code></li>
+                            <li>Type <code>/orders</code> to open the marketplace interface.</li>
+                            <li>Create a buy request specifying the required item, quantity, and payment per item.</li>
+                            <li>Sellers can fulfill your order directly through the GUI to receive immediate payment.</li>
                         </ul>
+                    </div>
 
-                        <h3>Going LIVE</h3>
-                        <p>After staff verify and approve the creator's HTTPS Twitch, YouTube, or TikTok channel link, the creator can use <code>/creatorlive on</code>. Activations grant a LIVE badge for up to six hours and send a server-wide announcement (subject to a 6-hour announcement cooldown). Use <code>/creatorlive status</code> to check remaining time and <code>/creatorlive off</code> when ending a stream.</p>
+                    <!-- 26. PVP -->
+                    <div id="pvp" class="wiki-pane">
+                        <h2>Player vs Player (PvP)</h2>
+                        <p>PvP is strictly **opt-in** on Crispy Springs so players can build peacefully without fear of surprise attacks.</p>
+                        <ul>
+                            <li>Toggle your PvP status using <code>/pvptoggle</code>.</li>
+                            <li>Both combatants must have PvP enabled to deal damage to each other in Survival.</li>
+                        </ul>
+                    </div>
 
-                        <h3>Applying</h3>
-                        <p>Contact the Crispy Springs team through Discord and provide your Minecraft name, platform, channel link, usual content, and approximate streaming schedule.</p>
+                    <!-- 27. CREATOR PROGRAMME -->
+                    <div id="creator-programme" class="wiki-pane">
+                        <h2>Creator Programme</h2>
+                        <p>Do you stream or create YouTube videos, TikToks, or Shorts on Crispy Springs? Apply for our Creator Programme[cite: 11]!</p>
+                        <ul>
+                            <li>Receive an in-game <code>LIVE</code> or <code>CREATOR</code> badge[cite: 11].</li>
+                            <li>Get stream announcements broadcast to the server chat and Discord automatically.</li>
+                            <li>Apply by opening a ticket on our Discord server[cite: 11].</li>
+                        </ul>
+                    </div>
+
+                    <!-- 28. DISCORD LINKING -->
+                    <div id="chat-linking" class="wiki-pane">
+                        <h2>Discord Chat & Account Linking</h2>
+                        <p>Link your Minecraft account with our Discord server powered by **DiscordSRV**.</p>
+                        <h3>Linking Steps</h3>
+                        <ol>
+                            <li>Type <code>/discord link</code> in-game to receive a unique 4-digit code.</li>
+                            <li>Send a direct message containing the code to the Crispy Springs Discord Bot on Discord.</li>
+                            <li>Your accounts are now linked! You will receive synced roles and secure account recovery support.</li>
+                        </ol>
                     </div>
 
                 </main>
@@ -532,9 +601,7 @@
         <p>&copy; 2026 CrispySprings SMP. All rights reserved. Not affiliated with Mojang Studios or Microsoft.</p>
     </footer>
 
-    <!-- Script Section -->
     <script>
-        // Tab Switching Functionality
         function openWiki(paneId, btnElement) {
             const panes = document.querySelectorAll('.wiki-pane');
             const tabs = document.querySelectorAll('.wiki-tab');
@@ -551,7 +618,6 @@
             }
         }
 
-        // Copy IP Address
         function copyIP() {
             const ip = "147.135.6.160:25899";
             navigator.clipboard.writeText(ip);
@@ -561,7 +627,6 @@
             setTimeout(() => { ipBtn.innerHTML = originalHTML; }, 2500);
         }
 
-        // Fetch Live Server Status
         async function fetchServerStatus() {
             const statsBox = document.getElementById('serverStats');
             try {
