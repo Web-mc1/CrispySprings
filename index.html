@@ -7,20 +7,20 @@
     
     <!-- Primary Meta Tags -->
     <meta name="title" content="CrispySprings SMP | Official Server Store & Wiki">
-    <meta name="description" content="A feature-rich Community SMP with a player-driven economy, custom quests, and endless exploration.">
+    <meta name="description" content="A feature-rich Community SMP with a player-driven economy, custom quests, live interactive map, and endless exploration.">
 
     <!-- Open Graph / Facebook / Discord -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://YOUR_USERNAME.github.io/YOUR_REPO/">
     <meta property="og:title" content="CrispySprings SMP | Official Server Store & Wiki">
-    <meta property="og:description" content="A feature-rich Community SMP with a player-driven economy, custom quests, and endless exploration.">
+    <meta property="og:description" content="A feature-rich Community SMP with a player-driven economy, custom quests, live interactive map, and endless exploration.">
     <meta property="og:image" content="https://YOUR_USERNAME.github.io/YOUR_REPO/preview.png">
 
     <!-- Twitter / X -->
     <meta name="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://YOUR_USERNAME.github.io/YOUR_REPO/">
     <meta name="twitter:title" content="CrispySprings SMP | Official Server Store & Wiki">
-    <meta name="twitter:description" content="A feature-rich Community SMP with a player-driven economy, custom quests, and endless exploration.">
+    <meta name="twitter:description" content="A feature-rich Community SMP with a player-driven economy, custom quests, live interactive map, and endless exploration.">
     <meta name="twitter:image" content="https://YOUR_USERNAME.github.io/YOUR_REPO/preview.png">
 
     <!-- Local Favicon -->
@@ -31,7 +31,7 @@
     <script src="https://js.tebex.io/v1/embed.js"></script>
 
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
 
         :root {
             --primary: #3b82f6;
@@ -70,15 +70,17 @@
         }
 
         /* Header / Hero */
-        header { text-align: center; padding: 80px 20px 70px; border-bottom: 1px solid var(--glass-border); }
-        .server-logo { width: 100px; height: 100px; object-fit: contain; margin-bottom: 15px; filter: drop-shadow(0 0 12px rgba(251, 191, 36, 0.4)); }
+        header { text-align: center; padding: 80px 20px 70px; border-bottom: 1px solid var(--glass-border); position: relative; }
+        .server-logo { width: 110px; height: 110px; object-fit: contain; margin-bottom: 15px; filter: drop-shadow(0 0 15px rgba(251, 191, 36, 0.5)); transition: transform 0.3s ease; }
+        .server-logo:hover { transform: scale(1.05) rotate(2deg); }
+        
         header h1 { font-size: 3.8rem; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 3px; font-weight: 800; background: linear-gradient(135deg, #ea580c, #fbbf24); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         header p { font-size: 1.15rem; color: var(--text-muted); margin-bottom: 30px; max-width: 700px; margin-left: auto; margin-right: auto; }
         
         .ip-box { background: rgba(59, 130, 246, 0.2); border: 2px solid var(--primary); padding: 14px 30px; border-radius: 50px; display: inline-flex; align-items: center; gap: 12px; cursor: pointer; transition: all 0.3s ease; font-size: 1.2rem; font-weight: 600; }
-        .ip-box:hover { background: var(--primary); transform: scale(1.04); box-shadow: 0 0 25px rgba(59, 130, 246, 0.6); }
+        .ip-box:hover { background: var(--primary); transform: translateY(-2px) scale(1.04); box-shadow: 0 0 25px rgba(59, 130, 246, 0.6); }
 
-        .server-stats { margin-top: 25px; font-size: 1rem; color: var(--text-light); display: inline-flex; align-items: center; gap: 10px; padding: 10px 20px; border-radius: 30px; }
+        .server-stats { margin-top: 25px; font-size: 1rem; color: var(--text-light); display: inline-flex; align-items: center; gap: 10px; padding: 10px 22px; border-radius: 30px; }
         .status-dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
         .status-dot.online { background-color: var(--accent); box-shadow: 0 0 10px var(--accent); }
         .status-dot.offline { background-color: #ef4444; box-shadow: 0 0 10px #ef4444; }
@@ -86,20 +88,34 @@
         @keyframes pulse { from { opacity: 0.4; } to { opacity: 1; } }
 
         .nav-links { display: flex; justify-content: center; gap: 15px; margin-top: 35px; flex-wrap: wrap; }
-        .nav-links a { text-decoration: none; color: var(--text-light); padding: 10px 22px; border-radius: 8px; font-weight: 600; transition: all 0.2s ease; border: 1px solid var(--glass-border); }
-        .nav-links a:hover { background: rgba(255, 255, 255, 0.15); transform: translateY(-2px); }
+        .nav-links a { text-decoration: none; color: var(--text-light); padding: 12px 24px; border-radius: 10px; font-weight: 600; transition: all 0.25s ease; border: 1px solid var(--glass-border); background: rgba(255, 255, 255, 0.03); }
+        .nav-links a:hover { background: rgba(255, 255, 255, 0.15); border-color: #fbbf24; transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
 
         /* Container Layout */
         .content-container { max-width: 1300px; margin: 60px auto; padding: 0 20px; }
         .section-title { text-align: center; font-size: 2.3rem; margin-bottom: 10px; font-weight: 800; }
         .category-title { color: #fbbf24; font-size: 1.6rem; margin: 35px 0 15px 0; border-bottom: 1px solid var(--glass-border); padding-bottom: 8px; }
 
+        /* Interactive Map Section */
+        .map-wrapper { padding: 35px; border-radius: 16px; margin-bottom: 60px; }
+        .map-actions { display: flex; justify-content: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+        .map-btn { background: rgba(255, 255, 255, 0.06); border: 1px solid var(--glass-border); color: var(--text-light); padding: 8px 18px; border-radius: 8px; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: all 0.2s ease; }
+        .map-btn:hover, .map-btn.active { background: rgba(234, 88, 12, 0.25); border-color: #ea580c; color: #fff; }
+        .map-container { position: relative; width: 100%; aspect-ratio: 1 / 1; max-height: 750px; border-radius: 14px; overflow: hidden; border: 2px solid var(--glass-border); background: #000; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .map-container iframe { width: 100%; height: 100%; border: none; }
+
         /* Tebex Store Grid */
         .store-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
-        .store-card { padding: 25px; border-radius: 12px; text-align: center; display: flex; flex-direction: column; justify-content: space-between; gap: 15px; }
+        .store-card { padding: 25px; border-radius: 12px; text-align: center; display: flex; flex-direction: column; justify-content: space-between; gap: 15px; transition: transform 0.3s ease, border-color 0.3s ease; }
+        .store-card:hover { transform: translateY(-5px); border-color: #fbbf24; }
         .store-card h3 { color: #fdba74; font-size: 1.25rem; font-weight: 600; }
-        .buy-btn { background: var(--primary); color: #fff; border: none; padding: 12px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; transition: background 0.2s; text-decoration: none; display: inline-block; }
-        .buy-btn:hover { background: var(--primary-hover); }
+        .buy-btn { background: var(--primary); color: #fff; border: none; padding: 12px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; transition: all 0.2s; text-decoration: none; display: inline-block; }
+        .buy-btn:hover { background: var(--primary-hover); box-shadow: 0 0 15px rgba(59, 130, 246, 0.5); }
+
+        /* Search & Filter Bar for Wiki */
+        .wiki-search-box { margin: 20px 0 25px 0; display: flex; gap: 10px; width: 100%; }
+        .wiki-search-input { flex: 1; padding: 14px 20px; border-radius: 10px; background: rgba(0, 0, 0, 0.35); border: 1px solid var(--glass-border); color: #fff; font-size: 1rem; outline: none; transition: border-color 0.2s; }
+        .wiki-search-input:focus { border-color: #fbbf24; box-shadow: 0 0 12px rgba(251, 191, 36, 0.2); }
 
         /* Interactive Wiki Layout */
         .wiki-box { padding: 35px; border-radius: 16px; margin-top: 60px; }
@@ -149,7 +165,7 @@
     <header class="glass">
         <img src="minecraft-png-icon-16689.png" alt="CrispySprings Icon" class="server-logo">
         <h1>CrispySprings SMP</h1>
-        <p>A feature-rich Community SMP with a player-driven economy, custom quests, and endless exploration.</p>
+        <p>A feature-rich Community SMP with a player-driven economy, custom quests, live interactive map, and endless exploration.</p>
         
         <div class="ip-box" onclick="copyIP()" id="ipBtn">
             <span>🎮 147.135.6.160:25899</span>
@@ -161,6 +177,7 @@
         </div>
 
         <div class="nav-links">
+            <a href="#map" class="glass">🗺️ Live Map</a>
             <a href="#store" class="glass">🛍️ Store</a>
             <a href="#wiki" class="glass">📖 Wiki Guide</a>
             <a href="https://discord.gg/9K9r9kjSR4" class="glass" target="_blank">💬 Discord</a>
@@ -168,6 +185,23 @@
     </header>
 
     <div class="content-container">
+
+        <!-- DYNMAP SECTION -->
+        <div id="map" class="map-wrapper glass">
+            <h2 class="section-title">World Map</h2>
+            <p style="text-align: center; color: var(--text-muted); margin-bottom: 20px;">Explore the live 1:1 scale world, view player claims, and track online players in real-time.</p>
+            
+            <div class="map-actions">
+                <button class="map-btn active" onclick="switchMap('http://147.135.6.160:8100/?world=minecraft_survival#minecraft:survival', this)">Overworld</button>
+                <button class="map-btn" onclick="switchMap('http://147.135.6.160:8100/?world=minecraft_nether', this)">Nether</button>
+                <button class="map-btn" onclick="switchMap('http://147.135.6.160:8100/?world=minecraft_the_end', this)">The End</button>
+                <a href="http://147.135.6.160:8100/?world=minecraft_survival#minecraft:survival" target="_blank" class="map-btn" style="text-decoration: none;">↗ Fullscreen Map</a>
+            </div>
+
+            <div class="map-container">
+                <iframe id="dynmapFrame" src="http://147.135.6.160:8100/?world=minecraft_survival#minecraft:survival" title="CrispySprings Dynamic Map"></iframe>
+            </div>
+        </div>
 
         <!-- TEBEX STORE SECTION -->
         <div id="store" class="glass" style="padding: 35px; border-radius: 16px;">
@@ -210,38 +244,43 @@
         <!-- WIKI SECTION -->
         <div id="wiki" class="wiki-box glass">
             <h2 class="section-title">Server Wiki</h2>
-            <p style="text-align: center; color: var(--text-muted); margin-bottom: 25px;">The official Crispy Springs Community Guide.</p>
+            <p style="text-align: center; color: var(--text-muted); margin-bottom: 15px;">The official Crispy Springs Community Guide.</p>
             
+            <div class="wiki-search-box">
+                <input type="text" id="wikiSearch" class="wiki-search-input" placeholder="🔍 Search wiki topics or commands..." onkeyup="filterWiki()">
+            </div>
+
             <div class="wiki-layout">
-                <aside class="wiki-sidebar">
+                <aside class="wiki-sidebar" id="wikiSidebar">
                     <button class="wiki-tab active" onclick="openWiki('home', this)"><span class="num">01</span> Home</button>
                     <button class="wiki-tab" onclick="openWiki('getting-started', this)"><span class="num">02</span> Getting Started</button>
                     <button class="wiki-tab" onclick="openWiki('commands', this)"><span class="num">03</span> Commands</button>
                     <button class="wiki-tab" onclick="openWiki('progression', this)"><span class="num">04</span> Progression & Ranks</button>
                     <button class="wiki-tab" onclick="openWiki('worlds', this)"><span class="num">05</span> Worlds & Travel</button>
-                    <button class="wiki-tab" onclick="openWiki('economy', this)"><span class="num">06</span> Economy & Trading</button>
-                    <button class="wiki-tab" onclick="openWiki('jobs', this)"><span class="num">07</span> Jobs</button>
-                    <button class="wiki-tab" onclick="openWiki('mcmmo', this)"><span class="num">08</span> mcMMO Skills</button>
-                    <button class="wiki-tab" onclick="openWiki('claims', this)"><span class="num">09</span> Claims & Protection</button>
-                    <button class="wiki-tab" onclick="openWiki('homes-storage', this)"><span class="num">10</span> Homes & Storage</button>
-                    <button class="wiki-tab" onclick="openWiki('playerwarps', this)"><span class="num">11</span> PlayerWarps</button>
-                    <button class="wiki-tab" onclick="openWiki('quests-achievements', this)"><span class="num">12</span> Daily Quests & Achievements</button>
-                    <button class="wiki-tab" onclick="openWiki('treasures', this)"><span class="num">13</span> Community Treasures</button>
-                    <button class="wiki-tab" onclick="openWiki('forge', this)"><span class="num">14</span> Community Forge</button>
-                    <button class="wiki-tab" onclick="openWiki('equipment-gems', this)"><span class="num">15</span> Equipment Gems</button>
-                    <button class="wiki-tab" onclick="openWiki('graves', this)"><span class="num">16</span> Graves & Death</button>
-                    <button class="wiki-tab" onclick="openWiki('voice-chat', this)"><span class="num">17</span> Proximity Voice Chat</button>
-                    <button class="wiki-tab" onclick="openWiki('shops-auctions', this)"><span class="num">18</span> Chest Shops & Auctions</button>
-                    <button class="wiki-tab" onclick="openWiki('leaderboards', this)"><span class="num">19</span> Leaderboards</button>
-                    <button class="wiki-tab" onclick="openWiki('cosmetics-poses', this)"><span class="num">20</span> Character Poses & Sit</button>
-                    <button class="wiki-tab" onclick="openWiki('armorstand-editor', this)"><span class="num">21</span> Armor Stand Editor</button>
-                    <button class="wiki-tab" onclick="openWiki('custom-models', this)"><span class="num">22</span> Custom Player Models</button>
-                    <button class="wiki-tab" onclick="openWiki('supporter-benefits', this)"><span class="num">23</span> Supporter Store Perks</button>
-                    <button class="wiki-tab" onclick="openWiki('rules-help', this)"><span class="num">24</span> Rules & Support</button>
-                    <button class="wiki-tab" onclick="openWiki('marketplace-orders', this)"><span class="num">25</span> Marketplace Buy Orders</button>
-                    <button class="wiki-tab" onclick="openWiki('pvp', this)"><span class="num">26</span> Player vs Player</button>
-                    <button class="wiki-tab" onclick="openWiki('creator-programme', this)"><span class="num">27</span> Creator Programme</button>
-                    <button class="wiki-tab" onclick="openWiki('chat-linking', this)"><span class="num">28</span> Discord Chat Linking</button>
+                    <button class="wiki-tab" onclick="openWiki('dynmap-guide', this)"><span class="num">06</span> Live Dynmap Guide</button>
+                    <button class="wiki-tab" onclick="openWiki('economy', this)"><span class="num">07</span> Economy & Trading</button>
+                    <button class="wiki-tab" onclick="openWiki('jobs', this)"><span class="num">08</span> Jobs</button>
+                    <button class="wiki-tab" onclick="openWiki('mcmmo', this)"><span class="num">09</span> mcMMO Skills</button>
+                    <button class="wiki-tab" onclick="openWiki('claims', this)"><span class="num">10</span> Claims & Protection</button>
+                    <button class="wiki-tab" onclick="openWiki('homes-storage', this)"><span class="num">11</span> Homes & Storage</button>
+                    <button class="wiki-tab" onclick="openWiki('playerwarps', this)"><span class="num">12</span> PlayerWarps</button>
+                    <button class="wiki-tab" onclick="openWiki('quests-achievements', this)"><span class="num">13</span> Daily Quests & Achievements</button>
+                    <button class="wiki-tab" onclick="openWiki('treasures', this)"><span class="num">14</span> Community Treasures</button>
+                    <button class="wiki-tab" onclick="openWiki('forge', this)"><span class="num">15</span> Community Forge</button>
+                    <button class="wiki-tab" onclick="openWiki('equipment-gems', this)"><span class="num">16</span> Equipment Gems</button>
+                    <button class="wiki-tab" onclick="openWiki('graves', this)"><span class="num">17</span> Graves & Death</button>
+                    <button class="wiki-tab" onclick="openWiki('voice-chat', this)"><span class="num">18</span> Proximity Voice Chat</button>
+                    <button class="wiki-tab" onclick="openWiki('shops-auctions', this)"><span class="num">19</span> Chest Shops & Auctions</button>
+                    <button class="wiki-tab" onclick="openWiki('leaderboards', this)"><span class="num">20</span> Leaderboards</button>
+                    <button class="wiki-tab" onclick="openWiki('cosmetics-poses', this)"><span class="num">21</span> Character Poses & Sit</button>
+                    <button class="wiki-tab" onclick="openWiki('armorstand-editor', this)"><span class="num">22</span> Armor Stand Editor</button>
+                    <button class="wiki-tab" onclick="openWiki('custom-models', this)"><span class="num">23</span> Custom Player Models</button>
+                    <button class="wiki-tab" onclick="openWiki('supporter-benefits', this)"><span class="num">24</span> Supporter Store Perks</button>
+                    <button class="wiki-tab" onclick="openWiki('rules-help', this)"><span class="num">25</span> Rules & Support</button>
+                    <button class="wiki-tab" onclick="openWiki('marketplace-orders', this)"><span class="num">26</span> Marketplace Buy Orders</button>
+                    <button class="wiki-tab" onclick="openWiki('pvp', this)"><span class="num">27</span> Player vs Player</button>
+                    <button class="wiki-tab" onclick="openWiki('creator-programme', this)"><span class="num">28</span> Creator Programme</button>
+                    <button class="wiki-tab" onclick="openWiki('chat-linking', this)"><span class="num">29</span> Discord Chat Linking</button>
                 </aside>
 
                 <main class="wiki-content">
@@ -260,6 +299,7 @@
                             <li>Choose your Jobs and complete daily quests.</li>
                             <li>Protect your first home with a claim.</li>
                             <li>Browse player buy requests with <code>/orders</code>.</li>
+                            <li>Check out the interactive web map to locate unclaim land!</li>
                             <li>Apply for the Creator Programme if you make livestreams or gaming content.</li>
                             <li>Use <code>/menu</code> whenever you are unsure what to do next.</li>
                         </ul>
@@ -301,6 +341,7 @@
                             <tr><td><code>/orders</code></td><td>View active player buy requests and sell items directly.</td></tr>
                             <tr><td><code>/pw</code></td><td>Open the Player Warps directory.</td></tr>
                             <tr><td><code>/forge</code></td><td>Open the Community Forge interface anywhere.</td></tr>
+                            <tr><td><code>/dynmap hide / show</code></td><td>Toggle your visibility on the interactive live web map.</td></tr>
                             <tr><td><code>/pvptoggle</code></td><td>Enable or disable your PvP status.</td></tr>
                             <tr><td><code>/discord link</code></td><td>Link your Minecraft profile to your Discord account.</td></tr>
                         </table>
@@ -328,7 +369,24 @@
                         <p>A dedicated world for gathering raw materials, mining, and deforestation. Access it via <code>/rw tp</code> or through Spawn portals. <strong>Note:</strong> The Resource World resets periodically!</p>
                     </div>
 
-                    <!-- 06. ECONOMY -->
+                    <!-- 06. DYNMAP GUIDE -->
+                    <div id="dynmap-guide" class="wiki-pane">
+                        <h2>Live Dynmap Web Guide</h2>
+                        <p>Crispy Springs features a 1:1 real-time interactive map accessible straight from our website or directly at <code>147.135.6.160:8100</code>.</p>
+                        <h3>Map Features</h3>
+                        <ul>
+                            <li><strong>Live Player Tracking:</strong> See online players moving around the world in real time.</li>
+                            <li><strong>Claim Overlays:</strong> Preview claimed land areas to easily locate unsettled open territory.</li>
+                            <li><strong>Dimension Switching:</strong> Toggle seamlessly between Overworld, Nether, and The End map layers.</li>
+                        </ul>
+                        <h3>Map Commands</h3>
+                        <ul>
+                            <li><code>/dynmap hide</code> - Hide your player pin from the live web map.</li>
+                            <li><code>/dynmap show</code> - Unhide your player pin so others can view your location.</li>
+                        </ul>
+                    </div>
+
+                    <!-- 07. ECONOMY -->
                     <div id="economy" class="wiki-pane">
                         <h2>Economy & Player Market</h2>
                         <p>Our economy is 100% player-driven with zero infinite admin shops inflating the currency.</p>
@@ -341,7 +399,7 @@
                         </ul>
                     </div>
 
-                    <!-- 07. JOBS -->
+                    <!-- 08. JOBS -->
                     <div id="jobs" class="wiki-pane">
                         <h2>Jobs System</h2>
                         <p>Earn income and job experience while playing normally. Join up to 2 jobs initially (unlocked up to 4 via progression).</p>
@@ -357,7 +415,7 @@
                         <p>Use <code>/jobs browse</code> to join an occupation.</p>
                     </div>
 
-                    <!-- 08. MCMMO -->
+                    <!-- 09. MCMMO -->
                     <div id="mcmmo" class="wiki-pane">
                         <h2>mcMMO Skills</h2>
                         <p>Perform natural tasks to level up core RPG skills and unlock powerful active abilities.</p>
@@ -370,7 +428,7 @@
                         <p>Type <code>/mcstats</code> to view your skill levels and active perk power level.</p>
                     </div>
 
-                    <!-- 09. CLAIMS -->
+                    <!-- 10. CLAIMS -->
                     <div id="claims" class="wiki-pane">
                         <h2>Land Claims & Build Protection</h2>
                         <p>Protect your builds, containers, animals, and redstone mechanisms using GriefPrevention claims.</p>
@@ -389,7 +447,7 @@
                         </ul>
                     </div>
 
-                    <!-- 10. HOMES & STORAGE -->
+                    <!-- 11. HOMES & STORAGE -->
                     <div id="homes-storage" class="wiki-pane">
                         <h2>Homes & Private Vaults</h2>
                         <h3>Home Teleports</h3>
@@ -403,7 +461,7 @@
                         <p>Access safe virtual chest space anywhere in the server via <code>/pv [number]</code>. Unlock additional vault pages as your progression rank increases.</p>
                     </div>
 
-                    <!-- 11. PLAYERWARPS -->
+                    <!-- 12. PLAYERWARPS -->
                     <div id="playerwarps" class="wiki-pane">
                         <h2>Player Warps</h2>
                         <p>Create public warps to invite visitors, buyers, or neighbors to your builds, shop centers, or grinders.</p>
@@ -416,7 +474,7 @@
                         </ul>
                     </div>
 
-                    <!-- 12. QUESTS & ACHIEVEMENTS -->
+                    <!-- 13. QUESTS & ACHIEVEMENTS -->
                     <div id="quests-achievements" class="wiki-pane">
                         <h2>Daily Quests & Achievements</h2>
                         <p>Earn daily bonus income, crate keys, and cosmetics by completing rotating daily quests.</p>
@@ -427,7 +485,7 @@
                         </ul>
                     </div>
 
-                    <!-- 13. TREASURES -->
+                    <!-- 14. TREASURES -->
                     <div id="treasures" class="wiki-pane">
                         <h2>Community Treasures</h2>
                         <p>Explore Spawn and key public areas to discover over <strong>100 hidden treasure heads</strong>!</p>
@@ -437,7 +495,7 @@
                         </ul>
                     </div>
 
-                    <!-- 14. FORGE -->
+                    <!-- 15. FORGE -->
                     <div id="forge" class="wiki-pane">
                         <h2>Community Forge</h2>
                         <p>Craft custom Masterwork equipment with stats beyond standard enchantment limits.</p>
@@ -449,7 +507,7 @@
                         </ul>
                     </div>
 
-                    <!-- 15. EQUIPMENT GEMS -->
+                    <!-- 16. EQUIPMENT GEMS -->
                     <div id="equipment-gems" class="wiki-pane">
                         <h2>Equipment Gems</h2>
                         <p>Enhance your armor and weapons by slotting powerful Equipment Gems.</p>
@@ -461,7 +519,7 @@
                         </ul>
                     </div>
 
-                    <!-- 16. GRAVES -->
+                    <!-- 17. GRAVES -->
                     <div id="graves" class="wiki-pane">
                         <h2>Graves & Death Recovery</h2>
                         <p>Never worry about losing inventory items to despawning or lava again!</p>
@@ -472,7 +530,7 @@
                         </ul>
                     </div>
 
-                    <!-- 17. VOICE CHAT -->
+                    <!-- 18. VOICE CHAT -->
                     <div id="voice-chat" class="wiki-pane">
                         <h2>Proximity Voice Chat</h2>
                         <p>Interact with nearby players in real-time using position-based audio through **Simple Voice Chat**.</p>
@@ -484,7 +542,7 @@
                         </ol>
                     </div>
 
-                    <!-- 18. SHOPS & AUCTIONS -->
+                    <!-- 19. SHOPS & AUCTIONS -->
                     <div id="shops-auctions" class="wiki-pane">
                         <h2>Chest Shops & Auction House</h2>
                         <h3>Setting Up QuickShop Chests</h3>
@@ -500,7 +558,7 @@
                         </ul>
                     </div>
 
-                    <!-- 19. LEADERBOARDS -->
+                    <!-- 20. LEADERBOARDS -->
                     <div id="leaderboards" class="wiki-pane">
                         <h2>Leaderboards & Rankings</h2>
                         <p>Compete with players across multiple gameplay categories powered by <strong>ajLeaderboards</strong>.</p>
@@ -511,7 +569,7 @@
                         </ul>
                     </div>
 
-                    <!-- 20. COSMETICS & POSES -->
+                    <!-- 21. COSMETICS & POSES -->
                     <div id="cosmetics-poses" class="wiki-pane">
                         <h2>Character Poses & Emotes</h2>
                         <p>Use GSit commands to sit on chairs, lay down, or pose anywhere without needing blocks.</p>
@@ -524,7 +582,7 @@
                         </table>
                     </div>
 
-                    <!-- 21. ARMORSTAND EDITOR -->
+                    <!-- 22. ARMORSTAND EDITOR -->
                     <div id="armorstand-editor" class="wiki-pane">
                         <h2>Armor Stand Editor</h2>
                         <p>Customize armor stands with precision controls for building displays and statues.</p>
@@ -535,7 +593,7 @@
                         </ul>
                     </div>
 
-                    <!-- 22. CUSTOM MODELS -->
+                    <!-- 23. CUSTOM MODELS -->
                     <div id="custom-models" class="wiki-pane">
                         <h2>Custom Player Models (CPM)</h2>
                         <p>Crispy Springs fully supports **Customizable Player Models (CPM)**.</p>
@@ -545,7 +603,7 @@
                         </ul>
                     </div>
 
-                    <!-- 23. SUPPORTER BENEFITS -->
+                    <!-- 24. SUPPORTER BENEFITS -->
                     <div id="supporter-benefits" class="wiki-pane">
                         <h2>Supporter Store Perks</h2>
                         <p>Supporting Crispy Springs through our official Tebex Store helps pay dedicated server hosting fees while unlocking non-pay-to-win convenience features.</p>
@@ -556,7 +614,7 @@
                         </ul>
                     </div>
 
-                    <!-- 24. RULES & HELP -->
+                    <!-- 25. RULES & HELP -->
                     <div id="rules-help" class="wiki-pane">
                         <h2>Rules & Community Support</h2>
                         <h3>Server Guidelines</h3>
@@ -569,7 +627,7 @@
                         <p>If you encounter an issue, open a support ticket on our <a href="https://discord.gg/9K9r9kjSR4" target="_blank">Discord Server</a>.</p>
                     </div>
 
-                    <!-- 25. MARKETPLACE ORDERS -->
+                    <!-- 26. MARKETPLACE ORDERS -->
                     <div id="marketplace-orders" class="wiki-pane">
                         <h2>Marketplace Buy Orders</h2>
                         <p>Need bulk materials for a build? Set up automated buy requests so other players can fill them!</p>
@@ -580,7 +638,7 @@
                         </ul>
                     </div>
 
-                    <!-- 26. PVP -->
+                    <!-- 27. PVP -->
                     <div id="pvp" class="wiki-pane">
                         <h2>Player vs Player (PvP)</h2>
                         <p>PvP is strictly **opt-in** on Crispy Springs so players can build peacefully without fear of surprise attacks.</p>
@@ -590,7 +648,7 @@
                         </ul>
                     </div>
 
-                    <!-- 27. CREATOR PROGRAMME -->
+                    <!-- 28. CREATOR PROGRAMME -->
                     <div id="creator-programme" class="wiki-pane">
                         <h2>Creator Programme</h2>
                         <p>Do you stream or create YouTube videos, TikToks, or Shorts on Crispy Springs? Apply for our Creator Programme!</p>
@@ -601,7 +659,7 @@
                         </ul>
                     </div>
 
-                    <!-- 28. DISCORD LINKING -->
+                    <!-- 29. DISCORD LINKING -->
                     <div id="chat-linking" class="wiki-pane">
                         <h2>Discord Chat & Account Linking</h2>
                         <p>Link your Minecraft account with our Discord server powered by **DiscordSRV**.</p>
@@ -637,6 +695,33 @@
             if (btnElement) {
                 btnElement.classList.add('active');
             }
+        }
+
+        function switchMap(url, btnElement) {
+            document.getElementById('dynmapFrame').src = url;
+            const buttons = document.querySelectorAll('.map-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            if (btnElement) {
+                btnElement.classList.add('active');
+            }
+        }
+
+        function filterWiki() {
+            const query = document.getElementById('wikiSearch').value.toLowerCase();
+            const tabs = document.querySelectorAll('.wiki-tab');
+            const panes = document.querySelectorAll('.wiki-pane');
+
+            tabs.forEach(tab => {
+                const text = tab.textContent.toLowerCase();
+                const paneId = tab.getAttribute('onclick').match(/'([^']+)'/)[1];
+                const paneContent = document.getElementById(paneId).textContent.toLowerCase();
+
+                if (text.includes(query) || paneContent.includes(query)) {
+                    tab.style.display = 'flex';
+                } else {
+                    tab.style.display = 'none';
+                }
+            });
         }
 
         function copyIP() {
