@@ -10,21 +10,18 @@
     <meta name="description" content="A feature-rich Community SMP with a player-driven economy, custom quests, live interactive map, and endless exploration.">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#0a0f1e">
-    <!-- ⚠️ Set this to your real published URL once you know it (avoids duplicate-content SEO issues) -->
-    <link rel="canonical" href="https://Web-mc1.github.io/YOUR_REPO/">
+    <link rel="canonical" href="https://YOUR_USERNAME.github.io/YOUR_REPO/">
 
     <!-- Speed up the Google Fonts connection -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <!-- Open Graph / Facebook / Discord -->
-    <!-- ⚠️ Replace YOUR_USERNAME / YOUR_REPO below with your real GitHub Pages address before publishing,
-         or Discord/Twitter link previews will point nowhere and show no image. -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://YOUR_USERNAME.github.io/YOUR_REPO/">
     <meta property="og:title" content="CrispySprings SMP | Official Server Store & Wiki">
     <meta property="og:description" content="A feature-rich Community SMP with a player-driven economy, custom quests, live interactive map, and endless exploration.">
-    <meta property="og:image" content="https://Web-mc1.github.io/CrispySprings/preview.png">
+    <meta property="og:image" content="https://YOUR_USERNAME.github.io/YOUR_REPO/preview.png">
 
     <!-- Twitter / X -->
     <meta name="twitter:card" content="summary_large_image">
@@ -33,10 +30,10 @@
     <meta name="twitter:description" content="A feature-rich Community SMP with a player-driven economy, custom quests, live interactive map, and endless exploration.">
     <meta name="twitter:image" content="https://YOUR_USERNAME.github.io/YOUR_REPO/preview.png">
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="server-icon.png">
+    <!-- Favicon (Tab Icon) -->
+    <link rel="icon" type="image/png" href="favicon.png">
 
-    <!-- Tebex Official Embed Overlay Script (deferred — not needed until the store loads) -->
+    <!-- Tebex Official Embed Overlay Script -->
     <script src="https://js.tebex.io/v1/embed.js" defer></script>
 
     <style>
@@ -65,7 +62,6 @@
             font-family: 'Rajdhani', 'Poppins', sans-serif;
         }
 
-        /* Respect users who've asked their OS/browser to reduce motion */
         @media (prefers-reduced-motion: reduce) {
             *, *::before, *::after {
                 animation-duration: 0.001ms !important;
@@ -75,7 +71,6 @@
             }
         }
 
-        /* Visible keyboard-focus ring on interactive elements (mouse users don't see it) */
         a:focus-visible, button:focus-visible, input:focus-visible {
             outline: 2px solid #fbbf24;
             outline-offset: 3px;
@@ -88,11 +83,10 @@
         .back-to-top.visible { opacity: 1; pointer-events: auto; }
         .back-to-top:hover { transform: translateY(-3px); background: var(--primary-hover); }
 
-        /* Background photo — file lives alongside this page in the repo. */
+        /* Background photo updated to bg.jpg */
         body {
-            background: linear-gradient(rgba(10, 15, 30, 0.75), rgba(10, 15, 30, 0.88)), 
-                        linear-gradient(160deg, #0a0f1e 0%, #16213a 45%, #1b2a44 100%),
-                        url('dOk3erq3R4FLcv01RbGT9ED2-MVTfRAALUAZUO0WE95SwjrVXV1-OsDEqVJeDvKFqN5e6eNK5th2U4P36Q4kNdOv7oxB-OgVUVliPf4xei6qPq3izRfKbn_BkpghzHH3F9zsr_RETIrdF8yKX2EAWyuv0Jd2CHIf0q7l_unareglG9rzp45j2z5CNyMySWBb.jpeg');
+            background: linear-gradient(rgba(10, 15, 30, 0.65), rgba(10, 15, 30, 0.78)), 
+                        url('bg.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -109,7 +103,6 @@
             box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
         }
 
-        /* Soft ambient color glows fixed behind everything for atmosphere/depth */
         .ambient-glow { position: fixed; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; }
         .ambient-glow::before, .ambient-glow::after {
             content: ''; position: absolute; width: 45vw; height: 45vw; border-radius: 50%; filter: blur(110px); opacity: 0.28;
@@ -117,7 +110,6 @@
         .ambient-glow::before { top: -10%; left: -10%; background: var(--primary); }
         .ambient-glow::after { bottom: -15%; right: -10%; background: var(--ember); }
 
-        /* Scroll-reveal: sections fade & rise into place as they enter the viewport */
         .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
         .reveal.in-view { opacity: 1; transform: translateY(0); }
 
@@ -222,11 +214,14 @@
     <a href="#main-content" class="skip-link">Skip to content</a>
 
     <header class="glass">
-        <!-- Server logo -->
-        <img src="server-icon.png" alt="CrispySprings Icon" class="server-logo"
-             onerror="this.onerror=null; this.replaceWith(Object.assign(document.createElement('div'), {className:'server-logo server-logo-fallback', textContent:'⛏️'}));">
-        <div class="eyebrow">Community Survival Server</div>
+        <!-- Text positioned above the server icon -->
         <h1>CrispySprings SMP</h1>
+
+        <!-- Server icon -->
+        <img src="favicon.png" alt="CrispySprings Icon" class="server-logo"
+             onerror="this.onerror=null; this.replaceWith(Object.assign(document.createElement('div'), {className:'server-logo server-logo-fallback', textContent:'⛏️'}));">
+        
+        <div class="eyebrow">Community Survival Server</div>
         <p>A feature-rich Community SMP with a player-driven economy, custom quests, live interactive map, and endless exploration.</p>
         
         <div class="ip-box" onclick="copyIP()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();copyIP();}" id="ipBtn" role="button" tabindex="0" aria-label="Copy server IP 147.135.6.160:25899 to clipboard">
@@ -781,8 +776,6 @@
                 }
             });
 
-            // If the currently open article got filtered out, jump to the first
-            // match instead of leaving the reader looking at a blank sidebar.
             if (!activeTabStillVisible && firstVisibleTab) {
                 const paneId = firstVisibleTab.getAttribute('onclick').match(/'([^']+)'/)[1];
                 openWiki(paneId, firstVisibleTab);
@@ -816,8 +809,6 @@
                 setTimeout(() => { ipBtn.innerHTML = originalHTML; }, 2500);
             };
 
-            // navigator.clipboard needs a secure context (https, or localhost); fall back
-            // to the older execCommand trick so copying still works everywhere else.
             if (navigator.clipboard && window.isSecureContext) {
                 navigator.clipboard.writeText(ip).then(showCopied).catch(showFailed);
             } else {
@@ -850,23 +841,18 @@
                     statsBox.innerHTML = `<span class="status-dot offline"></span> Server Currently Offline`;
                 }
             } catch (err) {
-                // Never claim the server is online when the check itself failed —
-                // that's misleading. Say status is unknown and let players verify in-game.
                 statsBox.innerHTML = `<span class="status-dot unknown"></span> Status Unavailable Right Now`;
             }
         }
 
         fetchServerStatus();
-        // Keep the status reasonably fresh without needing a page reload.
         setInterval(fetchServerStatus, 60000);
 
-        // Back-to-top button: only show once the reader has scrolled a bit.
         const backToTopBtn = document.getElementById('backToTop');
         window.addEventListener('scroll', () => {
             backToTopBtn.classList.toggle('visible', window.scrollY > 500);
         });
 
-        // Scrollspy: highlight whichever nav link matches the section currently in view.
         const sections = ['map', 'store', 'wiki'].map(id => document.getElementById(id)).filter(Boolean);
         const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
         const spyObserver = new IntersectionObserver((entries) => {
@@ -880,7 +866,6 @@
         }, { rootMargin: '-45% 0px -45% 0px' });
         sections.forEach(section => spyObserver.observe(section));
 
-        // Fade + rise each major section into view the first time it's scrolled to.
         const revealObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
